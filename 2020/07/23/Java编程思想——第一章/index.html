@@ -8,16 +8,16 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Java编程思想——第一章 | ShenQi Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Q1：什么是UML？ UML（Unified Modelling Language,统一建模语言） 每个类型都用一个方框表示，类名在方框的顶部，任何数据成员都描述在方框的中间部分，方法（隶属于此对象的。用来接受你发给此对象的消息的函数）在方框的底部。  Q2：为什么要隐藏一部分具体实现&#x2F;访问控制？ 访问控制的第一个存在原因就是让客户端程序员无法接触到他们不该接触的部分——这部分并不是用户解决特定问">
+  <meta name="description" content="Q1：什么是UML？ UML（Unified Modelling Language,统一建模语言） 每个类型都用一个方框表示，类名在方框的顶部，任何数据成员都描述在方框的中间部分，方法（隶属于此对象的。用来接受你发给此对象的消息的函数）在方框的底部。&lt;–more–&gt;  Q2：为什么要隐藏一部分具体实现&#x2F;访问控制？ 访问控制的第一个存在原因就是让客户端程序员无法接触到他们不该接触的部分—">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java编程思想——第一章">
 <meta property="og:url" content="http://yoursite.com/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%80%E7%AB%A0/index.html">
 <meta property="og:site_name" content="ShenQi Blog">
-<meta property="og:description" content="Q1：什么是UML？ UML（Unified Modelling Language,统一建模语言） 每个类型都用一个方框表示，类名在方框的顶部，任何数据成员都描述在方框的中间部分，方法（隶属于此对象的。用来接受你发给此对象的消息的函数）在方框的底部。  Q2：为什么要隐藏一部分具体实现&#x2F;访问控制？ 访问控制的第一个存在原因就是让客户端程序员无法接触到他们不该接触的部分——这部分并不是用户解决特定问">
+<meta property="og:description" content="Q1：什么是UML？ UML（Unified Modelling Language,统一建模语言） 每个类型都用一个方框表示，类名在方框的顶部，任何数据成员都描述在方框的中间部分，方法（隶属于此对象的。用来接受你发给此对象的消息的函数）在方框的底部。&lt;–more–&gt;  Q2：为什么要隐藏一部分具体实现&#x2F;访问控制？ 访问控制的第一个存在原因就是让客户端程序员无法接触到他们不该接触的部分—">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://yoursite.com/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%80%E7%AB%A0/UML.png">
 <meta property="article:published_time" content="2020-07-23T08:48:28.000Z">
-<meta property="article:modified_time" content="2020-07-23T09:49:55.379Z">
+<meta property="article:modified_time" content="2020-07-23T10:48:46.790Z">
 <meta property="article:author" content="Shen Qi">
 <meta property="article:tag" content="JAVA">
 <meta name="twitter:card" content="summary">
@@ -189,10 +189,33 @@
       
         <p><strong>Q1：什么是UML？</strong></p>
 <p>UML（Unified Modelling Language,统一建模语言）</p>
-<p>每个类型都用一个方框表示，类名在方框的顶部，任何数据成员都描述在方框的中间部分，方法（隶属于此对象的。用来接受你发给此对象的消息的函数）在方框的底部。</p>
-<p><img src="/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%80%E7%AB%A0/UML.png" alt="UML演示图片"></p>
+<p>每个类型都用一个方框表示，类名在方框的顶部，任何数据成员都描述在方框的中间部分，方法（隶属于此对象的。用来接受你发给此对象的消息的函数）在方框的底部。<br>&lt;–more–&gt;<br><img src="/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%80%E7%AB%A0/UML.png" alt="UML演示图片"></p>
+<hr>
 <p><strong>Q2：为什么要隐藏一部分具体实现/访问控制？</strong></p>
-<p>访问控制的第一个存在原因就是让客户端程序员无法接触到他们不该接触的部分——这部分并不是用户解决特定问题所需的接口的一部分，这对程序员们来说只是一项服务。<br>访问控制存在的第二个原因就是允许库设计者们可以自由的修改类内部的工作方式而不会担心影响到客户端程序员。（接口与实现分离）</p>
+<p>访问控制的第一个存在原因就是让客户端程序员无法接触到他们不该接触的部分——这部分并不是用户解决特定问题所需的接口的一部分，这对程序员们来说只是一项服务。</p>
+<p>访问控制存在的第二个原因就是允许库设计者们可以自由的修改类内部的工作方式而不会担心影响到客户端程序员。（接口与实现分离）</p>
+<hr>
+<p><strong>Q3：接口的多种不同实现/多态的实现方式？</strong></p>
+<p>面向对象程序设计的最重要的秘诀：编译器不可能产生传统意义上的函数调用</p>
+<p>一个非面向对象的编程的编译器产生的函数调用会引起所谓的<em>前期绑定</em>。（这么做意味着编译器将产生对一个具体函数名字的调用，而运行时，这个调用解析将要被执行的代码的<em>绝对地址</em>）</p>
+<p>而在OOP（面向对象程序设计语言）中，则不需要这个绝对地址，<strong>程序直到运行时才能够确定代码的地址</strong>，所以当消息发送到一个泛化对象时，必须采用其他的机制。</p>
+<p>面向对象程序设计语言使用了<em>后期绑定</em>的概念。当向对象发送消息时，被调用的代码直到运行时才能确定。编译器确保被调用方法的存在，并对调用参数和返回值执行类型检查，但是并<strong>不需要直到被执行的确切代码</strong>。</p>
+<p>为了执行后期绑定，java使用了一小段特殊的代码来替代绝对地址调用。这段代码使用在对象中存储的信息来计算方法体的位置，这样，根据这一段代码的内容，每一个对象都可以有不同的行为表现。</p>
+<hr>
+<p><strong>Q4：是否所有的类最终都继承自单一的基类？</strong></p>
+<p>在java中（事实上还包括除了C++以外的所有OOP语言），答案是yes，这个终极基类的名字就是Object。</p>
+<p>这个结构被称为<strong>单根继承结构</strong>。</p>
+<p>单根继承结构<strong>保证了所有对象都具备某些功能</strong>。因此，在系统中，每个对象都可以执行某些基础操作，所有对象都可以很容易的在堆上创建，而参数的传递也得到了极大的简化，</p>
+<p>单根继承结构也使<strong>垃圾回收机制的实现变得容易的多</strong>。由于所有对象都保证具有其类型信息。因此不会因无法确定对象的类型而陷入僵局。这对于系统级操作系统(如异常处理)显得尤为重要，并且给编程带了更大的灵活性。</p>
+<hr>
+<p><strong>Q5：参数化类型为什么会出现？参数化类型是什么？</strong></p>
+<p>在JAVA SE5出现之前，容器存储的对象都只是java的通用类型：Object。拿来存储Object的容器可以存储除了基本类型以外的所有东西。但<strong>在容器取出对象时</strong>，需要再度变回具体的实际对象。</p>
+<p>这里就需要再度用到<strong>转型</strong>，这需要一个将Object变为具体对象的<strong>向下造型</strong>的过程，但除非确切了解需要处理对象的类型，否则<strong>向下造型是不安全的</strong>，向下造型成错误的类型，系统就会抛出异常。所以需要一种方式记住被处理对象究竟是什么类型，这个方法就是参数化类型。</p>
+<p>在JAVA SE5 中增加了<strong>参数化类型</strong>，在JAVA中称其为<strong>泛型</strong>。</p>
+<p>用一对尖括号，中间包含类型信息，通过这些特征就可以识别对泛型的使用。例如。下面的例子就可以创建一个存储Shape的ArrayList：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ArrayList&lt;Shape&gt; shapes = <span class="keyword">new</span> ArrayList&lt;Shape&gt;();</span><br></pre></td></tr></table></figure>
+
+<hr>
 
       
 
