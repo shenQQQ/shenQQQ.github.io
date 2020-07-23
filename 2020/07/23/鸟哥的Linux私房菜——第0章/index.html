@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>鸟哥的Linux私房菜——第0章 | ShenQi Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Q1：主板上的芯片组如何控制各组件之间的通信？ 主板是连接各部分组件的重要部分。因此在主板上负责连接组件的芯片组，其设计优劣，直接会影响到性能。早期的芯片组通常分为两个网桥来控制各组件之间的通信，分别是：  北桥：负责连接速度较快的CPU，内存和显卡等组件。  南桥：负责连接速度较慢的设备接口，包括硬盘，USB设备，网卡等。 不过由于北桥最重要的就是CPU与内存之间的桥接，如果北桥存在，那么CPU">
+  <meta name="description" content="Q1：主板上的芯片组如何控制各组件之间的通信？ 主板是连接各部分组件的重要部分。因此在主板上负责连接组件的芯片组，其设计优劣，直接会影响到性能。早期的芯片组通常分为两个网桥来控制各组件之间的通信，分别是：  北桥：负责连接速度较快的CPU，内存和显卡等组件。  南桥：负责连接速度较慢的设备接口，包括硬盘，USB设备，网卡等。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="鸟哥的Linux私房菜——第0章">
 <meta property="og:url" content="http://yoursite.com/2020/07/23/%E9%B8%9F%E5%93%A5%E7%9A%84Linux%E7%A7%81%E6%88%BF%E8%8F%9C%E2%80%94%E2%80%94%E7%AC%AC0%E7%AB%A0/index.html">
 <meta property="og:site_name" content="ShenQi Blog">
-<meta property="og:description" content="Q1：主板上的芯片组如何控制各组件之间的通信？ 主板是连接各部分组件的重要部分。因此在主板上负责连接组件的芯片组，其设计优劣，直接会影响到性能。早期的芯片组通常分为两个网桥来控制各组件之间的通信，分别是：  北桥：负责连接速度较快的CPU，内存和显卡等组件。  南桥：负责连接速度较慢的设备接口，包括硬盘，USB设备，网卡等。 不过由于北桥最重要的就是CPU与内存之间的桥接，如果北桥存在，那么CPU">
+<meta property="og:description" content="Q1：主板上的芯片组如何控制各组件之间的通信？ 主板是连接各部分组件的重要部分。因此在主板上负责连接组件的芯片组，其设计优劣，直接会影响到性能。早期的芯片组通常分为两个网桥来控制各组件之间的通信，分别是：  北桥：负责连接速度较快的CPU，内存和显卡等组件。  南桥：负责连接速度较慢的设备接口，包括硬盘，USB设备，网卡等。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-07-23T15:38:14.000Z">
-<meta property="article:modified_time" content="2020-07-23T16:35:55.003Z">
+<meta property="article:modified_time" content="2020-07-23T16:38:00.365Z">
 <meta property="article:author" content="Shen Qi">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
@@ -190,6 +190,8 @@
 <li><p>北桥：负责<strong>连接速度较快的CPU，内存和显卡等</strong>组件。</p>
 </li>
 <li><p>南桥：负责<strong>连接速度较慢的设备接口</strong>，包括硬盘，USB设备，网卡等。</p>
+<a id="more"></a>
+
 <p>不过由于北桥最重要的就是CPU与内存之间的桥接，如果北桥存在，那么CPU与内存之间的交流会消耗掉北桥的带宽。但如果将北桥整合进CPU内，<strong>不仅CPU与内存之间可以直接通信，速度较快，而且也不用消耗掉额外的带宽</strong>。所以现在的CPU看不到以往的北桥芯片了。</p>
 </li>
 </ol>
