@@ -164,6 +164,261 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-鸟哥的Linux私房菜——第0章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/23/%E9%B8%9F%E5%93%A5%E7%9A%84Linux%E7%A7%81%E6%88%BF%E8%8F%9C%E2%80%94%E2%80%94%E7%AC%AC0%E7%AB%A0/">鸟哥的Linux私房菜——第0章</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/23/%E9%B8%9F%E5%93%A5%E7%9A%84Linux%E7%A7%81%E6%88%BF%E8%8F%9C%E2%80%94%E2%80%94%E7%AC%AC0%E7%AB%A0/" class="archive-article-date">
+  	<time datetime="2020-07-23T15:38:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Q1：主板上的芯片组如何控制各组件之间的通信？"><a href="#Q1：主板上的芯片组如何控制各组件之间的通信？" class="headerlink" title="Q1：主板上的芯片组如何控制各组件之间的通信？"></a>Q1：主板上的芯片组如何控制各组件之间的通信？</h3><p> 主板是连接各部分组件的重要部分。因此在主板上负责连接组件的芯片组，其设计优劣，直接会影响到性能。早期的芯片组通常分为两个网桥来控制各组件之间的通信，分别是：</p>
+<ol>
+<li><p>北桥：负责<strong>连接速度较快的CPU，内存和显卡等</strong>组件。</p>
+</li>
+<li><p>南桥：负责<strong>连接速度较慢的设备接口</strong>，包括硬盘，USB设备，网卡等。</p>
+<p>不过由于北桥最重要的就是CPU与内存之间的桥接，如果北桥存在，那么CPU与内存之间的交流会消耗掉北桥的带宽。但如果将北桥整合进CPU内，<strong>不仅CPU与内存之间可以直接通信，速度较快，而且也不用消耗掉额外的带宽</strong>。所以现在的CPU看不到以往的北桥芯片了。</p>
+</li>
+</ol>
+<hr>
+<h3 id="Q2：能不能仅通过频率来判断运算性能？"><a href="#Q2：能不能仅通过频率来判断运算性能？" class="headerlink" title="Q2：能不能仅通过频率来判断运算性能？"></a>Q2：能不能仅通过频率来判断运算性能？</h3><p>不能。不同的CPU之间不能单纯地仅凭频率来判断性能。这是因为<strong>每块CPU的指令集不同，架构也不见得一样，可使用的二级缓存以及其运算机制也可能不同，加上每一次频率能够进行的工作指令数也不相同</strong>，所以，频率目前仅能用来比较<strong>同款CPU</strong>的速度。</p>
+<hr>
+<h3 id="Q3：怎么计算CPU的工作频率？"><a href="#Q3：怎么计算CPU的工作频率？" class="headerlink" title="Q3：怎么计算CPU的工作频率？"></a>Q3：怎么计算CPU的工作频率？</h3><p>在<strong>早期的CPU设计</strong>中，所谓的外频指的是CPU通过北桥芯片与外部组件进行数据传输时的速度，倍频则是CPU内部用来加速工作性能的一个倍数两者相乘才是CPU的频率速度。</p>
+<p>例如：Intel Core 2 E8400的频率是3.0GHz，而外频是333MHz，所以可得CPU倍频是9倍。</p>
+<p>很多电脑玩家喜欢玩的超频，就是通过修改主板提供的设置功能，将CPU的倍频或是外频修改成较高频率。但因为CPU的倍频通常在出厂的时候就已经被锁定，所以修改的往往是CPU的外频。</p>
+<p>现在没有所谓的北桥，因此CPU的频率设计就无需考虑要同步的外频，只需要考虑整体的频率即可。</p>
+<hr>
+<h3 id="Q4-什么是CPU的总线位宽？"><a href="#Q4-什么是CPU的总线位宽？" class="headerlink" title="Q4:什么是CPU的总线位宽？"></a>Q4:什么是CPU的总线位宽？</h3><p>CPU的各项数据统统来自于内存，如果内存单位时间内提供的数据量越大的话，系统的整体性能应该也越快。</p>
+<p>CPU的总线位宽指的就是单位时间内能够传输的数据量，它与内存的工作频率与内存数据位宽位宽（<strong>内存一次传输的数据量</strong>）有关，例如，64位内存的工作频率是1600MHz，俺么CPU可以从内存中取得的最快带宽就是1600MHz<em>64bit=1600MHz</em>8B=12.8GB/s</p>
+<p>CPU也有跟内存的<strong>数据带宽</strong>相似的概念，叫做<strong>字长</strong>，我们电脑中的32位或者64位也往往指的是CPU的字长位数，字长指的是<strong>CPU每次能处理的数据量</strong>。</p>
+<hr>
+<h3 id="Q5：CPU超线程（Hyper-Threading，HT）是如何实现的？"><a href="#Q5：CPU超线程（Hyper-Threading，HT）是如何实现的？" class="headerlink" title="Q5：CPU超线程（Hyper-Threading，HT）是如何实现的？"></a>Q5：CPU超线程（Hyper-Threading，HT）是如何实现的？</h3><p>在每一个CPU中，将内部的寄存器分成两组，让程序分别使用这两组寄存器。也就是说，有两个程序<strong>同时竞争CPU的运算单元</strong>，而非通过操作系统的多任务切换。这一过程使得CPU好像同时拥有两个逻辑分离的内核的样子。</p>
+<p>在大多数情况下，HT技术会带来性能的提升，但是也会存在性能下降得情况，具体问题要进行具体分析。</p>
+<hr>
+<h3 id="Q6：什么是内存的多通道设计？"><a href="#Q6：什么是内存的多通道设计？" class="headerlink" title="Q6：什么是内存的多通道设计？"></a>Q6：什么是内存的多通道设计？</h3><p>因为所有的数据都需要通过内存才能交给CPU去计算，所以内存的数据位宽当然是越大越好。但是传统的总线位宽是不太可能改变的，所以芯片组厂商就想到把两个内存集合在一起，如果一根内存有64位，那么两根内存就有128位。这就是双通道的设计理念。</p>
+<hr>
+<h3 id="例题："><a href="#例题：" class="headerlink" title="例题："></a>例题：</h3><p>你的系统使用 i7 的 4790 CPU，使用了 DDR3-1600 内存，使用了 PCIe 2.0 x8 的磁盘阵列卡，这张卡上面安装了 8 颗 3TB 的理论速度可达 200Mbyte/s 的硬盘 (假设为可加总速度的 RAID0 配置)， 是安插在 CPU 控制芯片相连的插槽中。网络使用 giga 网卡，安插在 PCIe 2.0 x1 的界面上。在这样的设备中，上述的哪个环节速度可能是你的瓶颈？</p>
+<p><strong>答</strong>：</p>
+<p>DDR3-1600 的带宽可达：12.8GBytes/s<br>磁盘阵列卡理论传输率： PCIe 2.0 x8 为 4GBytes/s<br>磁盘每颗 200MBytes/s，共八颗，总效率为： 200MBytes*8 ~ 1.6GBytes/s<br>网络接口使用 PCIe 2.0 1x 所以接口速度可达 500MBytes/s，但是 Giga 网络最高为 125MBytes/s<br>通过上述分析，我们知道，速度最慢的为网络的 125MBytes/s ！所以，如果想要让整体性能提升，网络恐怕就是需要克服的一环！</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/23/%E9%B8%9F%E5%93%A5%E7%9A%84Linux%E7%A7%81%E6%88%BF%E8%8F%9C%E2%80%94%E2%80%94%E7%AC%AC0%E7%AB%A0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Java编程思想——第四章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E5%9B%9B%E7%AB%A0/">Java编程思想——第四章</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E5%9B%9B%E7%AB%A0/" class="archive-article-date">
+  	<time datetime="2020-07-23T15:28:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="continue和break的详细用法？"><a href="#continue和break的详细用法？" class="headerlink" title="continue和break的详细用法？"></a>continue和break的详细用法？</h3><ol>
+<li>一般的continue会退回最内层循环的开头（顶部），并继续执行。</li>
+<li>带标签的continue会到达标签的位置，并重新进入紧接在那个标签后的循环。</li></ol>
+        
+          <a class="article-more-a" href="/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E5%9B%9B%E7%AB%A0/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E5%9B%9B%E7%AB%A0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Java编程思想——第三章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%89%E7%AB%A0/">Java编程思想——第三章</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%89%E7%AB%A0/" class="archive-article-date">
+  	<time datetime="2020-07-23T15:03:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="请简述-与equals（）的区别？"><a href="#请简述-与equals（）的区别？" class="headerlink" title="请简述==与equals（）的区别？"></a>请简述==与equals（）的区别？</h3><p>当使用==进行关于对象之间的比较时，是进行的对象引用之间的比较。也就是说即使对象的内容完全一致，但只要对象引用指向的不是相同的对象，则也会输出false。</p>
+        
+          <a class="article-more-a" href="/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%89%E7%AB%A0/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%89%E7%AB%A0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Java编程思想——第二章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -492,6 +747,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">土豆种植</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
             
             <div class="clearfix"></div>

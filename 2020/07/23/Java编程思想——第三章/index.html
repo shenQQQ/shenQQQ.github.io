@@ -6,22 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Java编程思想——第一章 | ShenQi Blog</title>
+  <title>Java编程思想——第三章 | ShenQi Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Q1：什么是UML？UML（Unified Modelling Language,统一建模语言） 每个类型都用一个方框表示，类名在方框的顶部，任何数据成员都描述在方框的中间部分，方法（隶属于此对象的。用来接受你发给此对象的消息的函数）在方框的底部。">
+  <meta name="description" content="请简述&#x3D;&#x3D;与equals（）的区别？当使用&#x3D;&#x3D;进行关于对象之间的比较时，是进行的对象引用之间的比较。也就是说即使对象的内容完全一致，但只要对象引用指向的不是相同的对象，则也会输出false。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java编程思想——第一章">
-<meta property="og:url" content="http://yoursite.com/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%80%E7%AB%A0/index.html">
+<meta property="og:title" content="Java编程思想——第三章">
+<meta property="og:url" content="http://yoursite.com/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%89%E7%AB%A0/index.html">
 <meta property="og:site_name" content="ShenQi Blog">
-<meta property="og:description" content="Q1：什么是UML？UML（Unified Modelling Language,统一建模语言） 每个类型都用一个方框表示，类名在方框的顶部，任何数据成员都描述在方框的中间部分，方法（隶属于此对象的。用来接受你发给此对象的消息的函数）在方框的底部。">
+<meta property="og:description" content="请简述&#x3D;&#x3D;与equals（）的区别？当使用&#x3D;&#x3D;进行关于对象之间的比较时，是进行的对象引用之间的比较。也就是说即使对象的内容完全一致，但只要对象引用指向的不是相同的对象，则也会输出false。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://yoursite.com/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%80%E7%AB%A0/UML.png">
-<meta property="article:published_time" content="2020-07-23T08:48:28.000Z">
-<meta property="article:modified_time" content="2020-07-23T11:43:33.163Z">
+<meta property="og:image" content="http://yoursite.com/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%89%E7%AB%A0/equals%E5%8E%9F%E7%A0%81.png">
+<meta property="article:published_time" content="2020-07-23T15:03:56.000Z">
+<meta property="article:modified_time" content="2020-07-23T15:27:36.565Z">
 <meta property="article:author" content="Shen Qi">
 <meta property="article:tag" content="JAVA">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%80%E7%AB%A0/UML.png">
+<meta name="twitter:image" content="http://yoursite.com/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%89%E7%AB%A0/equals%E5%8E%9F%E7%A0%81.png">
   
     <link rel="alternative" href="/atom.xml" title="ShenQi Blog" type="application/atom+xml">
   
@@ -167,63 +167,36 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Java编程思想——第一章" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Java编程思想——第三章" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Java编程思想——第一章
+      Java编程思想——第三章
     </h1>
   
 
         
-        <a href="/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%80%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-07-23T08:48:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-23</time>
+        <a href="/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%89%E7%AB%A0/" class="archive-article-date">
+  	<time datetime="2020-07-23T15:03:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Q1：什么是UML？"><a href="#Q1：什么是UML？" class="headerlink" title="Q1：什么是UML？"></a>Q1：什么是UML？</h3><p>UML（Unified Modelling Language,统一建模语言）</p>
-<p>每个类型都用一个方框表示，类名在方框的顶部，任何数据成员都描述在方框的中间部分，方法（隶属于此对象的。用来接受你发给此对象的消息的函数）在方框的底部。</p>
+        <h3 id="请简述-与equals（）的区别？"><a href="#请简述-与equals（）的区别？" class="headerlink" title="请简述==与equals（）的区别？"></a>请简述==与equals（）的区别？</h3><p>当使用==进行关于对象之间的比较时，是进行的对象引用之间的比较。也就是说即使对象的内容完全一致，但只要对象引用指向的不是相同的对象，则也会输出false。</p>
 <a id="more"></a>
-<p><img src="/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%80%E7%AB%A0/UML.png" alt="UML演示图片"></p>
+<p>equals（）的函数在Object中也是使用的==语句，但是</p>
+<p><img src="/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%89%E7%AB%A0/equals%E5%8E%9F%E7%A0%81.png" alt="equals原码"></p>
+<p>对于自带的常用类，比如Integer，String对于这个方法都进行了重写，使其变成了对于对象内容的值比较。对于自己创建的类，我们也可以重新覆盖equalsmore–（）方法，来达到自己想要的功能。</p>
 <hr>
-<h3 id="Q2：为什么要隐藏一部分具体实现-访问控制？"><a href="#Q2：为什么要隐藏一部分具体实现-访问控制？" class="headerlink" title="Q2：为什么要隐藏一部分具体实现/访问控制？"></a>Q2：为什么要隐藏一部分具体实现/访问控制？</h3><p>访问控制的第一个存在原因就是让客户端程序员无法接触到他们不该接触的部分——这部分并不是用户解决特定问题所需的接口的一部分，这对程序员们来说只是一项服务。</p>
-<p>访问控制存在的第二个原因就是允许库设计者们可以自由的修改类内部的工作方式而不会担心影响到客户端程序员。（接口与实现分离）</p>
+<h3 id="短路现象是什么？"><a href="#短路现象是什么？" class="headerlink" title="短路现象是什么？"></a>短路现象是什么？</h3><p>在使用逻辑操作符运算时，我们会遇到一种“短路现象”。即一旦能够明确无误地确定整个表达式的值，就不再计算表达式的余下部分了。比如，多节逻辑或运算式子的的第一个式子运算结果为真，则无论后续结果如何，这个式子的结果都将为真。此时，java系统就不会继续向后计算，那样只是浪费。“短路”一词的由来正源于此。事实上，如果所有的逻辑表达式都有一部分不必计算，那将来将获得潜在的性能提升。</p>
 <hr>
-<h3 id="Q3：接口的多种不同实现-多态的实现方式？"><a href="#Q3：接口的多种不同实现-多态的实现方式？" class="headerlink" title="Q3：接口的多种不同实现/多态的实现方式？"></a>Q3：接口的多种不同实现/多态的实现方式？</h3><p>面向对象程序设计的最重要的秘诀：编译器不可能产生传统意义上的函数调用</p>
-<p>一个非面向对象的编程的编译器产生的函数调用会引起所谓的<em>前期绑定</em>。（这么做意味着编译器将产生对一个具体函数名字的调用，而运行时，这个调用解析将要被执行的代码的<em>绝对地址</em>）</p>
-<p>而在OOP（面向对象程序设计语言）中，则不需要这个绝对地址，<strong>程序直到运行时才能够确定代码的地址</strong>，所以当消息发送到一个泛化对象时，必须采用其他的机制。</p>
-<p>面向对象程序设计语言使用了<em>后期绑定</em>的概念。当向对象发送消息时，被调用的代码直到运行时才能确定。编译器确保被调用方法的存在，并对调用参数和返回值执行类型检查，但是并<strong>不需要直到被执行的确切代码</strong>。</p>
-<p>为了执行后期绑定，java使用了一小段特殊的代码来替代绝对地址调用。这段代码使用在对象中存储的信息来计算方法体的位置，这样，根据这一段代码的内容，每一个对象都可以有不同的行为表现。</p>
-<hr>
-<h3 id="Q4：是否所有的类最终都继承自单一的基类？"><a href="#Q4：是否所有的类最终都继承自单一的基类？" class="headerlink" title="Q4：是否所有的类最终都继承自单一的基类？"></a>Q4：是否所有的类最终都继承自单一的基类？</h3><p>在java中（事实上还包括除了C++以外的所有OOP语言），答案是yes，这个终极基类的名字就是Object。</p>
-<p>这个结构被称为<strong>单根继承结构</strong>。</p>
-<p>单根继承结构<strong>保证了所有对象都具备某些功能</strong>。因此，在系统中，每个对象都可以执行某些基础操作，所有对象都可以很容易的在堆上创建，而参数的传递也得到了极大的简化，</p>
-<p>单根继承结构也使<strong>垃圾回收机制的实现变得容易的多</strong>。由于所有对象都保证具有其类型信息。因此不会因无法确定对象的类型而陷入僵局。这对于系统级操作系统(如异常处理)显得尤为重要，并且给编程带了更大的灵活性。</p>
-<hr>
-<h3 id="Q5：参数化类型为什么会出现？参数化类型是什么？"><a href="#Q5：参数化类型为什么会出现？参数化类型是什么？" class="headerlink" title="Q5：参数化类型为什么会出现？参数化类型是什么？"></a>Q5：参数化类型为什么会出现？参数化类型是什么？</h3><p>在JAVA SE5出现之前，容器存储的对象都只是java的通用类型：Object。拿来存储Object的容器可以存储除了基本类型以外的所有东西。但<strong>在容器取出对象时</strong>，需要再度变回具体的实际对象。</p>
-<p>这里就需要再度用到<strong>转型</strong>，这需要一个将Object变为具体对象的<strong>向下造型</strong>的过程，但除非确切了解需要处理对象的类型，否则<strong>向下造型是不安全的</strong>，向下造型成错误的类型，系统就会抛出异常。所以需要一种方式记住被处理对象究竟是什么类型，这个方法就是参数化类型。</p>
-<p>在JAVA SE5 中增加了<strong>参数化类型</strong>，在JAVA中称其为<strong>泛型</strong>。</p>
-<p>用一对尖括号，中间包含类型信息，通过这些特征就可以识别对泛型的使用。例如。下面的例子就可以创建一个存储Shape的ArrayList：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ArrayList&lt;Shape&gt; shapes = <span class="keyword">new</span> ArrayList&lt;Shape&gt;();</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="Q6：Java是如何管理对象的创建与其生命周期的？"><a href="#Q6：Java是如何管理对象的创建与其生命周期的？" class="headerlink" title="Q6：Java是如何管理对象的创建与其生命周期的？"></a>Q6：Java是如何管理对象的创建与其生命周期的？</h3><p>关于<strong>对象的创建</strong>：</p>
-<p>如果是追求最大的执行速度，对象的存储空间和生命周期可以在编写程序时确定。这可以通过将对象置于<strong>堆栈</strong>（他们有时被称为自动变量（automatic variable）或限域变量（scoped variable））<strong>或静态存储区</strong>内来实现。这种方式将存储空间分配和释放置于优先考虑的位置，<strong>在堆栈中创建存储空间和释放存储空间通常只需要一条汇编指令即可</strong>，分别对应将栈顶指针向上或者向下移动，在创建存储空间时所耗费的时间很短，在某些情况下这样的控制非常有价值，但是，<strong>这种方法也牺牲了灵活性</strong>，因为在程序编写时<strong>必须时知道对象确切的数量，生命周期和类型。</strong>在试图解决更一般化的问题时，这种方法就显得过于受限了。</p>
-<p>对应的另外一种方法是在被称为<strong>堆（heap）的内存池</strong>中动态的创建对象。在这种方法中，<strong>只有到程序运行到相关代码被执行的那一刻才需要确定要创建多少对象，生命周期如何，以及类型是什么</strong>。如果需要一个新对象，可以在需要的时刻直接在堆中创建。但是因为存储空间是动态管理的，所以<strong>需要大量的时间在堆中分配存储空间</strong>，这可能远远大于在堆栈中创建存储空间的时间。而创建存储的空间的时间依赖于存储机制的设计。</p>
-<p>选择动态逻辑方式有这样一个一般性的<strong>逻辑假设</strong>：对象趋向于变得复杂，所以查找和释放存储空间的开销不会对对象的创建造成重大冲击。而动态方法所带来的更大的灵活性则正是解决一般化编程问题的要点之所在。</p>
-<p>所以Java在对象的创建的问题上完全选择了动态内存分配方式。</p>
-<p>而关于<strong>对象的生命周期</strong>：</p>
-<p>对于允许在堆栈上创建对象的语言，编译器可以确定对象存活的时间，并可以自动销毁他。然而，如果是在堆上创建对象，编译器就会对它的生命周期一无所知。</p>
-<p>对于这个问题，<strong>Java提供了被称为“垃圾回收器”的机制</strong>，它可以自动发现对象何时不再被使用，并继而销毁它。垃圾回收机制非常有用，它减少了所必须考虑的议题和必须编写的代码，更重要的是，垃圾回收机制提供了更高层面的保障，避免了暗藏的内存泄漏问题。</p>
-<p>在C++语言中，<strong>必须通过编程来确定堆内存中何时销毁对象</strong>，这样做很有可能因为不能正确处理而导致内存泄漏（这在C++程序中是常见的问题），内存泄漏问题也使得许多C++项目折戟沉沙。</p>
-<p>垃圾回收机制和单根继承机制这两种机制结合起来，使得用JAVA的编程的过程较之用C++编程要简单的多，所要做出的决策和克服的障碍也要少得多。</p>
-<p>PS：内存泄漏是指程序中已经分配出去的堆内存，由于某种原因导致<strong>堆内存未释放或无法释放</strong>，造成系统内存的浪费，从而导致系统运行速度下降甚至系统崩溃等严重后果。</p>
+<h3 id="如何表达十六进制数？八进制数？"><a href="#如何表达十六进制数？八进制数？" class="headerlink" title="如何表达十六进制数？八进制数？"></a>如何表达十六进制数？八进制数？</h3><p>十六进制数适用于所有整数数据类型，以前缀0x（或0X），后面跟随0-9或小写（或大写）的a-f来表示。</p>
+<p>八进制数由前缀0以及后续的0~7的数字来表示。</p>
 
       
 
@@ -324,7 +297,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%80%E7%AB%A0/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%89%E7%AB%A0/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -338,18 +311,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%8C%E7%AB%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E5%9B%9B%E7%AB%A0/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Java编程思想——第二章
+          Java编程思想——第四章
         
       </div>
     </a>
   
   
-    <a href="/2020/07/17/%E5%9C%9F%E8%B1%86%E5%85%BB%E6%AE%96%E8%AE%A1%E5%88%92/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">土豆养殖计划</div>
+    <a href="/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%8C%E7%AB%A0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java编程思想——第二章</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -376,7 +349,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Q1：什么是UML？"><span class="toc-number">1.</span> <span class="toc-text">Q1：什么是UML？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q2：为什么要隐藏一部分具体实现-访问控制？"><span class="toc-number">2.</span> <span class="toc-text">Q2：为什么要隐藏一部分具体实现&#x2F;访问控制？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q3：接口的多种不同实现-多态的实现方式？"><span class="toc-number">3.</span> <span class="toc-text">Q3：接口的多种不同实现&#x2F;多态的实现方式？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q4：是否所有的类最终都继承自单一的基类？"><span class="toc-number">4.</span> <span class="toc-text">Q4：是否所有的类最终都继承自单一的基类？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q5：参数化类型为什么会出现？参数化类型是什么？"><span class="toc-number">5.</span> <span class="toc-text">Q5：参数化类型为什么会出现？参数化类型是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q6：Java是如何管理对象的创建与其生命周期的？"><span class="toc-number">6.</span> <span class="toc-text">Q6：Java是如何管理对象的创建与其生命周期的？</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#请简述-与equals（）的区别？"><span class="toc-number">1.</span> <span class="toc-text">请简述&#x3D;&#x3D;与equals（）的区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#短路现象是什么？"><span class="toc-number">2.</span> <span class="toc-text">短路现象是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何表达十六进制数？八进制数？"><span class="toc-number">3.</span> <span class="toc-text">如何表达十六进制数？八进制数？</span></a></li></ol>
                     </div>
                 </span>
             </div>
