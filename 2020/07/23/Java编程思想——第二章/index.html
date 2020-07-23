@@ -6,17 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>ShenQi Blog</title>
+  <title>Java编程思想——第二章 | ShenQi Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="泛用量产型社畜战士预备机">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ShenQi Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="Q1:在JAVA中程序员是如何操纵对象的？是直接操纵元素，还是基于某种特殊语法来间接操纵（例如C与C++中的指针）？每种编程语言都有自己的操纵元素的方式，有时候，程序员必须注意将要处理的数据是什么类型。但所有这一切在JAVA中都得到了简化。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java编程思想——第二章">
+<meta property="og:url" content="http://yoursite.com/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%8C%E7%AB%A0/index.html">
 <meta property="og:site_name" content="ShenQi Blog">
-<meta property="og:description" content="泛用量产型社畜战士预备机">
+<meta property="og:description" content="Q1:在JAVA中程序员是如何操纵对象的？是直接操纵元素，还是基于某种特殊语法来间接操纵（例如C与C++中的指针）？每种编程语言都有自己的操纵元素的方式，有时候，程序员必须注意将要处理的数据是什么类型。但所有这一切在JAVA中都得到了简化。">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%8C%E7%AB%A0/%E5%9F%BA%E6%9C%AC%E6%88%90%E5%91%98%E9%BB%98%E8%AE%A4%E5%80%BC.png">
+<meta property="article:published_time" content="2020-07-23T12:04:04.000Z">
+<meta property="article:modified_time" content="2020-07-23T13:24:46.731Z">
 <meta property="article:author" content="Shen Qi">
+<meta property="article:tag" content="JAVA">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%8C%E7%AB%A0/%E5%9F%BA%E6%9C%AC%E6%88%90%E5%91%98%E9%BB%98%E8%AE%A4%E5%80%BC.png">
   
     <link rel="alternative" href="/atom.xml" title="ShenQi Blog" type="application/atom+xml">
   
@@ -162,16 +167,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-Java编程思想——第二章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-Java编程思想——第二章" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%8C%E7%AB%A0/">Java编程思想——第二章</a>
+    <h1 class="article-title" itemprop="name">
+      Java编程思想——第二章
     </h1>
   
 
@@ -185,11 +188,67 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="Q1-在JAVA中程序员是如何操纵对象的？是直接操纵元素，还是基于某种特殊语法来间接操纵（例如C与C-中的指针）？"><a href="#Q1-在JAVA中程序员是如何操纵对象的？是直接操纵元素，还是基于某种特殊语法来间接操纵（例如C与C-中的指针）？" class="headerlink" title="Q1:在JAVA中程序员是如何操纵对象的？是直接操纵元素，还是基于某种特殊语法来间接操纵（例如C与C++中的指针）？"></a>Q1:在JAVA中程序员是如何操纵对象的？是直接操纵元素，还是基于某种特殊语法来间接操纵（例如C与C++中的指针）？</h3><p>每种编程语言都有自己的操纵元素的方式，有时候，程序员必须注意将要处理的数据是什么类型。但所有这一切在JAVA中都得到了简化。</p>
-        
-          <a class="article-more-a" href="/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%8C%E7%AB%A0/#more">more >></a>
-        
+<a id="more"></a>
+<p>Java中一切都被视为对象，所以可以采用单一固定的语法。尽管一切都看成对象，但<strong>操纵的标识符实际上是对象的一个“引用”(reference)</strong>。（Java中的引用并不是按值传递的指针）</p>
+<p>这一情形可以被想象成用遥控器（引用）操纵电视机（对象）。只要握住这个遥控器，就相当于掌握了与电视机连接的通道。但一旦需要“换频道”或者“关小声音”，我们实际操纵的是遥控器（引用），再由遥控器来操纵电视机（对象）。如果要在房间里四处走走，并想保持对电视机的控制，那么手上拿着的是遥控器，而非电视机。此外，即使没有电视机，遥控器亦可独立存在。也就是说，你拥有一个引用，并不表示你必须有一个对象同它连接。</p>
+<hr>
+<h3 id="Q2：Java程序的对象是怎么安排放置的？内存是怎么分配的？"><a href="#Q2：Java程序的对象是怎么安排放置的？内存是怎么分配的？" class="headerlink" title="Q2：Java程序的对象是怎么安排放置的？内存是怎么分配的？"></a>Q2：Java程序的对象是怎么安排放置的？内存是怎么分配的？</h3><p>有五个不同的地方可以用来存储数据:</p>
+<ol>
+<li><p>寄存器：<strong>最快的存储区</strong>（位于处理器内部），且<strong>数量极其有限</strong>，寄存器根据需求分配存储，<strong>程序员不能直接控制</strong>，在程序中也感受不到寄存器的存在。</p>
+</li>
+<li><p>堆栈：通过直接移动堆栈指针来分配存储，<strong>快速有效</strong>（位于RAM（随机访问存储器）中），仅次于寄存器。堆栈指针可以从处理器中获得直接支持。Java系统必须知道堆栈内所有项目确切的生命周期，这一约束<strong>限制了程序的灵活性</strong>。所以，虽然Java的某些数据存储于堆栈之中——特别是对象引用，但是java对象本身并不存储于其中。</p>
+</li>
+<li><p>堆：通用内存池（也位于RAM）。堆中的数据不需要知道确切的生命周期，因此，堆里分配存储<strong>有很大的灵活性</strong>。但为了这种灵活性需要付出代价：<strong>用堆进行存储分配和清理可能需要更多的时间。</strong></p>
+</li>
+<li><p>常量存储：<strong>常量值通常直接存放在程序代码内部</strong>，这样做是安全的，因为他们永远都不会被改变。有时在嵌入式系统中，常量会跟其他部分隔离开，所以在这种情况下，可以选择将其存放在ROM（只读存储器）中。</p>
+</li>
+<li><p>非RAM存储：如果程序完全存活于数据之外，那么它可以不受程序的任何控制，在程序没有运行的时候也可以存在。两个基本的例子就是：<em>流对象</em>和<em>持久化对象</em>。例如，持久化对象中，将对象存放于磁盘之中。这种存储方式的技巧在于：<strong>把对象转化成可以存放在其他媒介上的事务，在需要时，可以恢复成常规的，基于RAM的对象。</strong></p>
+</li>
+</ol>
+<hr>
+<h3 id="Q3：Java中如何存储基本类型？"><a href="#Q3：Java中如何存储基本类型？" class="headerlink" title="Q3：Java中如何存储基本类型？"></a>Q3：Java中如何存储基本类型？</h3><p>Java中使用<strong>new</strong>创建一个小的，简单的对象，往往不是很有效率。因此对于这些类型，java中需要创建一个并非是引用的“自动”变量，这个变量直接存储值，并置于堆栈中，因此更加高效。</p>
+<p>另外，基本类型也具备包装类，可以在堆中创建一个非基本对象，用来表示对应的基本类型。</p>
+<hr>
+<h3 id="Q4：什么是高精度数字？"><a href="#Q4：什么是高精度数字？" class="headerlink" title="Q4：什么是高精度数字？"></a>Q4：什么是高精度数字？</h3><p>Java提供了两个用于高精度计算的类：BigInteger和BigDecimal。这两个类可以执行与基本类型相同的操作。但由于精度较高更复杂了一些，运算速度会更慢一些，相当于用速度换取了精度。</p>
+<p>BigInteger支持任意精度的整数。可以准确的表示任何大小的整数而不丢失任何信息。<br>BigDecimal支持任意精度的定点数。</p>
+<hr>
+<h3 id="Q5：什么是基本成员默认值？"><a href="#Q5：什么是基本成员默认值？" class="headerlink" title="Q5：什么是基本成员默认值？"></a>Q5：什么是基本成员默认值？</h3><p>若类的某个成员是基本数据类型，即使没有进行初始化，Java也会确认它获得一个默认值，以确保基本类型的成员变量得到初始化（C++没有此功能）。</p>
+<p><img src="/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%8C%E7%AB%A0/%E5%9F%BA%E6%9C%AC%E6%88%90%E5%91%98%E9%BB%98%E8%AE%A4%E5%80%BC.png" alt="基本成员默认值"></p>
+<p>然而上述确保初始化的方法并不适用于“局部变量”（既并非某个类的字段）。如果只声明了局部变量但在使用时没有去赋值，Java在编译时则会返回一个错误，告诉变量没有被初始化。</p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢大哥捧场<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/wechatpay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -209,16 +268,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%8C%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%8C%E7%AB%A0/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%80%E7%AB%A0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java编程思想——第一章</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -233,164 +351,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java编程思想——第一章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%80%E7%AB%A0/">Java编程思想——第一章</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%80%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-07-23T08:48:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Q1：什么是UML？"><a href="#Q1：什么是UML？" class="headerlink" title="Q1：什么是UML？"></a>Q1：什么是UML？</h3><p>UML（Unified Modelling Language,统一建模语言）</p>
-<p>每个类型都用一个方框表示，类名在方框的顶部，任何数据成员都描述在方框的中间部分，方法（隶属于此对象的。用来接受你发给此对象的消息的函数）在方框的底部。</p>
-        
-          <a class="article-more-a" href="/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%80%E7%AB%A0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%80%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Q1-在JAVA中程序员是如何操纵对象的？是直接操纵元素，还是基于某种特殊语法来间接操纵（例如C与C-中的指针）？"><span class="toc-number">1.</span> <span class="toc-text">Q1:在JAVA中程序员是如何操纵对象的？是直接操纵元素，还是基于某种特殊语法来间接操纵（例如C与C++中的指针）？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q2：Java程序的对象是怎么安排放置的？内存是怎么分配的？"><span class="toc-number">2.</span> <span class="toc-text">Q2：Java程序的对象是怎么安排放置的？内存是怎么分配的？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q3：Java中如何存储基本类型？"><span class="toc-number">3.</span> <span class="toc-text">Q3：Java中如何存储基本类型？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q4：什么是高精度数字？"><span class="toc-number">4.</span> <span class="toc-text">Q4：什么是高精度数字？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q5：什么是基本成员默认值？"><span class="toc-number">5.</span> <span class="toc-text">Q5：什么是基本成员默认值？</span></a></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
   
-    <article id="post-土豆养殖计划" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/17/%E5%9C%9F%E8%B1%86%E5%85%BB%E6%AE%96%E8%AE%A1%E5%88%92/">土豆养殖计划</a>
-    </h1>
   
 
-        
-        <a href="/2020/07/17/%E5%9C%9F%E8%B1%86%E5%85%BB%E6%AE%96%E8%AE%A1%E5%88%92/" class="archive-article-date">
-  	<time datetime="2020-07-17T09:44:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>有人想拥有一枚自己的土豆</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">土豆种植</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/17/%E5%9C%9F%E8%B1%86%E5%85%BB%E6%AE%96%E8%AE%A1%E5%88%92/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
+  
 
   
+
   
 
 
@@ -415,8 +401,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
