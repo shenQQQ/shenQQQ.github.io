@@ -6,22 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Java编程思想——第二章 | ShenQi Blog</title>
+  <title>一期土豆种植日志 | ShenQi Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Q1:在JAVA中程序员是如何操纵对象的？是直接操纵元素，还是基于某种特殊语法来间接操纵（例如C与C++中的指针）？每种编程语言都有自己的操纵元素的方式，有时候，程序员必须注意将要处理的数据是什么类型。但所有这一切在JAVA中都得到了简化。">
+  <meta name="description" content="19年暑假三下乡活动的时候，我忽然发现农村里有许多非常好玩的东西，对于菜园的培育和食物的采摘让我非常感兴趣。回家之后，加之看了《火星救援》，里面对于土豆的培育更是给我留下了非常深刻的印象。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java编程思想——第二章">
-<meta property="og:url" content="http://yoursite.com/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%8C%E7%AB%A0/index.html">
+<meta property="og:title" content="一期土豆种植日志">
+<meta property="og:url" content="http://yoursite.com/2020/07/24/%E4%B8%80%E6%9C%9F%E5%9C%9F%E8%B1%86%E7%A7%8D%E6%A4%8D%E6%97%A5%E5%BF%97/index.html">
 <meta property="og:site_name" content="ShenQi Blog">
-<meta property="og:description" content="Q1:在JAVA中程序员是如何操纵对象的？是直接操纵元素，还是基于某种特殊语法来间接操纵（例如C与C++中的指针）？每种编程语言都有自己的操纵元素的方式，有时候，程序员必须注意将要处理的数据是什么类型。但所有这一切在JAVA中都得到了简化。">
+<meta property="og:description" content="19年暑假三下乡活动的时候，我忽然发现农村里有许多非常好玩的东西，对于菜园的培育和食物的采摘让我非常感兴趣。回家之后，加之看了《火星救援》，里面对于土豆的培育更是给我留下了非常深刻的印象。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://yoursite.com/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%8C%E7%AB%A0/%E5%9F%BA%E6%9C%AC%E6%88%90%E5%91%98%E9%BB%98%E8%AE%A4%E5%80%BC.png">
-<meta property="article:published_time" content="2020-07-23T12:04:04.000Z">
-<meta property="article:modified_time" content="2020-07-24T02:43:05.327Z">
+<meta property="og:image" content="http://yoursite.com/2020/07/24/%E4%B8%80%E6%9C%9F%E5%9C%9F%E8%B1%86%E7%A7%8D%E6%A4%8D%E6%97%A5%E5%BF%97/%E5%9C%9F%E8%B1%86%E7%A7%8D%E6%A4%8D1.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/07/24/%E4%B8%80%E6%9C%9F%E5%9C%9F%E8%B1%86%E7%A7%8D%E6%A4%8D%E6%97%A5%E5%BF%97/%E5%9C%9F%E8%B1%86%E7%A7%8D%E6%A4%8D2.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/07/24/%E4%B8%80%E6%9C%9F%E5%9C%9F%E8%B1%86%E7%A7%8D%E6%A4%8D%E6%97%A5%E5%BF%97/%E5%9C%9F%E8%B1%86%E7%A7%8D%E6%A4%8D3.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/07/24/%E4%B8%80%E6%9C%9F%E5%9C%9F%E8%B1%86%E7%A7%8D%E6%A4%8D%E6%97%A5%E5%BF%97/%E5%9C%9F%E8%B1%86%E7%A7%8D%E6%A4%8D4.jpg">
+<meta property="article:published_time" content="2020-07-24T02:56:35.000Z">
+<meta property="article:modified_time" content="2020-07-24T03:44:27.333Z">
 <meta property="article:author" content="Shen Qi">
-<meta property="article:tag" content="JAVA">
+<meta property="article:tag" content="土豆种植">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%8C%E7%AB%A0/%E5%9F%BA%E6%9C%AC%E6%88%90%E5%91%98%E9%BB%98%E8%AE%A4%E5%80%BC.png">
+<meta name="twitter:image" content="http://yoursite.com/2020/07/24/%E4%B8%80%E6%9C%9F%E5%9C%9F%E8%B1%86%E7%A7%8D%E6%A4%8D%E6%97%A5%E5%BF%97/%E5%9C%9F%E8%B1%86%E7%A7%8D%E6%A4%8D1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="ShenQi Blog" type="application/atom+xml">
   
@@ -161,54 +164,64 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Java编程思想——第二章" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-一期土豆种植日志" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Java编程思想——第二章
+      一期土豆种植日志
     </h1>
   
 
         
-        <a href="/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%8C%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-07-23T12:04:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-23</time>
+        <a href="/2020/07/24/%E4%B8%80%E6%9C%9F%E5%9C%9F%E8%B1%86%E7%A7%8D%E6%A4%8D%E6%97%A5%E5%BF%97/" class="archive-article-date">
+  	<time datetime="2020-07-24T02:56:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-24</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Q1-在JAVA中程序员是如何操纵对象的？是直接操纵元素，还是基于某种特殊语法来间接操纵（例如C与C-中的指针）？"><a href="#Q1-在JAVA中程序员是如何操纵对象的？是直接操纵元素，还是基于某种特殊语法来间接操纵（例如C与C-中的指针）？" class="headerlink" title="Q1:在JAVA中程序员是如何操纵对象的？是直接操纵元素，还是基于某种特殊语法来间接操纵（例如C与C++中的指针）？"></a>Q1:在JAVA中程序员是如何操纵对象的？是直接操纵元素，还是基于某种特殊语法来间接操纵（例如C与C++中的指针）？</h3><p>每种编程语言都有自己的操纵元素的方式，有时候，程序员必须注意将要处理的数据是什么类型。但所有这一切在JAVA中都得到了简化。</p>
+        <p>19年暑假三下乡活动的时候，我忽然发现农村里有许多非常好玩的东西，对于菜园的培育和食物的采摘让我非常感兴趣。回家之后，加之看了《火星救援》，里面对于土豆的培育更是给我留下了非常深刻的印象。</p>
 <a id="more"></a>
-<p>Java中一切都被视为对象，所以可以采用单一固定的语法。尽管一切都看成对象，但<strong>操纵的标识符实际上是对象的一个“引用”(reference)</strong>。（Java中的引用并不是按值传递的指针）</p>
-<p>这一情形可以被想象成用遥控器（引用）操纵电视机（对象）。只要握住这个遥控器，就相当于掌握了与电视机连接的通道。但一旦需要“换频道”或者“关小声音”，我们实际操纵的是遥控器（引用），再由遥控器来操纵电视机（对象）。如果要在房间里四处走走，并想保持对电视机的控制，那么手上拿着的是遥控器，而非电视机。此外，即使没有电视机，遥控器亦可独立存在。也就是说，你拥有一个引用，并不表示你必须有一个对象同它连接。</p>
-<hr>
-<h3 id="Q2：Java程序的对象是怎么安排放置的？内存是怎么分配的？"><a href="#Q2：Java程序的对象是怎么安排放置的？内存是怎么分配的？" class="headerlink" title="Q2：Java程序的对象是怎么安排放置的？内存是怎么分配的？"></a>Q2：Java程序的对象是怎么安排放置的？内存是怎么分配的？</h3><p>有五个不同的地方可以用来存储数据:</p>
-<ol>
-<li><p>寄存器：<strong>最快的存储区</strong>（位于处理器内部），且<strong>数量极其有限</strong>，寄存器根据需求分配存储，<strong>程序员不能直接控制</strong>，在程序中也感受不到寄存器的存在。</p>
-</li>
-<li><p>堆栈：通过直接移动堆栈指针来分配存储，<strong>快速有效</strong>（位于RAM（随机访问存储器）中），仅次于寄存器。堆栈指针可以从处理器中获得直接支持。Java系统必须知道堆栈内所有项目确切的生命周期，这一约束<strong>限制了程序的灵活性</strong>。所以，虽然Java的某些数据存储于堆栈之中——特别是对象引用，但是java对象本身并不存储于其中。</p>
-</li>
-<li><p>堆：通用内存池（也位于RAM）。堆中的数据不需要知道确切的生命周期，因此，堆里分配存储<strong>有很大的灵活性</strong>。但为了这种灵活性需要付出代价：<strong>用堆进行存储分配和清理可能需要更多的时间。</strong></p>
-</li>
-<li><p>常量存储：<strong>常量值通常直接存放在程序代码内部</strong>，这样做是安全的，因为他们永远都不会被改变。有时在嵌入式系统中，常量会跟其他部分隔离开，所以在这种情况下，可以选择将其存放在ROM（只读存储器）中。</p>
-</li>
-<li><p>非RAM存储：如果程序完全存活于数据之外，那么它可以不受程序的任何控制，在程序没有运行的时候也可以存在。两个基本的例子就是：<em>流对象</em>和<em>持久化对象</em>。例如，持久化对象中，将对象存放于磁盘之中。这种存储方式的技巧在于：<strong>把对象转化成可以存放在其他媒介上的事务，在需要时，可以恢复成常规的，基于RAM的对象。</strong></p>
-</li>
-</ol>
-<hr>
-<h3 id="Q3：Java中如何存储基本类型？"><a href="#Q3：Java中如何存储基本类型？" class="headerlink" title="Q3：Java中如何存储基本类型？"></a>Q3：Java中如何存储基本类型？</h3><p>Java中使用<strong>new</strong>创建一个小的，简单的对象，往往不是很有效率。因此对于这些类型，java中需要创建一个并非是引用的“自动”变量，这个变量直接存储值，并置于堆栈中，因此更加高效。</p>
-<p>另外，基本类型也具备包装类，可以在堆中创建一个非基本对象，用来表示对应的基本类型。</p>
-<hr>
-<h3 id="Q4：什么是高精度数字？"><a href="#Q4：什么是高精度数字？" class="headerlink" title="Q4：什么是高精度数字？"></a>Q4：什么是高精度数字？</h3><p>Java提供了两个用于高精度计算的类：BigInteger和BigDecimal。这两个类可以执行与基本类型相同的操作。但由于精度较高更复杂了一些，运算速度会更慢一些，相当于用速度换取了精度。</p>
-<p>BigInteger支持任意精度的整数。可以准确的表示任何大小的整数而不丢失任何信息。<br>BigDecimal支持任意精度的定点数。</p>
-<hr>
-<h3 id="Q5：什么是基本成员默认值？"><a href="#Q5：什么是基本成员默认值？" class="headerlink" title="Q5：什么是基本成员默认值？"></a>Q5：什么是基本成员默认值？</h3><p>若类的某个成员是基本数据类型，即使没有进行初始化，Java也会确认它获得一个默认值，以确保基本类型的成员变量得到初始化（C++没有此功能）。</p>
-<p><img src="/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%8C%E7%AB%A0/%E5%9F%BA%E6%9C%AC%E6%88%90%E5%91%98%E9%BB%98%E8%AE%A4%E5%80%BC.png" alt="基本成员默认值"></p>
-<p>然而上述确保初始化的方法并不适用于“局部变量”（既并非某个类的字段）。如果只声明了局部变量但在使用时没有去赋值，Java在编译时则会返回一个错误，告诉变量没有被初始化。</p>
+
+<p>我也想亲自用科学实验的方法来记录一下土豆的培育过程。说干就干！</p>
+<p>在经过了前期的物资信息跟种植知识的调研之后，我确定种植土豆计划完全可行。</p>
+<p>2019.8.15 我开始了土豆的种植计划，我在新世纪百货帝国挑选了三个最为饱满强劲的土豆，分别作为土豆计划的一，二，三号种子选手。</p>
+<div align="center"> 
+
+<img src="/2020/07/24/%E4%B8%80%E6%9C%9F%E5%9C%9F%E8%B1%86%E7%A7%8D%E6%A4%8D%E6%97%A5%E5%BF%97/土豆种植1.jpg" width="400" height="300" alt="图片名称">
+
+</div>
+
+<p>2019.9.15 在早上起床刷牙的时候，我惊喜的发现，三位种子选手的颜色由原先的土黄色变成了明显的淡绿色。搜索了相关问题之后，发现是，土豆内部产生了龙葵素，龙葵素是绿色的，同时使得土豆的外表也变成了绿色。龙葵素有剧毒，此时的土豆就已经完全不能食用了。但巧合的是，我的一位室友，喜食洋芋（重庆叫法），宿舍里开始计划为这位同学制作龙葵洋芋饭，让这位同学为宿舍的科学事业奉献自己。</p>
+<div align="center"> 
+
+<img src="/2020/07/24/%E4%B8%80%E6%9C%9F%E5%9C%9F%E8%B1%86%E7%A7%8D%E6%A4%8D%E6%97%A5%E5%BF%97/土豆种植2.jpg" width="400" height="300" alt="图片名称">
+
+</div>
+
+<p>2019.10.31 土豆的涨势出乎意料的慢，不过在长期搁置之下，1号选手还是率先发芽，虽然芽不太明显，但是这个消息对我来说也是一个极大的鼓舞。</p>
+<div align="center"> 
+
+<img src="/2020/07/24/%E4%B8%80%E6%9C%9F%E5%9C%9F%E8%B1%86%E7%A7%8D%E6%A4%8D%E6%97%A5%E5%BF%97/土豆种植3.jpg" width="400" height="300" alt="图片名称">
+
+</div>
+
+<p>2020.4.15  本来以为寒假很短，我跟我的土豆分别时间不会很长，谁能想到遭遇了新冠疫情，开学时间一再推迟，没有办法只得放任我的土豆自由生长。后来由于实在担心土豆的安危，我委托善解人意，乐于助人的宿管阿姨帮我看看我的土豆现在是个什么情况，本来我以为土豆这4个多月不照顾，已经必死无疑了。但是没有想到，我的土豆丝毫不受外面的疫情影响，涨势十分喜人。</p>
+<p>什么是生命力啊！土豆的强韧生命力深深的折服了我，</p>
+<p>!<div align="center"> </div></p>
+<img src="/2020/07/24/%E4%B8%80%E6%9C%9F%E5%9C%9F%E8%B1%86%E7%A7%8D%E6%A4%8D%E6%97%A5%E5%BF%97/土豆种植4.jpg" width="350" height="350" alt="图片名称">
+
+
+
+<p>2020.4.20 由于我们的宿舍需要被倒出来给湖北的同学隔离，结果来了一伙穷凶极恶的保洁人员，在完全没有征得我本人同意的前提下，处理了宿舍内的物品。我的土豆被残忍迫害，不知所踪。</p>
+<p><strong>一期土豆种植 终</strong></p>
+<p>总结：即使三个种子选手即使没有被扔掉，这次种植时间也过长了。火星救援里马克用了40天就能种出一代土豆，我所用的时间，毫无疑问过长了。</p>
+<p>这次土豆的育芽是完全放置在室外自然进行的，所以速度非常慢，下次可以直接放在水里育芽，听说出芽速度会快上许多。</p>
+<p>期待返校之后，我的第二波土豆种植。</p>
 
       
 
@@ -253,7 +266,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">土豆种植</a>
         		</li>
       		
 		</ul>
@@ -265,7 +278,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/JAVA编程思想//" class="article-tag-list-link color4">JAVA编程思想</a>
+        			<a href="/categories/土豆种植日志//" class="article-tag-list-link color2">土豆种植日志</a>
         		</li>
       		
 		</ul>
@@ -320,7 +333,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%8C%E7%AB%A0/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/24/%E4%B8%80%E6%9C%9F%E5%9C%9F%E8%B1%86%E7%A7%8D%E6%A4%8D%E6%97%A5%E5%BF%97/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -334,18 +347,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%89%E7%AB%A0/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Java编程思想——第三章
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%80%E7%AB%A0/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Java编程思想——第一章</div>
+    <a href="/2020/07/23/%E9%B8%9F%E5%93%A5%E7%9A%84Linux%E7%A7%81%E6%88%BF%E8%8F%9C%E2%80%94%E2%80%94%E7%AC%AC0%E7%AB%A0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">鸟哥的Linux私房菜——第0章</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -372,7 +376,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Q1-在JAVA中程序员是如何操纵对象的？是直接操纵元素，还是基于某种特殊语法来间接操纵（例如C与C-中的指针）？"><span class="toc-number">1.</span> <span class="toc-text">Q1:在JAVA中程序员是如何操纵对象的？是直接操纵元素，还是基于某种特殊语法来间接操纵（例如C与C++中的指针）？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q2：Java程序的对象是怎么安排放置的？内存是怎么分配的？"><span class="toc-number">2.</span> <span class="toc-text">Q2：Java程序的对象是怎么安排放置的？内存是怎么分配的？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q3：Java中如何存储基本类型？"><span class="toc-number">3.</span> <span class="toc-text">Q3：Java中如何存储基本类型？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q4：什么是高精度数字？"><span class="toc-number">4.</span> <span class="toc-text">Q4：什么是高精度数字？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q5：什么是基本成员默认值？"><span class="toc-number">5.</span> <span class="toc-text">Q5：什么是基本成员默认值？</span></a></li></ol>
+                    目录，不存在的…
                     </div>
                 </span>
             </div>
