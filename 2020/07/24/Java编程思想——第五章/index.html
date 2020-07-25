@@ -6,16 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: Linux | ShenQi Blog</title>
+  <title>Java编程思想——第五章 | ShenQi Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="泛用量产型社畜战士预备机">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ShenQi Blog">
-<meta property="og:url" content="http://yoursite.com/tags/Linux/index.html">
+  <meta name="description" content="Q1：Java语言里已经提供了垃圾回收机制，那么finalize（）函数是干什么的？Java有垃圾回收机制负责回收无用对象占据的内存资源，但是也有特殊情况；">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java编程思想——第五章">
+<meta property="og:url" content="http://yoursite.com/2020/07/24/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%94%E7%AB%A0/index.html">
 <meta property="og:site_name" content="ShenQi Blog">
-<meta property="og:description" content="泛用量产型社畜战士预备机">
+<meta property="og:description" content="Q1：Java语言里已经提供了垃圾回收机制，那么finalize（）函数是干什么的？Java有垃圾回收机制负责回收无用对象占据的内存资源，但是也有特殊情况；">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-07-24T15:20:59.000Z">
+<meta property="article:modified_time" content="2020-07-25T05:13:21.120Z">
 <meta property="article:author" content="Shen Qi">
+<meta property="article:tag" content="JAVA">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="ShenQi Blog" type="application/atom+xml">
@@ -156,71 +159,223 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Java编程思想——第五章" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/23/%E9%B8%9F%E5%93%A5%E7%9A%84Linux%E7%A7%81%E6%88%BF%E8%8F%9C%E2%80%94%E2%80%94%E7%AC%AC0%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-07-23T15:38:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-23</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/23/%E9%B8%9F%E5%93%A5%E7%9A%84Linux%E7%A7%81%E6%88%BF%E8%8F%9C%E2%80%94%E2%80%94%E7%AC%AC0%E7%AB%A0/">鸟哥的Linux私房菜——第0章</a>
+    <h1 class="article-title" itemprop="name">
+      Java编程思想——第五章
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/07/24/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%94%E7%AB%A0/" class="archive-article-date">
+  	<time datetime="2020-07-24T15:20:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Q1：Java语言里已经提供了垃圾回收机制，那么finalize（）函数是干什么的？"><a href="#Q1：Java语言里已经提供了垃圾回收机制，那么finalize（）函数是干什么的？" class="headerlink" title="Q1：Java语言里已经提供了垃圾回收机制，那么finalize（）函数是干什么的？"></a>Q1：Java语言里已经提供了垃圾回收机制，那么finalize（）函数是干什么的？</h3><p>Java有垃圾回收机制负责回收无用对象占据的内存资源，但是也有特殊情况；</p>
+<a id="more"></a>
+<p>假定<strong>你的对象（并非使用new）获得了一块“特殊”的内存区域</strong>，由于垃圾回收机制只知道释放那些经由new分配的内存，所以它不知道改如何释放这些特殊内存。为了应对这种方法，Java允许在类中定义一个名为finalize（）的方法。</p>
+<p><strong>垃圾回收机制对于对象的回收也是需要调动finalize（）方法的</strong>。一旦垃圾回收机制准备好释放对象占用的存储空间，将首先调用finalize（）方法，并且在下一次垃圾回收动作发生时，才会真正的回收对象占用的内存。</p>
+<p>无论对象是如何创建的，垃圾回收器都会负责释放对象占据的所有内存。所以，finalize（）只在一种特殊情况下才有使用需求，即<strong>通过某种创建对象的方式以外的方式，为对象分配了存储空间</strong>。</p>
+<p>这种特殊情况往往是，在分配内存的时候可能采用了类似C语言中的做法，而非Java中的通常做法。主要发生在使用了“本地方法”的情况中，<strong>“本地方法”是一种在Java中使用非Java代码的方式</strong>。本地方法目前只支持C，C++，但它们可以调用其他语言写的代码，所以实现上可以调用任何代码，在非Java代码中，也许会调用C的malloc（）函数系列来分配存储空间，而且除非调用free（）函数，否则存储空间得不到释放，就会造成内存泄漏。</p>
+<hr>
+<h3 id="Q2：垃圾回收机制如何工作？"><a href="#Q2：垃圾回收机制如何工作？" class="headerlink" title="Q2：垃圾回收机制如何工作？"></a>Q2：垃圾回收机制如何工作？</h3><p>也许在传统印象中，堆上分配对象是一件代价非常高昂的事，但是由于垃圾回收机制，对于提高处对象的创建速度，有着显著的效果。<strong>垃圾回收机制对于存储空间释放的管理影响了存储空间的分配</strong>。在某些情况下，Java从堆中分配空间的速度，可以与其他语言从堆栈中分配空间的速度向媲美。</p>
+<p>由于垃圾回收机制的介入，在他工作时，<strong>一面回收空间，一面使堆中的对象紧凑排列</strong>。这样Java的“堆指针”就可以很容易的移动到更靠近传送带开始的地方，也就尽量避免了回收错误。通过垃圾回收器，实现了一种高速的，有无限空间可供分配的堆模型。</p>
+<p>垃圾回收机制需要<strong>先寻找无用的对象，再清除它们</strong>。</p>
+<p>对于寻找机制，垃圾回收机制依据的思想是：对任何“活”的对象，一定能<strong>最终会追溯到其存活在堆栈和静态存储区之中的引用</strong>。这个引用链条可能会穿过数个对象层次。所以，如果<strong>从堆栈和静态存储区开始，遍历所有的引用</strong>，就能找到所有活的对象，对于发现的每个引用，必须追踪它所引用的对象，然后是此对象包含的所有引用，如此反复进行，直到“根源于堆栈和静态存储区的引用”所形成的对象网络全部被访问为止。</p>
+<p>对于清除机制，Java虚拟机将采用一种自适应的垃圾回收技术。同时不同的虚拟机实现的找到存活对象的方法也不一样。</p>
+<p>一种方法叫做<strong>停止——复制</strong>方法。这种方法需要<strong>先暂停程序的运行</strong>（所以这种做法不属于后台回收模式），然后<strong>将所有存活的对象从当前堆复制到另外一个堆</strong>，没有复制过去的全部都是垃圾。当对象被复制到新堆时，它们是一个挨着一个的，所以<strong>新堆保持紧凑排列</strong>，然后就可以按照前述方法简单，直接的分配新空间了。</p>
+<p>这种“复制式回收器”<strong>效率会降低</strong>，这里有两个的待解决的问题。首先，这个方法起码需要两个分离的堆来回倒腾，从而<strong>维护比实际需要多一倍的空间</strong>。一些虚拟机给出的方法是按需从<strong>堆中分配出几块比较大的内存，复制动作发生在这些大块内存内部</strong>。</p>
+<p>第二个问题在于复制。<strong>当程序只产生少量垃圾时，复制器仍会把内存从一处复制到另外一处，很浪费</strong>。这时，一些Java虚拟机会进行检查，转化到另外一种工作方式（即“自适应”）。</p>
+<p>这种方法叫做<strong>标记——清扫</strong>方法。标记——清扫的思路与垃圾回收机制寻找对象的思路相同，同样是<strong>从堆栈和静态存储区出发寻找并遍历所有的引用，进而找出所有的存活对象</strong>，在<strong>找到了活对象之后，给予标记</strong>。这个给标记的过程不会清除任何对象，当标记工作全部完成之后，清理工作才会开始。清理工作会<strong>清除掉所有未被标记的对象</strong>。</p>
+<p>但这种方法的<strong>得到的剩余空间是不连续的</strong>，垃圾回收机制要是想要得到连续的空间，就得重新整理剩下的对象。对于<strong>一般用途而言，标记——清扫的方法速度相当慢</strong>，但对于处理少量甚至不产生垃圾的时候，它的速度就是非常快的。</p>
+<hr>
+<h3 id="Q3：什么是显式的静态初始化和非静态实例初始化？"><a href="#Q3：什么是显式的静态初始化和非静态实例初始化？" class="headerlink" title="Q3：什么是显式的静态初始化和非静态实例初始化？"></a>Q3：什么是显式的静态初始化和非静态实例初始化？</h3><p>Java允许将多个静态初始化动作组织成一个特殊的静态子句，有时也叫“静态块”。</p>
+<p>这个代码块仅仅只是一段跟在static后面的代码，<strong>没有返回类型与访问控制符和函数名</strong>。这段静态初始化代码块仅仅执行一次：当首次使用构造方法之前new对象的<strong>类加载</strong>过程中，或者首次访问这个类的静态数据成员时（即使从未生成过那个类的对象）</p>
+<p>非静态的实例初始化代码块与静态初始化代码块相似，只是少了static关键字。同时，每一次使用构造方法new对象之前的类加载过程，都会使用到这段代码。</p>
+<hr>
+<h3 id="Q4：enum（枚举类型）有什么用处？"><a href="#Q4：enum（枚举类型）有什么用处？" class="headerlink" title="Q4：enum（枚举类型）有什么用处？"></a>Q4：enum（枚举类型）有什么用处？</h3><p>枚举类型是有限的，有顺序的类型集，当在使用同样需要在有限的可能值集合中选择的switch语句时，switch与与其等价的enum的组合是非常安全的。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢大哥捧场<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/wechatpay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/鸟哥的Linux私房菜//" class="article-tag-list-link color2">鸟哥的Linux私房菜</a>
+        			<a href="/categories/JAVA编程思想//" class="article-tag-list-link color4">JAVA编程思想</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/24/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%94%E7%AB%A0/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2020/07/24/%E4%B8%80%E6%9C%9F%E5%9C%9F%E8%B1%86%E7%A7%8D%E6%A4%8D%E6%97%A5%E5%BF%97/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">一期土豆种植日志</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Q1：Java语言里已经提供了垃圾回收机制，那么finalize（）函数是干什么的？"><span class="toc-number">1.</span> <span class="toc-text">Q1：Java语言里已经提供了垃圾回收机制，那么finalize（）函数是干什么的？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q2：垃圾回收机制如何工作？"><span class="toc-number">2.</span> <span class="toc-text">Q2：垃圾回收机制如何工作？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q3：什么是显式的静态初始化和非静态实例初始化？"><span class="toc-number">3.</span> <span class="toc-text">Q3：什么是显式的静态初始化和非静态实例初始化？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q4：enum（枚举类型）有什么用处？"><span class="toc-number">4.</span> <span class="toc-text">Q4：enum（枚举类型）有什么用处？</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -245,9 +400,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
