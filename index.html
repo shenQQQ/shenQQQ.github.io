@@ -158,6 +158,174 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-SpringBoot学习笔记（一）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/10/SpringBoot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/">SpringBoot学习笔记（一）</a>
+    </h1>
+  
+
+        
+        <a href="/2020/10/10/SpringBoot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" class="archive-article-date">
+  	<time datetime="2020-10-10T06:12:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/10/10/SpringBoot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Spark学习笔记01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/22/Spark%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001/">Spark学习笔记01</a>
+    </h1>
+  
+
+        
+        <a href="/2020/09/22/Spark%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001/" class="archive-article-date">
+  	<time datetime="2020-09-22T12:32:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="SPARK历史"><a href="#SPARK历史" class="headerlink" title="SPARK历史"></a>SPARK历史</h3><p>hardoop由存储框架 HDFS 与运算框架 MapperReduce 组成的数据处理系统。<br>但是hardoop的运算框架MR具有以下缺点：</p>
+<ul>
+<li>mr基于数据集运算，所以面向数据</li>
+<li>基本运算规则从存储介质中获取（采集）数据，然后进行计算，最后将结果存储到介质中，所以主要应用于一次性计算，不适合于数据挖掘和机器学习这样的迭代计算。</li>
+<li>MR基于文件存储介质的操作，所以性能很慢。</li>
+<li>MR和hadoop紧密耦合在一起，无法动态替换。</li>
+</ul>
+<p>2.X版本以后，更新了Yarn 资源调度框架。</p>
+<p>Spark基于Hadoop1.X架构思想，采用自己的方式改善Hadoop中的问题<br>Spark计算基于内存，并且基于Scala语法开发，所以天生适合迭代式计算</p>
+<div align="center"> 
+
+<img src="/2020/09/22/Spark%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001/spark框架.jpg" width="400" height="300" alt="图片名称">
+
+</div>
+
+<p>由于hadoop中的MR缺点过多，可以由spark替换，所以在真正的使用过程当中，是使用的hadoop的HDFS存储框架与Yarn资源管理系统加上Spark共同构成的计算框架，三个部分协同进行工作。</p>
+<p><strong>HDFS + （Yarn + Spark）</strong></p>
+<hr>
+<h3 id="Spark内置模块"><a href="#Spark内置模块" class="headerlink" title="Spark内置模块"></a>Spark内置模块</h3><div align="center"> 
+
+<img src="/2020/09/22/Spark%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001/spark内置模块.jpg" width="400" height="300" alt="图片名称">
+
+</div>
+
+<p>spark core：spark核心</p>
+<p>独立调度器： spark内置的资源调度器</p>
+<p>YARN： hadoop的资源调度</p>
+<p>Mesos：apache的资源调度</p>
+<hr>
+<h3 id="两个重要角色"><a href="#两个重要角色" class="headerlink" title="两个重要角色"></a>两个重要角色</h3><p><strong>Driver（驱动器）</strong></p>
+<p><strong>资源调度</strong>作用：</p>
+<ol>
+<li>把用户程序转换为作业（JOB）</li>
+<li>跟踪Executor的运行情况</li>
+<li>为执行器节点调度任务</li>
+<li>UI展示应用运行状况</li>
+</ol>
+<p><strong>Executor（执行器）</strong></p>
+<p>作用：<br>1.负责运行组成Spark应用的任务，并将结果返回给驱动器进程<br>2.通过自身的块管理器（Block Manager）为用户程序中要求缓存的RDD提供内存式存储，RDD是直接缓存在Executor进程内的，因此任务可以在运行时充分利用缓存数据加速运算。</p>
+<hr>
+<h3 id="Local模式"><a href="#Local模式" class="headerlink" title="Local模式"></a>Local模式</h3><p>Local模式就是运行在一台计算机上的模式，通常就是用于在本机上的练手和测试。可以通过以下方式集中设置Master</p>
+<p>local：所有计算都在一个线程上。</p>
+<p>local[K]：指定K个线程来计算，最大化利用cpu的计算能力。</p>
+<p>local[*]：直接按照cpu最多cores来设置线程数。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/09/22/Spark%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-火锅实验第一次日志" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -854,181 +1022,6 @@
 
 
   
-    <article id="post-Java编程思想——第二章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%8C%E7%AB%A0/">Java编程思想——第二章</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%8C%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-07-23T12:04:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Q1-在JAVA中程序员是如何操纵对象的？是直接操纵元素，还是基于某种特殊语法来间接操纵（例如C与C-中的指针）？"><a href="#Q1-在JAVA中程序员是如何操纵对象的？是直接操纵元素，还是基于某种特殊语法来间接操纵（例如C与C-中的指针）？" class="headerlink" title="Q1:在JAVA中程序员是如何操纵对象的？是直接操纵元素，还是基于某种特殊语法来间接操纵（例如C与C++中的指针）？"></a>Q1:在JAVA中程序员是如何操纵对象的？是直接操纵元素，还是基于某种特殊语法来间接操纵（例如C与C++中的指针）？</h3><p>每种编程语言都有自己的操纵元素的方式，有时候，程序员必须注意将要处理的数据是什么类型。但所有这一切在JAVA中都得到了简化。</p>
-        
-          <a class="article-more-a" href="/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%8C%E7%AB%A0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/JAVA编程思想//" class="article-tag-list-link color4">JAVA编程思想</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%8C%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java编程思想——第一章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%80%E7%AB%A0/">Java编程思想——第一章</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%80%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-07-23T08:48:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Q1：什么是UML？"><a href="#Q1：什么是UML？" class="headerlink" title="Q1：什么是UML？"></a>Q1：什么是UML？</h3><p>UML（Unified Modelling Language,统一建模语言）</p>
-<p>每个类型都用一个方框表示，类名在方框的顶部，任何数据成员都描述在方框的中间部分，方法（隶属于此对象的。用来接受你发给此对象的消息的函数）在方框的底部。</p>
-        
-          <a class="article-more-a" href="/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%80%E7%AB%A0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/JAVA编程思想//" class="article-tag-list-link color4">JAVA编程思想</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/23/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%80%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1137,11 +1130,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">火锅实验</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color5">火锅实验</a>
               </li>
             
             <div class="clearfix"></div>

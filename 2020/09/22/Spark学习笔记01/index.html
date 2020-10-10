@@ -6,25 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>一期土豆种植日志 | ShenQi Blog</title>
+  <title>Spark学习笔记01 | ShenQi Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="19年暑假三下乡活动的时候，我忽然发现农村里有许多非常好玩的东西，对于菜园的培育和食物的采摘让我非常感兴趣。回家之后，加之看了《火星救援》，里面对于土豆的培育更是给我留下了非常深刻的印象。">
+  <meta name="description" content="SPARK历史hardoop由存储框架 HDFS 与运算框架 MapperReduce 组成的数据处理系统。但是hardoop的运算框架MR具有以下缺点：  mr基于数据集运算，所以面向数据 基本运算规则从存储介质中获取（采集）数据，然后进行计算，最后将结果存储到介质中，所以主要应用于一次性计算，不适合于数据挖掘和机器学习这样的迭代计算。 MR基于文件存储介质的操作，所以性能很慢。 MR和hado">
 <meta property="og:type" content="article">
-<meta property="og:title" content="一期土豆种植日志">
-<meta property="og:url" content="http://yoursite.com/2020/07/24/%E4%B8%80%E6%9C%9F%E5%9C%9F%E8%B1%86%E7%A7%8D%E6%A4%8D%E6%97%A5%E5%BF%97/index.html">
+<meta property="og:title" content="Spark学习笔记01">
+<meta property="og:url" content="http://yoursite.com/2020/09/22/Spark%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001/index.html">
 <meta property="og:site_name" content="ShenQi Blog">
-<meta property="og:description" content="19年暑假三下乡活动的时候，我忽然发现农村里有许多非常好玩的东西，对于菜园的培育和食物的采摘让我非常感兴趣。回家之后，加之看了《火星救援》，里面对于土豆的培育更是给我留下了非常深刻的印象。">
+<meta property="og:description" content="SPARK历史hardoop由存储框架 HDFS 与运算框架 MapperReduce 组成的数据处理系统。但是hardoop的运算框架MR具有以下缺点：  mr基于数据集运算，所以面向数据 基本运算规则从存储介质中获取（采集）数据，然后进行计算，最后将结果存储到介质中，所以主要应用于一次性计算，不适合于数据挖掘和机器学习这样的迭代计算。 MR基于文件存储介质的操作，所以性能很慢。 MR和hado">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://yoursite.com/2020/07/24/%E4%B8%80%E6%9C%9F%E5%9C%9F%E8%B1%86%E7%A7%8D%E6%A4%8D%E6%97%A5%E5%BF%97/%E5%9C%9F%E8%B1%86%E7%A7%8D%E6%A4%8D1.jpg">
-<meta property="og:image" content="http://yoursite.com/2020/07/24/%E4%B8%80%E6%9C%9F%E5%9C%9F%E8%B1%86%E7%A7%8D%E6%A4%8D%E6%97%A5%E5%BF%97/%E5%9C%9F%E8%B1%86%E7%A7%8D%E6%A4%8D2.jpg">
-<meta property="og:image" content="http://yoursite.com/2020/07/24/%E4%B8%80%E6%9C%9F%E5%9C%9F%E8%B1%86%E7%A7%8D%E6%A4%8D%E6%97%A5%E5%BF%97/%E5%9C%9F%E8%B1%86%E7%A7%8D%E6%A4%8D3.jpg">
-<meta property="og:image" content="http://yoursite.com/2020/07/24/%E4%B8%80%E6%9C%9F%E5%9C%9F%E8%B1%86%E7%A7%8D%E6%A4%8D%E6%97%A5%E5%BF%97/%E5%9C%9F%E8%B1%86%E7%A7%8D%E6%A4%8D4.jpg">
-<meta property="article:published_time" content="2020-07-24T02:56:35.000Z">
-<meta property="article:modified_time" content="2020-07-25T05:31:37.992Z">
+<meta property="og:image" content="http://yoursite.com/2020/09/22/Spark%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001/spark%E6%A1%86%E6%9E%B6.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/09/22/Spark%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001/spark%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9D%97.jpg">
+<meta property="article:published_time" content="2020-09-22T12:32:41.000Z">
+<meta property="article:modified_time" content="2020-10-10T05:57:35.754Z">
 <meta property="article:author" content="Shen Qi">
-<meta property="article:tag" content="土豆种植">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/2020/07/24/%E4%B8%80%E6%9C%9F%E5%9C%9F%E8%B1%86%E7%A7%8D%E6%A4%8D%E6%97%A5%E5%BF%97/%E5%9C%9F%E8%B1%86%E7%A7%8D%E6%A4%8D1.jpg">
+<meta name="twitter:image" content="http://yoursite.com/2020/09/22/Spark%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001/spark%E6%A1%86%E6%9E%B6.jpg">
   
     <link rel="alternative" href="/atom.xml" title="ShenQi Blog" type="application/atom+xml">
   
@@ -164,65 +161,70 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-一期土豆种植日志" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Spark学习笔记01" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      一期土豆种植日志
+      Spark学习笔记01
     </h1>
   
 
         
-        <a href="/2020/07/24/%E4%B8%80%E6%9C%9F%E5%9C%9F%E8%B1%86%E7%A7%8D%E6%A4%8D%E6%97%A5%E5%BF%97/" class="archive-article-date">
-  	<time datetime="2020-07-24T02:56:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-24</time>
+        <a href="/2020/09/22/Spark%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001/" class="archive-article-date">
+  	<time datetime="2020-09-22T12:32:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-22</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>19年暑假三下乡活动的时候，我忽然发现农村里有许多非常好玩的东西，对于菜园的培育和食物的采摘让我非常感兴趣。回家之后，加之看了《火星救援》，里面对于土豆的培育更是给我留下了非常深刻的印象。</p>
-<a id="more"></a>
-
-<p>我也想亲自用科学实验的方法来记录一下土豆的培育过程。</p>
-<p>在经过了前期的物资信息跟种植知识的调研之后，我确定种植土豆计划完全可行。</p>
-<p>2019.8.15 我开始了土豆的种植计划，我在新世纪百货帝国挑选了三个最为饱满强劲的土豆，分别作为土豆计划的一，二，三号选手。</p>
+        <h3 id="SPARK历史"><a href="#SPARK历史" class="headerlink" title="SPARK历史"></a>SPARK历史</h3><p>hardoop由存储框架 HDFS 与运算框架 MapperReduce 组成的数据处理系统。<br>但是hardoop的运算框架MR具有以下缺点：</p>
+<ul>
+<li>mr基于数据集运算，所以面向数据</li>
+<li>基本运算规则从存储介质中获取（采集）数据，然后进行计算，最后将结果存储到介质中，所以主要应用于一次性计算，不适合于数据挖掘和机器学习这样的迭代计算。</li>
+<li>MR基于文件存储介质的操作，所以性能很慢。</li>
+<li>MR和hadoop紧密耦合在一起，无法动态替换。</li>
+</ul>
+<p>2.X版本以后，更新了Yarn 资源调度框架。</p>
+<p>Spark基于Hadoop1.X架构思想，采用自己的方式改善Hadoop中的问题<br>Spark计算基于内存，并且基于Scala语法开发，所以天生适合迭代式计算</p>
 <div align="center"> 
 
-<img src="/2020/07/24/%E4%B8%80%E6%9C%9F%E5%9C%9F%E8%B1%86%E7%A7%8D%E6%A4%8D%E6%97%A5%E5%BF%97/土豆种植1.jpg" width="400" height="300" alt="图片名称">
+<img src="/2020/09/22/Spark%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001/spark框架.jpg" width="400" height="300" alt="图片名称">
 
 </div>
 
-<p>2019.9.15 在早上起床刷牙的时候，我惊喜的发现，三位种子选手的颜色由原先的土黄色变成了明显的淡绿色。搜索了相关问题之后，发现是，土豆内部产生了龙葵素，龙葵素是绿色的，同时使得土豆的外表也变成了绿色。据资料显示，此时的土豆就完全不能食用了。但巧合的是，我的一位室友，喜食洋芋（重庆叫法），宿舍里由此开始计划为这位同学制作龙葵洋芋饭，让这位同学为宿舍的科学事业奉献自己。</p>
-<div align="center"> 
+<p>由于hadoop中的MR缺点过多，可以由spark替换，所以在真正的使用过程当中，是使用的hadoop的HDFS存储框架与Yarn资源管理系统加上Spark共同构成的计算框架，三个部分协同进行工作。</p>
+<p><strong>HDFS + （Yarn + Spark）</strong></p>
+<hr>
+<h3 id="Spark内置模块"><a href="#Spark内置模块" class="headerlink" title="Spark内置模块"></a>Spark内置模块</h3><div align="center"> 
 
-<img src="/2020/07/24/%E4%B8%80%E6%9C%9F%E5%9C%9F%E8%B1%86%E7%A7%8D%E6%A4%8D%E6%97%A5%E5%BF%97/土豆种植2.jpg" width="400" height="300" alt="图片名称">
-
-</div>
-
-<p>2019.10.31 土豆的涨势出乎意料的慢，不过在长期搁置之下，1号选手还是率先发芽，虽然好像不太明显。。。</p>
-<div align="center"> 
-
-<img src="/2020/07/24/%E4%B8%80%E6%9C%9F%E5%9C%9F%E8%B1%86%E7%A7%8D%E6%A4%8D%E6%97%A5%E5%BF%97/土豆种植3.jpg" width="400" height="300" alt="图片名称">
+<img src="/2020/09/22/Spark%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001/spark内置模块.jpg" width="400" height="300" alt="图片名称">
 
 </div>
 
-<p>2020.4.15  本来以为寒假很短，我跟我的土豆分别时间不会很长，谁能想到遭遇了新冠疫情，开学时间一再推迟，没有办法只得放任我的土豆自由生长。后来由于实在担心土豆的安危，我委托善解人意，乐于助人的宿管阿姨帮我看看我的土豆现在是个什么情况，本来我以为土豆这4个多月不照顾，已经必死无疑了。但是没有想到，我的土豆丝毫不受外面的疫情影响，涨势十分喜人。</p>
-<p>什么叫生命力啊！土豆牛逼！</p>
-<div align="center"> 
-
-<img src="/2020/07/24/%E4%B8%80%E6%9C%9F%E5%9C%9F%E8%B1%86%E7%A7%8D%E6%A4%8D%E6%97%A5%E5%BF%97/土豆种植4.jpg" width="350" height="350" alt="图片名称">
-
-</div>
-
-<p>2020.4.20 由于我们的宿舍需要被倒出来给湖北的同学隔离，结果来了一伙穷凶极恶的保洁人员，在完全没有征得我本人同意的前提下，处理了宿舍内的物品。我的土豆被残忍迫害，不知所踪。</p>
-<p><strong>一期土豆种植 终</strong></p>
-<p>总结：即使三个种子选手即使没有被扔掉，这次种植时间也过长了。火星救援里马克用了40天就能种出一代土豆，我所用的时间，毫无疑问过长了。</p>
-<p>这次土豆的育芽是完全放置在室外自然进行的，所以速度非常慢，下次可以直接放在水里育芽，听说出芽速度会快上许多。</p>
-<p>期待返校之后，我的第二波土豆种植。</p>
+<p>spark core：spark核心</p>
+<p>独立调度器： spark内置的资源调度器</p>
+<p>YARN： hadoop的资源调度</p>
+<p>Mesos：apache的资源调度</p>
+<hr>
+<h3 id="两个重要角色"><a href="#两个重要角色" class="headerlink" title="两个重要角色"></a>两个重要角色</h3><p><strong>Driver（驱动器）</strong></p>
+<p><strong>资源调度</strong>作用：</p>
+<ol>
+<li>把用户程序转换为作业（JOB）</li>
+<li>跟踪Executor的运行情况</li>
+<li>为执行器节点调度任务</li>
+<li>UI展示应用运行状况</li>
+</ol>
+<p><strong>Executor（执行器）</strong></p>
+<p>作用：<br>1.负责运行组成Spark应用的任务，并将结果返回给驱动器进程<br>2.通过自身的块管理器（Block Manager）为用户程序中要求缓存的RDD提供内存式存储，RDD是直接缓存在Executor进程内的，因此任务可以在运行时充分利用缓存数据加速运算。</p>
+<hr>
+<h3 id="Local模式"><a href="#Local模式" class="headerlink" title="Local模式"></a>Local模式</h3><p>Local模式就是运行在一台计算机上的模式，通常就是用于在本机上的练手和测试。可以通过以下方式集中设置Master</p>
+<p>local：所有计算都在一个线程上。</p>
+<p>local[K]：指定K个线程来计算，最大化利用cpu的计算能力。</p>
+<p>local[*]：直接按照cpu最多cores来设置线程数。</p>
 
       
 
@@ -262,29 +264,7 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">土豆种植</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/土豆种植日志//" class="article-tag-list-link color2">土豆种植日志</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
 
       
 
@@ -334,7 +314,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/24/%E4%B8%80%E6%9C%9F%E5%9C%9F%E8%B1%86%E7%A7%8D%E6%A4%8D%E6%97%A5%E5%BF%97/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/09/22/Spark%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -348,18 +328,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/07/24/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%94%E7%AB%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/10/10/SpringBoot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Java编程思想——第五章
+          SpringBoot学习笔记（一）
         
       </div>
     </a>
   
   
-    <a href="/2020/07/23/%E9%B8%9F%E5%93%A5%E7%9A%84Linux%E7%A7%81%E6%88%BF%E8%8F%9C%E2%80%94%E2%80%94%E7%AC%AC0%E7%AB%A0/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">鸟哥的Linux私房菜——第0章</div>
+    <a href="/2020/08/05/%E7%81%AB%E9%94%85%E5%AE%9E%E9%AA%8C%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%97%A5%E5%BF%97/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">火锅实验第一次日志</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -386,7 +366,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#SPARK历史"><span class="toc-number">1.</span> <span class="toc-text">SPARK历史</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spark内置模块"><span class="toc-number">2.</span> <span class="toc-text">Spark内置模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#两个重要角色"><span class="toc-number">3.</span> <span class="toc-text">两个重要角色</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Local模式"><span class="toc-number">4.</span> <span class="toc-text">Local模式</span></a></li></ol>
                     </div>
                 </span>
             </div>
