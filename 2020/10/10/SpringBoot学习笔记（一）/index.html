@@ -16,8 +16,9 @@
 <meta property="og:description" content="Spring-&gt;SpringBoot-&gt;SpringCloud SpringBoot特性1、    SpringBoot Starter：他将常用的依赖分组进行了整合，将其合并到一个依赖中，这样就可以一次性添加到项目的Maven或Gradle构建中；">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-10-10T06:12:17.000Z">
-<meta property="article:modified_time" content="2020-10-10T08:25:39.868Z">
+<meta property="article:modified_time" content="2020-10-10T08:38:41.983Z">
 <meta property="article:author" content="Shen Qi">
+<meta property="article:tag" content="JAVA">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="ShenQi Blog" type="application/atom+xml">
@@ -202,9 +203,10 @@
 
 <p><strong>9.ctrl+c中止命令</strong></p>
 <hr>
-<h3 id="默认扫描器-basepackage"><a href="#默认扫描器-basepackage" class="headerlink" title="默认扫描器 basepackage"></a>默认扫描器 basepackage</h3><p>在spring中如果任何注释，需要在bean xml文件中使用compoment-scan来扫描指定区域的文件，被扫描到的才会被执行。</p>
+<h3 id="默认扫描器-basepackage"><a href="#默认扫描器-basepackage" class="headerlink" title="默认扫描器 basepackage"></a>默认扫描器 basepackage</h3><p>在spring中如果任何注释，需要在bean xml文件中使用component-scan来扫描指定区域的文件，被扫描到的才会被执行。</p>
 <p>但是在springboot当中，则不需要xml来声明扫描器，主启动类所在的package就是扫描器的默认package。</p>
 <p>所以建议把主启动类放置顶层目录，就是所有执行文件的上层。</p>
+<p>P8是原码解析 学完可以回过头再看一遍</p>
 <hr>
 <h3 id="几个问题？"><a href="#几个问题？" class="headerlink" title="几个问题？"></a>几个问题？</h3><p><strong>Q1：starter是什么？我们如何去使用这些starter？</strong><br>    SpringBoot不需要自己去配置全部依赖，SpringBooter由starter来管理依赖，可以看到在starter-web.pom中还有一个父pom，springbootdependencies.pom。在这个pom中，可以看到当中包含了大量依赖与插件，并且设定了版本号。所以对于其子依赖可以不再定义版本号。</p>
 <p><strong>Q2：Tomcat的内嵌是如何完成？</strong></p>
@@ -249,7 +251,29 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/SpringBoot框架学习//" class="article-tag-list-link color5">SpringBoot框架学习</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -312,6 +336,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2020/10/21/SpringBoot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          SpringBoot学习笔记（二）
+        
+      </div>
+    </a>
   
   
     <a href="/2020/09/22/Spark%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001/" id="article-nav-older" class="article-nav-link-wrap">
@@ -458,6 +491,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">JAVA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Spark</a>
               </li>
              
               <li class="article-tag-list-item">
