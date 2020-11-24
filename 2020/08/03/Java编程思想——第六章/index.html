@@ -8,13 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Java编程思想——第六章 | ShenQi Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="Q1：Java可运行程序的代码组织？">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Java编程思想——第六章">
 <meta property="og:url" content="http://yoursite.com/2020/08/03/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E5%85%AD%E7%AB%A0/index.html">
 <meta property="og:site_name" content="ShenQi Blog">
+<meta property="og:description" content="Q1：Java可运行程序的代码组织？">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-08-03T15:20:59.000Z">
-<meta property="article:modified_time" content="2020-08-05T07:50:25.106Z">
+<meta property="article:modified_time" content="2020-11-24T12:21:06.890Z">
 <meta property="article:author" content="Shen Qi">
 <meta property="article:tag" content="JAVA">
 <meta name="twitter:card" content="summary">
@@ -177,7 +179,25 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id><a href="#" class="headerlink" title></a></h3>
+        <h3 id="Q1：Java可运行程序的代码组织？"><a href="#Q1：Java可运行程序的代码组织？" class="headerlink" title="Q1：Java可运行程序的代码组织？"></a>Q1：Java可运行程序的代码组织？</h3><a id="more"></a>
+<p>Java可运行程序是一组可以打包并压缩为一个Java文档文件（JAR，使用Java的jar文档生成器）的.class文件，Java解释器负责这些文件的查找、装载和解释。</p>
+<h3 id="Q2：package和import的设计目的？"><a href="#Q2：package和import的设计目的？" class="headerlink" title="Q2：package和import的设计目的？"></a>Q2：package和import的设计目的？</h3><p>package和import关键字允许你做的，是将单一的全局名字空间分隔开，使得无论多少人使用Internet以及Java开始编写类，都不会出现名称冲突问题。</p>
+<h3 id="Q3：package如何防止名称冲突？package是如何工作的？"><a href="#Q3：package如何防止名称冲突？package是如何工作的？" class="headerlink" title="Q3：package如何防止名称冲突？package是如何工作的？"></a>Q3：package如何防止名称冲突？package是如何工作的？</h3><p>按照惯例，package名称的第一部分是类的创建者的反顺序的Internet域名，如果你遵守惯例，Internet的域名是独一无二的，因此你的package名称也将是独一无二的，也就不会出现名称冲突的问题了。</p>
+<p>package需要通过Java解释器来实现，java解释器的运行过程如下：</p>
+<p>首先，找出环境变量CLASSPATH（可以用过操作系统来设置，有时也可以通过安装程序——用来在你的机器上安装JAVA或者基于JAVA的工具来设置），CLASSPATH包含一个或者多个目录，用作查找.class文件的根目录。从根目录开始，解释器获取包的名称并将每个句点替换成反斜杠，以从ClassPath根中产生一个路径名称（于是，package foo.bar.baz就变成为foo/bar/baz或者其他，这格式取决于不同的操作系统）。得到的路径会与CLASSPATH中的各个不同的项相连接，解释器就在这些目录中查找与你所想要创建的类名称相关的.class文件（解释器还会去查找某些涉及Java解释器所在位置的标准目录）</p>
+<h3 id="Q4：如果将两个含有相同名称的类库同时导入到一个程序当中，会出现什么状况？"><a href="#Q4：如果将两个含有相同名称的类库同时导入到一个程序当中，会出现什么状况？" class="headerlink" title="Q4：如果将两个含有相同名称的类库同时导入到一个程序当中，会出现什么状况？"></a>Q4：如果将两个含有相同名称的类库同时导入到一个程序当中，会出现什么状况？</h3><p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import net.mindview.simples.*;</span><br><span class="line">import java.util.*;</span><br></pre></td></tr></table></figure>
+
+<p>上例中导入的两个包都包含Vector类，这就存在潜在的冲突。但是只要你不写那些导致冲突的程序代码，就不会有什么问题——这样很好，否则就得做很多类型的检查工作来防止那些根本不会出现的冲突。</p>
+<p>但是如果现在要创建一个Vector类，就会出现冲突：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Vector v &#x3D; new Vector();</span><br></pre></td></tr></table></figure>
+
+<p>这行到底取用的是哪一个Vector类？编译器不知道，读者同样不知道。于是编译器就会提示出错误信息，强制你指明。举例来说，如果你想要的是标准的Java Vector你就得这样写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java.util.Vector v &#x3D; new java.util.Vector();</span><br></pre></td></tr></table></figure>
+<p>由于这样可以完全指明该Vector类的位置（配合CLASSPATH），所以除非还要使用java。util中的其他东西，否则就没必要写import Java.util.*语句了。</p>
+<h3 id="Q5：Java中为什么没有条件编译？"><a href="#Q5：Java中为什么没有条件编译？" class="headerlink" title="Q5：Java中为什么没有条件编译？"></a>Q5：Java中为什么没有条件编译？</h3><p>Java没有C的条件编译功能，该功能可以使你不必更改任何程序代码就能切换开关并产生不同的行为。JAVA去掉此功能的原因就是C在绝大多数情况下是用此功能来解决跨平台问题的，即程序代码的不同部分是根据不同平台来编译的。由于Java自身可以自动跨越不同的平台，因此这个功能对JAVA而言是没有必要的。</p>
+<p>然而，条件编译还有一些有价值的用途，调试就是一个很常见的用途。调试功能在开发过程中是开启的，而在发布的产品中是禁用的。可以通过修改被导入的package的方法来实现这一目的，修改的方法是将你程序中用到的代码从调试版改为发布版。这一技术可以适用于任何种类的条件代码。</p>
+
       
 
       
@@ -340,7 +360,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-number">1.</span> <span class="toc-text"></span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Q1：Java可运行程序的代码组织？"><span class="toc-number">1.</span> <span class="toc-text">Q1：Java可运行程序的代码组织？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q2：package和import的设计目的？"><span class="toc-number">2.</span> <span class="toc-text">Q2：package和import的设计目的？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q3：package如何防止名称冲突？package是如何工作的？"><span class="toc-number">3.</span> <span class="toc-text">Q3：package如何防止名称冲突？package是如何工作的？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q4：如果将两个含有相同名称的类库同时导入到一个程序当中，会出现什么状况？"><span class="toc-number">4.</span> <span class="toc-text">Q4：如果将两个含有相同名称的类库同时导入到一个程序当中，会出现什么状况？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q5：Java中为什么没有条件编译？"><span class="toc-number">5.</span> <span class="toc-text">Q5：Java中为什么没有条件编译？</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -467,11 +487,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">火锅实验</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color5">火锅实验</a>
               </li>
             
             <div class="clearfix"></div>
