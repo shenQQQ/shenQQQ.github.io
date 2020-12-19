@@ -6,16 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020/9 | ShenQi Blog</title>
+  <title>Java编程思想——第十一章 | ShenQi Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="泛用量产型社畜战士预备机">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ShenQi Blog">
-<meta property="og:url" content="http://yoursite.com/archives/2020/09/index.html">
+  <meta name="description" content="Q1：当需要存储一些数据时，怎样选择数组或者容器？数组是保存一组对象的最有效的方式，如果你想保存一组基本类型数据，也推荐使用这种方式。但是数组具有固定的尺寸，而在更一般的情况中，你在写程序时并不知道需要多少个对象，或者是否需要更复杂的方式来存储对象，因此数组尺寸这一固定限制显得过于受限了。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java编程思想——第十一章">
+<meta property="og:url" content="http://yoursite.com/2020/12/12/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0/index.html">
 <meta property="og:site_name" content="ShenQi Blog">
-<meta property="og:description" content="泛用量产型社畜战士预备机">
+<meta property="og:description" content="Q1：当需要存储一些数据时，怎样选择数组或者容器？数组是保存一组对象的最有效的方式，如果你想保存一组基本类型数据，也推荐使用这种方式。但是数组具有固定的尺寸，而在更一般的情况中，你在写程序时并不知道需要多少个对象，或者是否需要更复杂的方式来存储对象，因此数组尺寸这一固定限制显得过于受限了。">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-12-12T13:34:06.000Z">
+<meta property="article:modified_time" content="2020-12-12T14:45:21.893Z">
 <meta property="article:author" content="Shen Qi">
+<meta property="article:tag" content="JAVA">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="ShenQi Blog" type="application/atom+xml">
@@ -156,60 +159,225 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Java编程思想——第十一章" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/09/22/Spark%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001/" class="archive-article-date">
-  	<time datetime="2020-09-22T12:32:41.921Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-22</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/22/Spark%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001/">Spark学习笔记01</a>
+    <h1 class="article-title" itemprop="name">
+      Java编程思想——第十一章
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/12/12/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0/" class="archive-article-date">
+  	<time datetime="2020-12-12T13:34:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Q1：当需要存储一些数据时，怎样选择数组或者容器？"><a href="#Q1：当需要存储一些数据时，怎样选择数组或者容器？" class="headerlink" title="Q1：当需要存储一些数据时，怎样选择数组或者容器？"></a>Q1：当需要存储一些数据时，怎样选择数组或者容器？</h3><p>数组是保存一组对象的最有效的方式，如果你想保存一组基本类型数据，也推荐使用这种方式。但是数组具有固定的尺寸，而在更一般的情况中，你在写程序时并不知道需要多少个对象，或者是否需要更复杂的方式来存储对象，因此数组尺寸这一固定限制显得过于受限了。                                                                                                                                                                                  </p>
+<p>与之相对应的是，每一个容器类都可以自动的调整自己的尺寸。因此，与数组不同，在编程时，你可以将任意数量的对象放置到容器中，并不担心容器应该设置为多大。</p>
+<p>另附：数组与其他种类容器之间的区别有三部分：效率，类型和保存数组的能力。在JAVA中，数组是一种效率最高的存储和随机访问对象引用序列的方式。数组只是一个简单的线性序列，这使得元素访问非常迅速，代价是大小被固定，且生命周期不可改变。</p>
+<h3 id="Q2：什么是泛型？泛型有什么好处？"><a href="#Q2：什么是泛型？泛型有什么好处？" class="headerlink" title="Q2：什么是泛型？泛型有什么好处？"></a>Q2：什么是泛型？泛型有什么好处？</h3><p>泛型就是一种不确定的数据类型。例如ArrayList<E>的E就是泛型这种不确定的数据类型需要在使用这个类的时候才能确定出来。</E></p>
+<p>泛型可以省略，如果省略，默认泛型就是Object类型。</p>
+<p>使用泛型的好处在于：第一，省略了强转的代码。第二，可以把运行时才会发现的问题，提到编译时期。</p>
+<p>同时，在将元素从容器中取出时，类型转换也不是必须得了，因为容器已经知道你保存的是什么类型，因此他会在调用get()的时候替你执行转型。这样，通过使用泛型，你不仅知道编译器将会检查你放置到容器中的对象类型，而且在使用容器中的对象时，可以使用更加清晰的语法。</p>
+<h3 id="Q3：容器类两大基本类型？"><a href="#Q3：容器类两大基本类型？" class="headerlink" title="Q3：容器类两大基本类型？"></a>Q3：容器类两大基本类型？</h3><p>1.<strong>Collection</strong>。一个独立的元素序列，这些元素都服从一条或者多条规则。List必须按照插入的顺序来保存元素，而Set不能有重复元素。Queue按照<strong>队列</strong>的规则来确定对象产生的顺序。</p>
+<p>2.<strong>Map</strong>。一组成对的键值对对象。允许你使用键来查找值。</p>
+<h3 id="Q4：如何为Collection容器类添加一组元素？"><a href="#Q4：如何为Collection容器类添加一组元素？" class="headerlink" title="Q4：如何为Collection容器类添加一组元素？"></a>Q4：如何为Collection容器类添加一组元素？</h3><p>1.Arrays.List()方法接受<strong>一个数组或者一个用逗号分隔的元素列表</strong>（使用可变参数）并将其转换为一个List对象。</p>
+<p>2.Collection.addAll()方法接受<strong>一个Collection对象，以及一个数组或是一个用逗号分隔的列表</strong>，将元素添加到Collection中</p>
+<p>Collection的构造器可以接受另外一个Collection，用他来将自身初始化，因此你可以使用Arrays.List()来为这个构造器产生输入。但是Collection.addAll()这种方法运行起来要快的多，而且构建一个不包含元素的Collection，然后调用Collection.addAll()这种方式要方便很多，因此，通常情况下，<strong>Collection.addAll()是首选方法。</strong></p>
+<p>你也可以<strong>直接使用Arrays.asList()</strong>的输出，将其当作List，但是在这种情况下，其<strong>底层表示的是数组，因此不能调整尺寸</strong>。如果你试图用add()或者delete()方法在这种列表中添加或者删除元素，就有可能会引发去改变数组尺寸的尝试，因此你将会在运行的时候获得“Unsupported Operation”（不支持的操作）的错误。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Collection&lt;Integer&gt; collection = <span class="keyword">new</span> ArrayList&lt;Integer&gt;(Arrays.List(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>));</span><br><span class="line">Integer[] moreInts = &#123;<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>&#125;;</span><br><span class="line">collection.addAll(Arrays.asList(moreInt));</span><br><span class="line">Collection.addAll(collection,moreInts));</span><br><span class="line">Collection.addAll(collection,<span class="number">11</span>,<span class="number">12</span>,<span class="number">13</span>,<span class="number">14</span>,<span class="number">15</span>));</span><br><span class="line">List&lt;Integer&gt; list = Arrays.asList(<span class="number">16</span>,<span class="number">17</span>,<span class="number">18</span>,<span class="number">19</span>,<span class="number">20</span>);<span class="comment">//产生的是数组，不能改变长度。</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Q5：两大容器类型的区别？"><a href="#Q5：两大容器类型的区别？" class="headerlink" title="Q5：两大容器类型的区别？"></a>Q5：两大容器类型的区别？</h3><p>它们之间的区别在于容器每个“槽“保存的元素个数。</p>
+<p><strong>Collection类元素在每个槽中保存一个元素</strong>，此类容器包括：</p>
+<p>1.List：它以特定的顺序保存一组元素。</p>
+<p>2.Set：元素不能重复，</p>
+<p>3.Queue：只允许在容器的一端插入对象，并从另外一端移除对线（符合队列规则）</p>
+<p>Map类则在每个槽内保存了两个对象，既键（key）和与之对应的值（value）</p>
+<h3 id="Q6-三种Set的区别？"><a href="#Q6-三种Set的区别？" class="headerlink" title="Q6: 三种Set的区别？"></a>Q6: 三种Set的区别？</h3><p>将三个存入了相同元素的不同种类的Set输出，会发现三种Set的输出顺并不相同。这代表着三种Set类型<strong>实现存储元素的方式不相同</strong>。 </p>
+<p>HashSet使用的是相当复杂的方式来存储元素。此种方式是最快的获取元素的方式，因此，存储的顺序看起来并无实际意义。</p>
+<p>TreeSet会按照比较结果的升序来保存对象。</p>
+<p>LinkedHashSet按照添加顺序来保存对象。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢大哥捧场<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/wechatpay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Spark</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/JAVA编程思想//" class="article-tag-list-link color4">JAVA编程思想</a>
+        		</li>
+      		
+		</ul>
+	</div>
 
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/12/12/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2020/12/10/Java%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%9502/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java数据结构与算法02</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Q1：当需要存储一些数据时，怎样选择数组或者容器？"><span class="toc-number">1.</span> <span class="toc-text">Q1：当需要存储一些数据时，怎样选择数组或者容器？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q2：什么是泛型？泛型有什么好处？"><span class="toc-number">2.</span> <span class="toc-text">Q2：什么是泛型？泛型有什么好处？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q3：容器类两大基本类型？"><span class="toc-number">3.</span> <span class="toc-text">Q3：容器类两大基本类型？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q4：如何为Collection容器类添加一组元素？"><span class="toc-number">4.</span> <span class="toc-text">Q4：如何为Collection容器类添加一组元素？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q5：两大容器类型的区别？"><span class="toc-number">5.</span> <span class="toc-text">Q5：两大容器类型的区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q6-三种Set的区别？"><span class="toc-number">6.</span> <span class="toc-text">Q6: 三种Set的区别？</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -234,8 +402,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
