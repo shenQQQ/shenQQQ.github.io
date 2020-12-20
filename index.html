@@ -61,6 +61,8 @@
 	        
 				<li><a href="/archives">归档</a></li>
 	        
+				<li><a href="/guestbook">评论</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -119,6 +121,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -136,12 +140,14 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/archives">归档</a></li>
+					<li style="width: 33.333333333333336%"><a href="/archives">归档</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/guestbook">评论</a></li>
 		        
 				</ul>
 			</nav>
@@ -354,32 +360,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Q1：当需要存储一些数据时，怎样选择数组或者容器？"><a href="#Q1：当需要存储一些数据时，怎样选择数组或者容器？" class="headerlink" title="Q1：当需要存储一些数据时，怎样选择数组或者容器？"></a>Q1：当需要存储一些数据时，怎样选择数组或者容器？</h3><p>数组是保存一组对象的最有效的方式，如果你想保存一组基本类型数据，也推荐使用这种方式。但是数组具有固定的尺寸，而在更一般的情况中，你在写程序时并不知道需要多少个对象，或者是否需要更复杂的方式来存储对象，因此数组尺寸这一固定限制显得过于受限了。                                                                                                                                                                                  </p>
-<p>与之相对应的是，每一个容器类都可以自动的调整自己的尺寸。因此，与数组不同，在编程时，你可以将任意数量的对象放置到容器中，并不担心容器应该设置为多大。</p>
-<p>另附：数组与其他种类容器之间的区别有三部分：效率，类型和保存数组的能力。在JAVA中，数组是一种效率最高的存储和随机访问对象引用序列的方式。数组只是一个简单的线性序列，这使得元素访问非常迅速，代价是大小被固定，且生命周期不可改变。</p>
-<h3 id="Q2：什么是泛型？泛型有什么好处？"><a href="#Q2：什么是泛型？泛型有什么好处？" class="headerlink" title="Q2：什么是泛型？泛型有什么好处？"></a>Q2：什么是泛型？泛型有什么好处？</h3><p>泛型就是一种不确定的数据类型。例如ArrayList<E>的E就是泛型这种不确定的数据类型需要在使用这个类的时候才能确定出来。</E></p>
-<p>泛型可以省略，如果省略，默认泛型就是Object类型。</p>
-<p>使用泛型的好处在于：第一，省略了强转的代码。第二，可以把运行时才会发现的问题，提到编译时期。</p>
-<p>同时，在将元素从容器中取出时，类型转换也不是必须得了，因为容器已经知道你保存的是什么类型，因此他会在调用get()的时候替你执行转型。这样，通过使用泛型，你不仅知道编译器将会检查你放置到容器中的对象类型，而且在使用容器中的对象时，可以使用更加清晰的语法。</p>
-<h3 id="Q3：容器类两大基本类型？"><a href="#Q3：容器类两大基本类型？" class="headerlink" title="Q3：容器类两大基本类型？"></a>Q3：容器类两大基本类型？</h3><p>1.<strong>Collection</strong>。一个独立的元素序列，这些元素都服从一条或者多条规则。List必须按照插入的顺序来保存元素，而Set不能有重复元素。Queue按照<strong>队列</strong>的规则来确定对象产生的顺序。</p>
-<p>2.<strong>Map</strong>。一组成对的键值对对象。允许你使用键来查找值。</p>
-<h3 id="Q4：如何为Collection容器类添加一组元素？"><a href="#Q4：如何为Collection容器类添加一组元素？" class="headerlink" title="Q4：如何为Collection容器类添加一组元素？"></a>Q4：如何为Collection容器类添加一组元素？</h3><p>1.Arrays.List()方法接受<strong>一个数组或者一个用逗号分隔的元素列表</strong>（使用可变参数）并将其转换为一个List对象。</p>
-<p>2.Collection.addAll()方法接受<strong>一个Collection对象，以及一个数组或是一个用逗号分隔的列表</strong>，将元素添加到Collection中</p>
-<p>Collection的构造器可以接受另外一个Collection，用他来将自身初始化，因此你可以使用Arrays.List()来为这个构造器产生输入。但是Collection.addAll()这种方法运行起来要快的多，而且构建一个不包含元素的Collection，然后调用Collection.addAll()这种方式要方便很多，因此，通常情况下，<strong>Collection.addAll()是首选方法。</strong></p>
-<p>你也可以<strong>直接使用Arrays.asList()</strong>的输出，将其当作List，但是在这种情况下，其<strong>底层表示的是数组，因此不能调整尺寸</strong>。如果你试图用add()或者delete()方法在这种列表中添加或者删除元素，就有可能会引发去改变数组尺寸的尝试，因此你将会在运行的时候获得“Unsupported Operation”（不支持的操作）的错误。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Collection&lt;Integer&gt; collection = <span class="keyword">new</span> ArrayList&lt;Integer&gt;(Arrays.List(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>));</span><br><span class="line">Integer[] moreInts = &#123;<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>&#125;;</span><br><span class="line">collection.addAll(Arrays.asList(moreInt));</span><br><span class="line">Collection.addAll(collection,moreInts));</span><br><span class="line">Collection.addAll(collection,<span class="number">11</span>,<span class="number">12</span>,<span class="number">13</span>,<span class="number">14</span>,<span class="number">15</span>));</span><br><span class="line">List&lt;Integer&gt; list = Arrays.asList(<span class="number">16</span>,<span class="number">17</span>,<span class="number">18</span>,<span class="number">19</span>,<span class="number">20</span>);<span class="comment">//产生的是数组，不能改变长度。</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Q5：两大容器类型的区别？"><a href="#Q5：两大容器类型的区别？" class="headerlink" title="Q5：两大容器类型的区别？"></a>Q5：两大容器类型的区别？</h3><p>它们之间的区别在于容器每个“槽“保存的元素个数。</p>
-<p><strong>Collection类元素在每个槽中保存一个元素</strong>，此类容器包括：</p>
-<p>1.List：它以特定的顺序保存一组元素。</p>
-<p>2.Set：元素不能重复，</p>
-<p>3.Queue：只允许在容器的一端插入对象，并从另外一端移除对线（符合队列规则）</p>
-<p>Map类则在每个槽内保存了两个对象，既键（key）和与之对应的值（value）</p>
-<h3 id="Q6-三种Set的区别？"><a href="#Q6-三种Set的区别？" class="headerlink" title="Q6: 三种Set的区别？"></a>Q6: 三种Set的区别？</h3><p>将三个存入了相同元素的不同种类的Set输出，会发现三种Set的输出顺并不相同。这代表着三种Set类型<strong>实现存储元素的方式不相同</strong>。 </p>
-<p>HashSet使用的是相当复杂的方式来存储元素。此种方式是最快的获取元素的方式，因此，存储的顺序看起来并无实际意义。</p>
-<p>TreeSet会按照比较结果的升序来保存对象。</p>
-<p>LinkedHashSet按照添加顺序来保存对象。</p>
-
+        <h3 id="Q1：当需要存储一些数据时，怎样选择数组或者容器？"><a href="#Q1：当需要存储一些数据时，怎样选择数组或者容器？" class="headerlink" title="Q1：当需要存储一些数据时，怎样选择数组或者容器？"></a>Q1：当需要存储一些数据时，怎样选择数组或者容器？</h3>
+        
+          <a class="article-more-a" href="/2020/12/12/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0/#more">more >></a>
+        
       
 
       

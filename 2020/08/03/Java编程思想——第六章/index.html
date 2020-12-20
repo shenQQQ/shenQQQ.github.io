@@ -64,6 +64,8 @@
 	        
 				<li><a href="/archives">归档</a></li>
 	        
+				<li><a href="/guestbook">评论</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -122,6 +124,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -139,12 +143,14 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/archives">归档</a></li>
+					<li style="width: 33.333333333333336%"><a href="/archives">归档</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/guestbook">评论</a></li>
 		        
 				</ul>
 			</nav>
@@ -377,6 +383,33 @@
 
   
 
+  
+    <section id="comments" class="comments">
+      <style>
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+      </style>
+      <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'true' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "b9UIcofckSy2KiwWHwFn3otH-gzGzoHsz",
+            app_key: "drOJyTOPtRAxptpVucRUQsBo",
+            placeholder: "有话要说？",
+            avatar:""
+        });
+    }
+</script>
+      </section>
+    
+    
   
 
   
