@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>鸟哥的Linux私房菜——第0章 | ShenQi Blog</title>
+  <title>Java数据结构与算法03 | ShenQi Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Q1：主板上的芯片组如何控制各组件之间的通信？ 主板是连接各部分组件的重要部分。因此在主板上负责连接组件的芯片组，其设计优劣，直接会影响到性能。早期的芯片组通常分为两个网桥来控制各组件之间的通信，分别是：">
+  <meta name="description" content="简单排序算法1.冒泡排序冒泡算法的运作规律如下：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="鸟哥的Linux私房菜——第0章">
-<meta property="og:url" content="http://yoursite.com/2020/09/23/%E9%B8%9F%E5%93%A5%E7%9A%84Linux%E7%A7%81%E6%88%BF%E8%8F%9C%E2%80%94%E2%80%94%E7%AC%AC0%E7%AB%A0/index.html">
+<meta property="og:title" content="Java数据结构与算法03">
+<meta property="og:url" content="http://yoursite.com/2020/12/13/Java%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%9503/index.html">
 <meta property="og:site_name" content="ShenQi Blog">
-<meta property="og:description" content="Q1：主板上的芯片组如何控制各组件之间的通信？ 主板是连接各部分组件的重要部分。因此在主板上负责连接组件的芯片组，其设计优劣，直接会影响到性能。早期的芯片组通常分为两个网桥来控制各组件之间的通信，分别是：">
+<meta property="og:description" content="简单排序算法1.冒泡排序冒泡算法的运作规律如下：">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-09-23T15:38:14.000Z">
-<meta property="article:modified_time" content="2021-03-24T05:57:15.305Z">
+<meta property="article:published_time" content="2020-12-13T15:23:20.000Z">
+<meta property="article:modified_time" content="2021-03-24T06:16:59.870Z">
 <meta property="article:author" content="Shen Qi">
-<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="JAVA">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="ShenQi Blog" type="application/atom+xml">
@@ -62,9 +62,9 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/archives">归档</a></li>
+				<li><a href="/categories">分类</a></li>
 	        
-				<li><a href="/guestbook">评论</a></li>
+				<li><a href="/archives">归档</a></li>
 	        
 			</ul>
 		</nav>
@@ -152,9 +152,9 @@
 				
 					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/archives">归档</a></li>
+					<li style="width: 33.333333333333336%"><a href="/categories">分类</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/guestbook">评论</a></li>
+					<li style="width: 33.333333333333336%"><a href="/archives">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -169,14 +169,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-鸟哥的Linux私房菜——第0章" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Java数据结构与算法03" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      鸟哥的Linux私房菜——第0章
+      Java数据结构与算法03
     </h1>
   
 
@@ -187,42 +187,53 @@
 		  <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
 	</span>
 
-<a href="/2020/09/23/%E9%B8%9F%E5%93%A5%E7%9A%84Linux%E7%A7%81%E6%88%BF%E8%8F%9C%E2%80%94%E2%80%94%E7%AC%AC0%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-09-23T15:38:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-23</time>
+<a href="/2020/12/13/Java%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%9503/" class="archive-article-date">
+  	<time datetime="2020-12-13T15:23:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-13</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Q1：主板上的芯片组如何控制各组件之间的通信？"><a href="#Q1：主板上的芯片组如何控制各组件之间的通信？" class="headerlink" title="Q1：主板上的芯片组如何控制各组件之间的通信？"></a>Q1：主板上的芯片组如何控制各组件之间的通信？</h3><p> 主板是连接各部分组件的重要部分。因此在主板上负责连接组件的芯片组，其设计优劣，直接会影响到性能。早期的芯片组通常分为两个网桥来控制各组件之间的通信，分别是：<br> <a id="more"></a></p>
-<ol>
-<li><p>北桥：负责<strong>连接速度较快的CPU，内存和显卡等</strong>组件。</p>
-</li>
-<li><p>南桥：负责<strong>连接速度较慢的设备接口</strong>，包括硬盘，USB设备，网卡等。</p>
-<p>不过由于北桥最重要的就是CPU与内存之间的桥接，如果北桥存在，那么CPU与内存之间的交流会消耗掉北桥的带宽。但如果将北桥整合进CPU内，<strong>不仅CPU与内存之间可以直接通信，速度较快，而且也不用消耗掉额外的带宽</strong>。所以现在的CPU看不到以往的北桥芯片了。</p>
-</li>
-</ol>
+        <h3 id="简单排序算法"><a href="#简单排序算法" class="headerlink" title="简单排序算法"></a>简单排序算法</h3><h4 id="1-冒泡排序"><a href="#1-冒泡排序" class="headerlink" title="1.冒泡排序"></a>1.冒泡排序</h4><p>冒泡算法的运作规律如下：</p>
+<a id="more"></a>
+
+<p>　　①、比较相邻的元素。如果第一个比第二个大，就交换他们两个。</p>
+<p>　　②、对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最大的数（也就是第一波冒泡完成）。</p>
+<p>　　③、针对所有的元素重复以上的步骤，除了最后一个。</p>
+<p>　　④、持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BubbleSort</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] sort(<span class="keyword">int</span>[] array)&#123;</span><br><span class="line">        <span class="comment">//这里for循环表示总共需要比较多少轮</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt; array.length; i++)&#123;</span><br><span class="line">            <span class="comment">//设定一个标记，若为true，则表示此次循环没有进行交换，也就是待排序列已经有序，排序已经完成。</span></span><br><span class="line">            <span class="keyword">boolean</span> flag = <span class="keyword">true</span>;</span><br><span class="line">            <span class="comment">//这里for循环表示每轮比较参与的元素下标</span></span><br><span class="line">            <span class="comment">//对当前无序区间array[0......length-i]进行排序</span></span><br><span class="line">            <span class="comment">//j的范围很关键，这个范围是在逐步缩小的,因为每轮比较都会将最大的放在右边</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span> ; j &lt; array.length-i ; j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(array[j]&gt;array[j+<span class="number">1</span>])&#123;</span><br><span class="line">                    <span class="keyword">int</span> temp = array[j];</span><br><span class="line">                    array[j] = array[j+<span class="number">1</span>];</span><br><span class="line">                    array[j+<span class="number">1</span>] = temp;</span><br><span class="line">                    flag = <span class="keyword">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(flag)&#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//第 i轮排序的结果为</span></span><br><span class="line">            System.out.print(<span class="string">"第"</span>+i+<span class="string">"轮排序后的结果为:"</span>);</span><br><span class="line">            display(array);</span><br><span class="line">             </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> array;</span><br><span class="line">         </span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    <span class="comment">//遍历显示数组</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">display</span><span class="params">(<span class="keyword">int</span>[] array)</span></span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; array.length ; i++)&#123;</span><br><span class="line">            System.out.print(array[i]+<span class="string">" "</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] array = &#123;<span class="number">4</span>,<span class="number">2</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">6</span>,<span class="number">1</span>,<span class="number">3</span>&#125;;</span><br><span class="line">        <span class="comment">//未排序数组顺序为</span></span><br><span class="line">        System.out.println(<span class="string">"未排序数组顺序为："</span>);</span><br><span class="line">        display(array);</span><br><span class="line">        System.out.println(<span class="string">"-----------------------"</span>);</span><br><span class="line">        array = sort(array);</span><br><span class="line">        System.out.println(<span class="string">"-----------------------"</span>);</span><br><span class="line">        System.out.println(<span class="string">"经过冒泡排序后的数组顺序为："</span>);</span><br><span class="line">        display(array);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>冒泡排序虽然是双重循环，但仅利用内层循环进行排序，每次循环就是将符合条件的选项放在队尾，同时使数组更加有序。当检测到循环内没有发生交换时，可以退出循环，节约运算时间。</p>
+<p><strong>冒泡排序性能分析：</strong></p>
+<p>　　假设参与比较的数组元素个数为 N，则第一轮排序有 N-1 次比较，第二轮有 N-2 次，如此类推，这种序列的求和公式为：</p>
+<p>　　（N-1）+（N-2）+…+1 = N*（N-1）/2</p>
+<p>　　当 N 的值很大时，算法比较次数约为 N2/2次比较，忽略减1。</p>
+<p>　　假设数据是随机的，那么每次比较可能要交换位置，可能不会交换，假设概率为50%，那么交换次数为 N2/4。不过如果是最坏的情况，初始数据是逆序的，那么每次比较都要交换位置。</p>
+<p>　　交换和比较次数都和N2 成正比。由于常数不算大 O 表示法中，忽略 2 和 4，那么冒泡排序运行都需要 O(N2) 时间级别。</p>
+<p>　　其实无论何时，只要看见一个循环嵌套在另一个循环中，我们都可以怀疑这个算法的运行时间为 O(N2)级，外层循环执行 N 次，内层循环对每一次外层循环都执行N次（或者几分之N次）。这就意味着大约需要执行N2次某个基本操作。</p>
+<h4 id="2-选择排序"><a href="#2-选择排序" class="headerlink" title="2.选择排序"></a>2.选择排序</h4><p>冒泡算法的运作规律如下：</p>
+<p>​        ①、从待排序序列中，找到关键字最小的元素</p>
+<p>　　②、如果最小元素不是待排序序列的第一个元素，将其和第一个元素互换</p>
+<p>　　③、从余下的 N - 1 个元素中，找出关键字最小的元素，重复(1)、(2)步，直到排序结束</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ChoiceSort</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] sort(<span class="keyword">int</span>[] array)&#123;</span><br><span class="line">        <span class="comment">//总共要经过N-1轮比较</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; array.length-<span class="number">1</span> ; i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> min = i;</span><br><span class="line">            <span class="comment">//每轮需要比较的次数</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i+<span class="number">1</span> ; j &lt; array.length ; j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(array[j]&lt;array[min])&#123;</span><br><span class="line">                    min = j;<span class="comment">//记录目前能找到的最小值元素的下标</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//将找到的最小值和i位置所在的值进行交换</span></span><br><span class="line">            <span class="keyword">if</span>(i != min)&#123;</span><br><span class="line">                <span class="keyword">int</span> temp = array[i];</span><br><span class="line">                array[i] = array[min];</span><br><span class="line">                array[min] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//第 i轮排序的结果为</span></span><br><span class="line">            System.out.print(<span class="string">"第"</span>+(i+<span class="number">1</span>)+<span class="string">"轮排序后的结果为:"</span>);</span><br><span class="line">            display(array);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> array;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="comment">//遍历显示数组</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">display</span><span class="params">(<span class="keyword">int</span>[] array)</span></span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; array.length ; i++)&#123;</span><br><span class="line">            System.out.print(array[i]+<span class="string">" "</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] array = &#123;<span class="number">4</span>,<span class="number">2</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">6</span>,<span class="number">1</span>,<span class="number">3</span>&#125;;</span><br><span class="line">        <span class="comment">//未排序数组顺序为</span></span><br><span class="line">        System.out.println(<span class="string">"未排序数组顺序为："</span>);</span><br><span class="line">        display(array);</span><br><span class="line">        System.out.println(<span class="string">"-----------------------"</span>);</span><br><span class="line">        array = sort(array);</span><br><span class="line">        System.out.println(<span class="string">"-----------------------"</span>);</span><br><span class="line">        System.out.println(<span class="string">"经过选择排序后的数组顺序为："</span>);</span><br><span class="line">        display(array);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>选择排序性能分析：</strong></p>
+<p>　　选择排序和冒泡排序执行了相同次数的比较：N*（N-1）/2，但是至多只进行了N次交换。</p>
+<p>　　当 N 值很大时，比较次数是主要的，所以和冒泡排序一样，用大O表示是O(N2) 时间级别。但是<strong>由于选择排序交换的次数少，所以选择排序无疑是比冒泡排序快的</strong>。同时，比较有价值的一点是，<strong>当 N 值较小时，如果交换时间比选择时间大的多，那么选择排序是相当快</strong>的。</p>
+<h4 id="3-插入排序"><a href="#3-插入排序" class="headerlink" title="3.插入排序"></a>3.插入排序</h4><p>​        直接插入排序基本思想是每一步将一个待排序的记录，插入到前面已经排好序的有序序列中去，直到插完所有元素为止。</p>
+<p>　　插入排序还分为直接插入排序、二分插入排序、链表插入排序、希尔排序等等，这里我们只是以直接插入排序讲解，后面讲高级排序的时候会将其他的。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InsertSort</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] sort(<span class="keyword">int</span>[] array)&#123;</span><br><span class="line">        <span class="keyword">int</span> j;</span><br><span class="line">        <span class="comment">//从下标为1的元素开始选择合适的位置插入，因为下标为0的只有一个元素，默认是有序的</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt; array.length ; i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> tmp = array[i];<span class="comment">//记录要插入的数据</span></span><br><span class="line">            j = i;</span><br><span class="line">            <span class="keyword">while</span>(j &gt; <span class="number">0</span> &amp;&amp; tmp &lt; array[j-<span class="number">1</span>])&#123;<span class="comment">//从已经排序的序列最右边的开始比较，找到比其小的数</span></span><br><span class="line">                array[j] = array[j-<span class="number">1</span>];<span class="comment">//向后挪动</span></span><br><span class="line">                j--;</span><br><span class="line">            &#125;</span><br><span class="line">            array[j] = tmp;<span class="comment">//存在比其小的数，插入</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> array;</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    <span class="comment">//遍历显示数组</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">display</span><span class="params">(<span class="keyword">int</span>[] array)</span></span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; array.length ; i++)&#123;</span><br><span class="line">            System.out.print(array[i]+<span class="string">" "</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] array = &#123;<span class="number">4</span>,<span class="number">2</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">6</span>,<span class="number">1</span>,<span class="number">3</span>&#125;;</span><br><span class="line">        <span class="comment">//未排序数组顺序为</span></span><br><span class="line">        System.out.println(<span class="string">"未排序数组顺序为："</span>);</span><br><span class="line">        display(array);</span><br><span class="line">        System.out.println(<span class="string">"-----------------------"</span>);</span><br><span class="line">        array = sort(array);</span><br><span class="line">        System.out.println(<span class="string">"-----------------------"</span>);</span><br><span class="line">        System.out.println(<span class="string">"经过插入排序后的数组顺序为："</span>);</span><br><span class="line">        display(array);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>　<strong>插入排序性能分析：</strong></p>
+<p>　　在第一轮排序中，它最多比较一次，第二轮最多比较两次，一次类推，第N轮，最多比较N-1次。因此有 1+2+3+…+N-1 = N*（N-1）/2。</p>
+<p>　　假设在每一轮排序发现插入点时，平均只有全体数据项的一半真的进行了比较，我们除以2得到：N*（N-1）/4。用大O表示法大致需要需要 O(N2) 时间级别。</p>
+<p>　　<strong>复制的次数大致等于比较的次数，但是一次复制与一次交换的时间耗时不同，所以相对于随机数据，插入排序比冒泡快一倍，比选择排序略快。</strong></p>
+<p>　　这里需要注意的是，如果要进行<strong>逆序排列</strong>，那么每次比较和移动都会进行，这时候并不会比冒泡排序快。</p>
 <hr>
-<h3 id="Q2：能不能仅通过频率来判断运算性能？"><a href="#Q2：能不能仅通过频率来判断运算性能？" class="headerlink" title="Q2：能不能仅通过频率来判断运算性能？"></a>Q2：能不能仅通过频率来判断运算性能？</h3><p>不能。不同的CPU之间不能单纯地仅凭频率来判断性能。这是因为<strong>每块CPU的指令集不同，架构也不见得一样，可使用的二级缓存以及其运算机制也可能不同，加上每一次频率能够进行的工作指令数也不相同</strong>，所以，频率目前仅能用来比较<strong>同款CPU</strong>的速度。</p>
-<hr>
-<h3 id="Q3：怎么计算CPU的工作频率？"><a href="#Q3：怎么计算CPU的工作频率？" class="headerlink" title="Q3：怎么计算CPU的工作频率？"></a>Q3：怎么计算CPU的工作频率？</h3><p>在<strong>早期的CPU设计</strong>中，所谓的外频指的是CPU通过北桥芯片与外部组件进行数据传输时的速度，倍频则是CPU内部用来加速工作性能的一个倍数两者相乘才是CPU的频率速度。</p>
-<p>例如：Intel Core 2 E8400的频率是3.0GHz，而外频是333MHz，所以可得CPU倍频是9倍。</p>
-<p>很多电脑玩家喜欢玩的超频，就是通过修改主板提供的设置功能，将CPU的倍频或是外频修改成较高频率。但因为CPU的倍频通常在出厂的时候就已经被锁定，所以修改的往往是CPU的外频。</p>
-<p>现在没有所谓的北桥，因此CPU的频率设计就无需考虑要同步的外频，只需要考虑整体的频率即可。</p>
-<hr>
-<h3 id="Q4-什么是CPU的总线位宽？"><a href="#Q4-什么是CPU的总线位宽？" class="headerlink" title="Q4:什么是CPU的总线位宽？"></a>Q4:什么是CPU的总线位宽？</h3><p>CPU的各项数据统统来自于内存，如果内存单位时间内提供的数据量越大的话，系统的整体性能应该也越快。</p>
-<p>CPU的总线位宽指的就是单位时间内能够传输的数据量，它与内存的工作频率与内存数据位宽位宽（<strong>内存一次传输的数据量</strong>）有关，例如，64位内存的工作频率是1600MHz，俺么CPU可以从内存中取得的最快带宽就是1600MHz<em>64bit=1600MHz</em>8B=12.8GB/s</p>
-<p>CPU也有跟内存的<strong>数据带宽</strong>相似的概念，叫做<strong>字长</strong>，我们电脑中的32位或者64位也往往指的是CPU的字长位数，字长指的是<strong>CPU每次能处理的数据量</strong>。</p>
-<hr>
-<h3 id="Q5：CPU超线程（Hyper-Threading，HT）是如何实现的？"><a href="#Q5：CPU超线程（Hyper-Threading，HT）是如何实现的？" class="headerlink" title="Q5：CPU超线程（Hyper-Threading，HT）是如何实现的？"></a>Q5：CPU超线程（Hyper-Threading，HT）是如何实现的？</h3><p>在每一个CPU中，将内部的寄存器分成两组，让程序分别使用这两组寄存器。也就是说，有两个程序<strong>同时竞争CPU的运算单元</strong>，而非通过操作系统的多任务切换。这一过程使得CPU好像同时拥有两个逻辑分离的内核的样子。</p>
-<p>在大多数情况下，HT技术会带来性能的提升，但是也会存在性能下降得情况，具体问题要进行具体分析。</p>
-<hr>
-<h3 id="Q6：什么是内存的多通道设计？"><a href="#Q6：什么是内存的多通道设计？" class="headerlink" title="Q6：什么是内存的多通道设计？"></a>Q6：什么是内存的多通道设计？</h3><p>因为所有的数据都需要通过内存才能交给CPU去计算，所以内存的数据位宽当然是越大越好。但是传统的总线位宽是不太可能改变的，所以芯片组厂商就想到把两个内存集合在一起，如果一根内存有64位，那么两根内存就有128位。这就是双通道的设计理念。</p>
-<hr>
-<h3 id="例题："><a href="#例题：" class="headerlink" title="例题："></a>例题：</h3><p>你的系统使用 i7 的 4790 CPU，使用了 DDR3-1600 内存，使用了 PCIe 2.0 x8 的磁盘阵列卡，这张卡上面安装了 8 颗 3TB 的理论速度可达 200Mbyte/s 的硬盘 (假设为可加总速度的 RAID0 配置)， 是安插在 CPU 控制芯片相连的插槽中。网络使用 giga 网卡，安插在 PCIe 2.0 x1 的界面上。在这样的设备中，上述的哪个环节速度可能是你的瓶颈？</p>
-<p><strong>答</strong>：</p>
-<p>DDR3-1600 的带宽可达：12.8GBytes/s<br>磁盘阵列卡理论传输率： PCIe 2.0 x8 为 4GBytes/s<br>磁盘每颗 200MBytes/s，共八颗，总效率为： 200MBytes*8 ~ 1.6GBytes/s<br>网络接口使用 PCIe 2.0 1x 所以接口速度可达 500MBytes/s，但是 Giga 网络最高为 125MBytes/s<br>通过上述分析，我们知道，速度最慢的为网络的 125MBytes/s ！所以，如果想要让整体性能提升，网络恐怕就是需要克服的一环！</p>
+<p>​    上面讲的三种排序，冒泡、选择、插入用大 O 表示法都需要 O(N2) 时间级别。一般不会选择冒泡排序，虽然冒泡排序书写是最简单的，但是平均性能是没有选择排序和插入排序好的。</p>
+<p>　　选择排序把交换次数降低到最低，但是比较次数还是挺大的。当数据量小，并且交换数据相对于比较数据更加耗时的情况下，可以应用选择排序。</p>
+<p>　　在大多数情况下，<strong>假设数据量比较小或基本有序时，插入排序是三种算法中最好的选择</strong>。</p>
 
       
 
@@ -267,7 +278,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA</a>
         		</li>
       		
 		</ul>
@@ -279,7 +290,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/鸟哥的Linux私房菜//" class="article-tag-list-link color2">鸟哥的Linux私房菜</a>
+        			<a href="/categories/数据结构与算法/" class="article-tag-list-link color3">数据结构与算法</a>
         		</li>
       		
 		</ul>
@@ -334,7 +345,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/09/23/%E9%B8%9F%E5%93%A5%E7%9A%84Linux%E7%A7%81%E6%88%BF%E8%8F%9C%E2%80%94%E2%80%94%E7%AC%AC0%E7%AB%A0/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/12/13/Java%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%9503/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -348,9 +359,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2020/12/20/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%80%E7%AB%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Java编程思想——第一章
+        
+      </div>
+    </a>
   
-    <a href="/2020/08/05/%E7%81%AB%E9%94%85%E5%AE%9E%E9%AA%8C%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%97%A5%E5%BF%97/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">火锅实验第一次日志</div>
+  
+    <a href="/2020/12/13/Java%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%9502/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java数据结构与算法02</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -377,7 +397,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Q1：主板上的芯片组如何控制各组件之间的通信？"><span class="toc-number">1.</span> <span class="toc-text">Q1：主板上的芯片组如何控制各组件之间的通信？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q2：能不能仅通过频率来判断运算性能？"><span class="toc-number">2.</span> <span class="toc-text">Q2：能不能仅通过频率来判断运算性能？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q3：怎么计算CPU的工作频率？"><span class="toc-number">3.</span> <span class="toc-text">Q3：怎么计算CPU的工作频率？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q4-什么是CPU的总线位宽？"><span class="toc-number">4.</span> <span class="toc-text">Q4:什么是CPU的总线位宽？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q5：CPU超线程（Hyper-Threading，HT）是如何实现的？"><span class="toc-number">5.</span> <span class="toc-text">Q5：CPU超线程（Hyper-Threading，HT）是如何实现的？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q6：什么是内存的多通道设计？"><span class="toc-number">6.</span> <span class="toc-text">Q6：什么是内存的多通道设计？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#例题："><span class="toc-number">7.</span> <span class="toc-text">例题：</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#简单排序算法"><span class="toc-number">1.</span> <span class="toc-text">简单排序算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-冒泡排序"><span class="toc-number">1.1.</span> <span class="toc-text">1.冒泡排序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-选择排序"><span class="toc-number">1.2.</span> <span class="toc-text">2.选择排序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-插入排序"><span class="toc-number">1.3.</span> <span class="toc-text">3.插入排序</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -527,6 +547,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">JAVA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">土豆种植</a>
