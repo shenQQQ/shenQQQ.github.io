@@ -168,6 +168,684 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Netty笔记——01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/25/Netty%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/">Netty笔记——01</a>
+    </h1>
+  
+
+        
+        
+<a href="/2021/03/25/Netty%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/" class="archive-article-date">
+  	<time datetime="2021-03-25T07:22:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Q1：Netty是啥"><a href="#Q1：Netty是啥" class="headerlink" title="Q1：Netty是啥?"></a>Q1：Netty是啥?</h3><p>Netty </p>
+<p>本质：网络应用程序框架</p>
+<p>实现：异步 事件驱动</p>
+<p>特性：高性能，可维护，快速开发</p>
+<p>用途：开发服务器和客户端</p>
+<h3 id="Q2-为什么不直接用JDK-NIO？"><a href="#Q2-为什么不直接用JDK-NIO？" class="headerlink" title="Q2:为什么不直接用JDK NIO？"></a>Q2:为什么不直接用JDK NIO？</h3><p><strong>Netty做的更多一些：</strong></p>
+<p>支持常用应用层协议</p>
+<p>解决传输问题:粘包，半包现象</p>
+<p>支持流量整形；</p>
+<p>完善的断连，Idle等异常处理</p>
+<p><strong>做的更好：</strong></p>
+<p>规避JDKNIO bug</p>
+<p>经典的epoll bug 异常唤醒空转导致cpu100%</p>
+<p>在JDK中并没有完全解决这个bug，只是减少了出现的次数</p>
+<p>netty会检测空转次数，并退出</p>
+<h3 id="Q3：有和Netty类似的框架，为什么不用别的？"><a href="#Q3：有和Netty类似的框架，为什么不用别的？" class="headerlink" title="Q3：有和Netty类似的框架，为什么不用别的？"></a>Q3：有和Netty类似的框架，为什么不用别的？</h3><p>apache mina 同样的作者，但是作者更推荐netty</p>
+<p>sun Grizzly 用的少，文档少，更新少</p>
+<p>Tomcat，Jetty 不属于统一层次，有自己的通信层实现，并没有独立出来，是为了支持servlet容器做的</p>
+<h3 id="Q4：什么是经典的三种IO模式？"><a href="#Q4：什么是经典的三种IO模式？" class="headerlink" title="Q4：什么是经典的三种IO模式？"></a>Q4：什么是经典的三种IO模式？</h3><p>以生活场景举例，去饭店吃饭有三种模式</p>
+<p>1.食堂排队模式</p>
+<p>2.取号，等待被叫模式</p>
+<p>3.包厢模式，点单等着被送到</p>
+<p>类比：饭店等于服务器，饭菜等于数据，饭菜好了等于数据就绪，端菜|送菜就等于数据传输</p>
+<p>BIO（阻塞IO）就相当于 排队打饭模式</p>
+<p>NIO（非阻塞同步IO）就相当于 取号等待被叫模式</p>
+<p>AIO（异步IO）就相当于 包厢模式</p>
+<p><strong>阻塞与非阻塞</strong></p>
+<p>菜没好，要不要死等 <strong>-&gt;</strong> 数据就绪前要不要等待？</p>
+<p>阻塞：没有数据传过来时，读会阻塞直到有数据；缓冲区满时，写操作也会阻塞</p>
+<p>非阻塞遇到这些情况时，都是直接返回</p>
+<p><strong>同步与异步</strong></p>
+<p>菜好了，谁端 <strong>-&gt;</strong> 数据就绪后，数据操作谁来完成？</p>
+<p>数据就绪后，需要自己去读，就是同步</p>
+<p>数据就绪之后直接读好再回调就是异步</p>
+<h3 id="Q6-为什么Netty仅支持NIO了？"><a href="#Q6-为什么Netty仅支持NIO了？" class="headerlink" title="Q6:为什么Netty仅支持NIO了？"></a>Q6:为什么Netty仅支持NIO了？</h3><p>曾经三种io都支持，但是后来不支持BIO和AIO了</p>
+<p><strong>不支持BIO</strong>是因为阻塞需要耗费资源，效率低</p>
+<p><strong>不支持AIO</strong>是因为：</p>
+<pre><code>windows实现成熟，但是windows很少用来做服务器
+
+linux常用来做服务器，但是aio实现不够成熟
+
+linux下aio与nio的性能提升不明显</code></pre><h3 id="Q7：为什么Netty有多种NIO实现？"><a href="#Q7：为什么Netty有多种NIO实现？" class="headerlink" title="Q7：为什么Netty有多种NIO实现？"></a>Q7：为什么Netty有多种NIO实现？</h3><p>通用的nio实现在linux下也是使用epoll，但是netty实现的更好</p>
+<ul>
+<li><p>netty暴露了更多的可控参数，例如</p>
+</li>
+<li><ul>
+<li>jdk的nio默认是水平触发</li>
+</ul>
+</li>
+<li><ul>
+<li>netty默认是边缘触发，而且水平触发和边缘触发可切换</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>netty实现的垃圾回收更少，性能更好</li>
+</ul>
+<h3 id="Q8：NIO一定优于BIO么？"><a href="#Q8：NIO一定优于BIO么？" class="headerlink" title="Q8：NIO一定优于BIO么？"></a>Q8：NIO一定优于BIO么？</h3><p>不一定 </p>
+<p>BIO代码更简单</p>
+<p>在连接数少，并发度低的情况下，BIO性能不输NIO</p>
+<h3 id="Q9：Netty怎么切换IO模式？"><a href="#Q9：Netty怎么切换IO模式？" class="headerlink" title="Q9：Netty怎么切换IO模式？"></a>Q9：Netty怎么切换IO模式？</h3><p>直接将EventLoopGroup和channel 上NIO的API改成OIO就行了</p>
+<p>channel 是反射+泛型+工厂</p>
+<p>NioEventLoopGroup 死循环监听，处理事件</p>
+<p>如果频繁的进行线程上下文切换，会带来额外的性能损耗。多线程并发执行某个业务流程，业务开发者还需要时刻对线程安全保持警惕，哪些数据可能会被并发修改，如何保护？这不仅降低了开发效率，也会带来额外的性能损耗。</p>
+<p>为了解决上述问题，Netty采用了串行化设计理念，从消息的读取、编码以及后续 ChannelHandler 的执行，始终都由 IO 线程 EventLoop 负责，这就意外着整个流程不会进行线程上下文的切换，数据也不会面临被并发修改的风险。</p>
+<p>EventLoopGroup 是一组 EventLoop 的抽象，一个 EventLoopGroup 当中会包含一个或多个 EventLoop，EventLoopGroup 提供 next 接口，可以从一组 EventLoop 里面按照一定规则获取其中一个 EventLoop 来处理任务。</p>
+<p>在 Netty 服务器端编程中我们需要 BossEventLoopGroup 和WorkerEventLoopGroup 两个 EventLoopGroup 来进行工作。</p>
+<p>BossEventLoopGroup 通常是一个单线程的 EventLoop，EventLoop 维护着一个注册了 ServerSocketChannel 的 Selector 实例，EventLoop 的实现涵盖 IO 事件的分离，和分发（Dispatcher），EventLoop 的实现充当 Reactor 模式中的分发（Dispatcher）的角色。</p>
+<p>NioEventLoopGroup 实际上就是个线程池，一个 EventLoopGroup 包含一个或者多个 EventLoop；</p>
+<p>一个 EventLoop 在它的生命周期内只和一个 Thread 绑定；</p>
+<p>所有有 EnventLoop 处理的 I/O 事件都将在它专有的 Thread 上被处理；</p>
+<p>一个 Channel 在它的生命周期内只注册于一个 EventLoop；</p>
+<p>每一个 EventLoop 负责处理一个或多个 Channel；</p>
+<h3 id="Q10：什么是Reactor及三种版本？"><a href="#Q10：什么是Reactor及三种版本？" class="headerlink" title="Q10：什么是Reactor及三种版本？"></a>Q10：什么是Reactor及三种版本？</h3><p>饭店规模变化</p>
+<p>一个人包揽所有：迎宾，点菜，做饭，上菜，送客</p>
+<p>多招几个伙计：大家一起做上面的事情</p>
+<p>进一步分工：专人做专事</p>
+<p>饭店伙计：线程</p>
+<p>迎宾：接入线程</p>
+<p>点菜：请求</p>
+<p>做菜:业务处理</p>
+<p>上菜：相应</p>
+<p>送客：断连</p>
+<p>那么一个人包揽所有，就是reactor 单线程</p>
+<p>多招几个伙计：就是reactor多线程</p>
+<p>专人专事：主从reactor多线程模式</p>
+<h3 id="Q11：如何在Netty中实现Reactor模式？"><a href="#Q11：如何在Netty中实现Reactor模式？" class="headerlink" title="Q11：如何在Netty中实现Reactor模式？"></a>Q11：如何在Netty中实现Reactor模式？</h3><p><img src="/2021/03/25/Netty%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/Netty01.jpg" alt="UML演示图片"></p>
+<h3 id="Q13：什么是粘包和半包？"><a href="#Q13：什么是粘包和半包？" class="headerlink" title="Q13：什么是粘包和半包？"></a>Q13：什么是粘包和半包？</h3><p>粘包：本来应该多次发送的信息被粘合在了一起</p>
+<p>半包：这个数据包内的信息被分隔成了多个包，每个包的数据不完整</p>
+<h3 id="Q14：为什么TCP应用中会出现粘包和半包？"><a href="#Q14：为什么TCP应用中会出现粘包和半包？" class="headerlink" title="Q14：为什么TCP应用中会出现粘包和半包？"></a>Q14：为什么TCP应用中会出现粘包和半包？</h3><p><strong>粘包的主要原因：</strong></p>
+<p>发送方每次写入数据&lt;套接字缓冲区大小               </p>
+<p>接收方读取套接字缓冲区数据不够及时</p>
+<p><strong>半包的主要原因：</strong></p>
+<p>发送方每次写入数据&gt;套接字缓冲区大小              </p>
+<p>发送的数据大于协议的MTU时，必须拆包</p>
+<p><strong>tcp协议中粘包发生的根本原因：</strong></p>
+<p>TCP是流式协议 消息无边界                         </p>
+<p>UDP像邮寄的包裹，虽然一次运输多个，但是每个都有界限，所以没有这个问题</p>
+<h3 id="Q15-解决粘包和半包的几种常用方法？"><a href="#Q15-解决粘包和半包的几种常用方法？" class="headerlink" title="Q15:解决粘包和半包的几种常用方法？"></a>Q15:解决粘包和半包的几种常用方法？</h3><p>解决问题的根本手段：找出消息的边界</p>
+<p>1.把TCP连接改成短链接，发送一个请求就结束一次连接  简单，但是效率低下</p>
+<p>2.封装成帧：   </p>
+<p>固定长度：简单,空间浪费  </p>
+<p>分隔符：空间不浪费，也比较简单。传输前需要扫描内容，如果出现了分隔符就要对他进行转义  </p>
+<p>固定长度字段，来存储内容的长度信息：小缺点，长度可能有限制（推荐）  </p>
+<p>其他方式：json——看{}是否成对 需要衡量具体场景</p>
+<h3 id="Q16：Netty对三种常用封帧方式的支持？"><a href="#Q16：Netty对三种常用封帧方式的支持？" class="headerlink" title="Q16：Netty对三种常用封帧方式的支持？"></a>Q16：Netty对三种常用封帧方式的支持？</h3><p><img src="/2021/03/25/Netty%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/Netty02.jpg" alt="UML演示图片"></p>
+<h3 id="Q17：为什么需要”二次“编码？"><a href="#Q17：为什么需要”二次“编码？" class="headerlink" title="Q17：为什么需要”二次“编码？"></a>Q17：为什么需要”二次“编码？</h3><p>假设我们把解决半包粘包问题的常用三种解码器叫做一次解码器</p>
+<p>那么我们在项目中，除了可选的压缩解压缩之外，还需要一层解码，因为一次解码的结果式字节，需要和项目中所使用的对象做转化，方便使用，这层解码器可以称为二次解码器，相应的，对应的编码器是为了将JAVA对象转化为字节流方便存储或者传输</p>
+<p>一次解码器都是继承于 byteToMessageDecoder</p>
+<p>将io.netty.buffer.ByteBuf（原始数据流）转化成为了 io.netty.buffer.ByteBuf（用户数据）</p>
+<p>二次解码器则是继承于MessageToMessageDecoder&lt;&gt;</p>
+<p>将io.netty.buffer.ByteBuf（用户数据） 转化成为了Java Object</p>
+<p>为什么二级编解码不能一次到位？</p>
+<p>可以，但是不建议没有分层，不够清晰；耦合性高，不容易置换方案</p>
+<h3 id="Q18：常用的二次编解码技术？"><a href="#Q18：常用的二次编解码技术？" class="headerlink" title="Q18：常用的二次编解码技术？"></a>Q18：常用的二次编解码技术？</h3><p>java 序列化</p>
+<p>Marshaling</p>
+<p>XML</p>
+<p>JSON</p>
+<p>MessagePack</p>
+<p>protobuf（性能好，可读性差）</p>
+<p>其他</p>
+<h3 id="Q19：选择编解码方式的要点？"><a href="#Q19：选择编解码方式的要点？" class="headerlink" title="Q19：选择编解码方式的要点？"></a>Q19：选择编解码方式的要点？</h3><p>选择编结码方式的要点编码后占用的空间：</p>
+<p>json，protocol，msgpack </p>
+<p>通常来讲，可读性越差，空间占用越小</p>
+<p>编解码速度：</p>
+<p>json，protocol，msgpack</p>
+<p>是否追求可读性：</p>
+<p>json可读性比较好</p>
+<p>多语言的支持：</p>
+<p>msgpack多语言支持非常好</p>
+<h3 id="Q20-Protobuf的简介和使用？"><a href="#Q20-Protobuf的简介和使用？" class="headerlink" title="Q20:Protobuf的简介和使用？"></a>Q20:Protobuf的简介和使用？</h3><p>protobuf相较于xml和json：更小更快，更便捷</p>
+<p>protobuf自带编译器，只需要对他进行编译，可以自动生成java，python，c++等代码，不需要再写其他代码使用非常简单</p>
+<p><img src="/2021/03/25/Netty%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/Netty03.jpg" alt="UML演示图片"></p>
+<p>先序列化，再反序列化就完成了相关的事情</p>
+<p>在netty-codec包里就是对各种编解码的支持支持</p>
+<p>base64，bytes（将netty的ByteBuffer，转换成java的字节数组），json，marshalling，protobuf，序列化方法</p>
+<h3 id="Q21：为什么需要KeepAlive？"><a href="#Q21：为什么需要KeepAlive？" class="headerlink" title="Q21：为什么需要KeepAlive？"></a>Q21：为什么需要KeepAlive？</h3><p>假设你开了一个饭店，别人电话来订餐，电话通了之后，订餐的说了一堆订餐要求，说着说着，对方不说话了（可能忘记挂机、出去办事、线路故障等）</p>
+<p>这时你会握着电话一直等么？</p>
+<p>不会</p>
+<p>如果不会一般会怎么做？</p>
+<p>会确认一句，在么？如果对方没回复，就挂掉。这套机制就被称作keepalive</p>
+<p>类比：电话线路<strong>-&gt;</strong>数据连接交谈的话<strong>-&gt;</strong>数据通话双方<strong>-&gt;</strong>数据的发送和接收方</p>
+<p>需要keepalive的场景就是 : </p>
+<p>对方临时着急走开                                               对端异常崩溃                       </p>
+<p>对方在，但是很忙不知道什么时候忙忘完        对端在，但是处理不完数据                       </p>
+<p>电话线路故障                                                      对端在，但是不可达不做keepalive           </p>
+<p>线路占用，耽误别人用餐                     连接已坏，但是还是浪费资源维持，下回直接用还有可能报错</p>
+<h3 id="Q22-怎么设计KeepAlive？以TCP-KeepAlive为例"><a href="#Q22-怎么设计KeepAlive？以TCP-KeepAlive为例" class="headerlink" title="Q22:怎么设计KeepAlive？以TCP KeepAlive为例"></a>Q22:怎么设计KeepAlive？以TCP KeepAlive为例</h3><p><img src="/2021/03/25/Netty%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/Netty04.jpg" alt="UML演示图片"></p>
+<p>time代表的是7200秒没有数据传过来，intvl代表的是，下一个探测报的间隔时间，75秒，具体有探测报多少个，要看probes，是9个</p>
+<h3 id="Q23：为什么需要应用层KeepAlive？"><a href="#Q23：为什么需要应用层KeepAlive？" class="headerlink" title="Q23：为什么需要应用层KeepAlive？"></a>Q23：为什么需要应用层KeepAlive？</h3><p>协议分层，各层关注点</p>
+<p>不同传输层关注是否“通”，应用层关注是否可以服务</p>
+<p>tcp层的keepalive默认关闭，且经由路由等中转设备keepalive包也可能被丢弃</p>
+<p>tcp层的keepalive时间太长，虽然可以修改，但是会影响所有应用（所以不推荐修改系统参数）</p>
+<p>在平时会经常听到HTTP的keepalive 而且会混为一谈http的keepalive指的是对长连接和短链接的选择</p>
+<p>connection：keep-alive 长连接（http/1.1 默认长连接，不要带这个header）</p>
+<p>connection：close 短链接</p>
+<h3 id="Q24：Idle监测是什么？"><a href="#Q24：Idle监测是什么？" class="headerlink" title="Q24：Idle监测是什么？"></a>Q24：Idle监测是什么？</h3><p>假设你开了一个饭店，别人电话来订餐，电话通了之后，订餐的说了一堆订餐要求，说着说着，对方不说话了（可能忘记挂机、出去办事、线路故障等）</p>
+<p>你会立刻发问说：你还在么？</p>
+<p>不会</p>
+<p>一般会稍微等一段时间，在这个时间内看看别人还会不会说话（Idle检测），如果还不说，认定对方存在问题（idle），于是发问“你还在么？”（keepalive），或者问都不问直接挂掉（关闭连接）</p>
+<p>idle检测，只是负责诊断，诊断后，做出不同行为，决定idle检测的最终用途</p>
+<p>发送keepalive，一般用来配合keepalive，减少keepalive消息</p>
+<p>keepalive设计演进：</p>
+<p>verison1 定时发送keepalive消息                 </p>
+<p>keepalive消息于服务器正常消息交换完全不关联，定时就发送 <strong>-&gt;</strong>                  </p>
+<p>version2 空闲检测，判定为idle时才会发送keepalive                 </p>
+<p>有其他数据发送时，就不发送keepalive，无数据传输超过一定时间，判定为idle，才会发送keepalive</p>
+<p>直接关闭连接：</p>
+<p>快速释放损坏的，恶意的，很久不用的连接，让系统保持最好的状态</p>
+<p>简单粗暴，客户端可能要重连</p>
+<p>实际应用中：结合起来使用。按需keepalive，保证不会空闲，如果空闲，关闭连接</p>
+<h3 id="Q25-如何在Netty中开启TCPkeepAlive和Idle检测？"><a href="#Q25-如何在Netty中开启TCPkeepAlive和Idle检测？" class="headerlink" title="Q25:如何在Netty中开启TCPkeepAlive和Idle检测？"></a>Q25:如何在Netty中开启TCPkeepAlive和Idle检测？</h3><p><img src="/2021/03/25/Netty%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/Netty05.jpg" alt="UML演示图片"></p>
+<p><img src="/2021/03/25/Netty%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/Netty06.jpg" alt="UML演示图片"></p>
+<h3 id="Q26：分析同步问题的核心三要素"><a href="#Q26：分析同步问题的核心三要素" class="headerlink" title="Q26：分析同步问题的核心三要素"></a>Q26：分析同步问题的核心三要素</h3><p>原子性 </p>
+<p>可见性 </p>
+<p>有序性</p>
+<h3 id="Q27：锁的分类？"><a href="#Q27：锁的分类？" class="headerlink" title="Q27：锁的分类？"></a>Q27：锁的分类？</h3><p>对竞争的态度：</p>
+<p>乐观锁（java.util.concurrent包中的原子类）</p>
+<p>悲观锁（Synchronized）</p>
+<p>对等待锁的人是否公平：</p>
+<p>公平锁：new ReentrantLock（true）</p>
+<p>非公平锁：new ReentrantLock（）</p>
+<p>是否可以共享：</p>
+<p>共享锁与独享锁：ReadWriteLock </p>
+<p>其读锁时共享锁，</p>
+<p>写锁时独享锁</p>
+<h3 id="Q28：Netty中锁的五个关键点？"><a href="#Q28：Netty中锁的五个关键点？" class="headerlink" title="Q28：Netty中锁的五个关键点？"></a>Q28：Netty中锁的五个关键点？</h3><p>（1）注意锁的大小 能锁对象不锁方法  </p>
+<p>（2）减小锁的大小 使用更小的数据类型  </p>
+<p>（3）注意锁的速度 提高并发性（即使衡量，使用最新的JDK）  </p>
+<p>（4） 不同服务使用不同的包  </p>
+<p>（5） 能不用则不用</p>
+<h3 id="Q29：Netty内存使用技巧？"><a href="#Q29：Netty内存使用技巧？" class="headerlink" title="Q29：Netty内存使用技巧？"></a>Q29：Netty内存使用技巧？</h3><p>（1）能用基本类型就不用包装类型      </p>
+<p>应该定义成类变量的不要定义为实例变量</p>
+<p>（2）类似HashMap的扩容</p>
+<p>（3)使用逻辑组合，代替实际复制     </p>
+<p>使用包装，代替实际复制     </p>
+<p>使用jdk的zero-copy接口FileChannel.transferTo（），实现<strong>零拷贝</strong>     </p>
+<p>堆外内存     </p>
+<p>夏日，小区周边的烧烤店铺，人满为患坐不下，店家常常怎么办？    </p>
+<p> 解决思路：</p>
+<p>店铺门口摆很多桌子招待客人     </p>
+<p>店内 <strong>-&gt;</strong> JVM内部 <strong>-&gt;</strong> 堆+非堆     </p>
+<p>店外 <strong>-&gt; *<em>JVM外部 *</em>-&gt;</strong> 堆外</p>
+<p>优点：</p>
+<p>更广阔的空间，缓解店铺内部压力 <strong>-&gt;</strong> 破除堆空间限制，减轻GC压力     </p>
+<p>减少冗余细节 <strong>-&gt;</strong> 避免复制</p>
+<p>缺点：</p>
+<p>需要搬桌子 <strong>-&gt;</strong> 创建速度满       </p>
+<p>受城管管，风险大 <strong>-&gt;</strong> 堆外内存受操作系统管理     </p>
+<p>内存池     </p>
+<p>点菜单的演进：</p>
+<p>一张纸-》点菜平板     </p>
+<p>为什么引入对象池：     </p>
+<p>创建对象开销大     </p>
+<p>对象高频率创建而且可以复用     </p>
+<p>支持并发又能保护系统     </p>
+<p>维护，共享有限的资源</p>
+<p>如何实现对象池？     </p>
+<p>开源实现：APACHE commons Pool     </p>
+<p>Netty轻量级对象池实现 io.netty.util.Recycler</p>
+<p>内存池、非内存池的默认选择和切换方式？</p>
+<p>安卓平台使用非内存池不是安卓使用内存池</p>
+<p>内存池实现？</p>
+<p>NEtty轻量级对象池实现 </p>
+<p>堆外内存、堆内存的默认选择和切换方式？</p>
+<p>默认是堆外内存，可以显示的切换</p>
+<p>堆外内存的分配本质？</p>
+<p>此处调用jdk的allocateDirect来分配堆外内存</p>
+<h3 id="Q31：Netty启动主线？"><a href="#Q31：Netty启动主线？" class="headerlink" title="Q31：Netty启动主线？"></a>Q31：Netty启动主线？</h3><p>待施工</p>
+<h3 id="Q32：Netty实战？"><a href="#Q32：Netty实战？" class="headerlink" title="Q32：Netty实战？"></a>Q32：Netty实战？</h3><p>待施工</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/03/25/Netty%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation" style="position: fixed;
+    right: 40px;
+    bottom: 500px;
+    z-index: 999;
+    font-size: 14px;">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-MyBatis笔记——01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/25/MyBatis%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/">MyBatis笔记——01</a>
+    </h1>
+  
+
+        
+        
+<a href="/2021/03/25/MyBatis%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/" class="archive-article-date">
+  	<time datetime="2021-03-25T05:09:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Q1：MyBatis是啥？"><a href="#Q1：MyBatis是啥？" class="headerlink" title="Q1：MyBatis是啥？"></a>Q1：MyBatis是啥？</h3><p><strong>优秀的持久层框架</strong> </p>
+<p><strong>持久化</strong>    </p>
+<p>​    持久化就是将程序的数据在持久状态和瞬时状态转化的过程 </p>
+        
+          <a class="article-more-a" href="/2021/03/25/MyBatis%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/03/25/MyBatis%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation" style="position: fixed;
+    right: 40px;
+    bottom: 500px;
+    z-index: 999;
+    font-size: 14px;">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-注解和反射" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/25/%E6%B3%A8%E8%A7%A3%E5%92%8C%E5%8F%8D%E5%B0%84/">注解和反射</a>
+    </h1>
+  
+
+        
+        
+<a href="/2021/03/25/%E6%B3%A8%E8%A7%A3%E5%92%8C%E5%8F%8D%E5%B0%84/" class="archive-article-date">
+  	<time datetime="2021-03-25T03:40:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Q1：内置注解？"><a href="#Q1：内置注解？" class="headerlink" title="Q1：内置注解？"></a>Q1：内置注解？</h3><p>注解是jdk5.0引入的新技术</p>
+<p>内置注解</p>
+        
+          <a class="article-more-a" href="/2021/03/25/%E6%B3%A8%E8%A7%A3%E5%92%8C%E5%8F%8D%E5%B0%84/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/03/25/%E6%B3%A8%E8%A7%A3%E5%92%8C%E5%8F%8D%E5%B0%84/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation" style="position: fixed;
+    right: 40px;
+    bottom: 500px;
+    z-index: 999;
+    font-size: 14px;">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-算法——分治法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/25/%E7%AE%97%E6%B3%95%E2%80%94%E2%80%94%E5%88%86%E6%B2%BB%E6%B3%95/">算法——分治法</a>
+    </h1>
+  
+
+        
+        
+<a href="/2021/03/25/%E7%AE%97%E6%B3%95%E2%80%94%E2%80%94%E5%88%86%E6%B2%BB%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2021-03-25T03:23:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Q1：快速排序？"><a href="#Q1：快速排序？" class="headerlink" title="Q1：快速排序？"></a>Q1：快速排序？</h3><p><strong>单向扫描分区：</strong></p>
+        
+          <a class="article-more-a" href="/2021/03/25/%E7%AE%97%E6%B3%95%E2%80%94%E2%80%94%E5%88%86%E6%B2%BB%E6%B3%95/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/03/25/%E7%AE%97%E6%B3%95%E2%80%94%E2%80%94%E5%88%86%E6%B2%BB%E6%B3%95/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation" style="position: fixed;
+    right: 40px;
+    bottom: 500px;
+    z-index: 999;
+    font-size: 14px;">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-算法——递归" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/25/%E7%AE%97%E6%B3%95%E2%80%94%E2%80%94%E9%80%92%E5%BD%92/">算法——递归</a>
+    </h1>
+  
+
+        
+        
+<a href="/2021/03/25/%E7%AE%97%E6%B3%95%E2%80%94%E2%80%94%E9%80%92%E5%BD%92/" class="archive-article-date">
+  	<time datetime="2021-03-25T01:51:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Q1：递归三要素？"><a href="#Q1：递归三要素？" class="headerlink" title="Q1：递归三要素？"></a>Q1：递归三要素？</h3><p>1.找重复，找边界，找变化   </p>
+        
+          <a class="article-more-a" href="/2021/03/25/%E7%AE%97%E6%B3%95%E2%80%94%E2%80%94%E9%80%92%E5%BD%92/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/03/25/%E7%AE%97%E6%B3%95%E2%80%94%E2%80%94%E9%80%92%E5%BD%92/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation" style="position: fixed;
+    right: 40px;
+    bottom: 500px;
+    z-index: 999;
+    font-size: 14px;">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-算法——位运算" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/25/%E7%AE%97%E6%B3%95%E2%80%94%E2%80%94%E4%BD%8D%E8%BF%90%E7%AE%97/">算法——位运算</a>
+    </h1>
+  
+
+        
+        
+<a href="/2021/03/25/%E7%AE%97%E6%B3%95%E2%80%94%E2%80%94%E4%BD%8D%E8%BF%90%E7%AE%97/" class="archive-article-date">
+  	<time datetime="2021-03-25T01:38:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Q1-6种常用位运算符？"><a href="#Q1-6种常用位运算符？" class="headerlink" title="Q1:6种常用位运算符？"></a>Q1:6种常用位运算符？</h3><table>
+<thead>
+<tr>
+<th>符号</th>
+<th>描述</th>
+<th>运算规则</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&amp;</td>
+<td>与</td>
+<td>两个位都为1时，结果才为1</td>
+</tr>
+<tr>
+<td>|</td>
+<td>或</td>
+<td>两个位都为0时，结果才为0</td>
+</tr>
+<tr>
+<td>^</td>
+<td>异或</td>
+<td>两个位相同位0，不同为1（<strong>可以理解为不仅位的加法</strong>）</td>
+</tr>
+<tr>
+<td>~</td>
+<td>取反</td>
+<td>0变1，1变0</td>
+</tr>
+</tbody></table>
+        
+          <a class="article-more-a" href="/2021/03/25/%E7%AE%97%E6%B3%95%E2%80%94%E2%80%94%E4%BD%8D%E8%BF%90%E7%AE%97/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/03/25/%E7%AE%97%E6%B3%95%E2%80%94%E2%80%94%E4%BD%8D%E8%BF%90%E7%AE%97/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation" style="position: fixed;
+    right: 40px;
+    bottom: 500px;
+    z-index: 999;
+    font-size: 14px;">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-MySQL笔记——02" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -240,7 +918,11 @@
 </article>
 
 <aside class="wrap-side-operation">
-    <div class="mod-side-operation">
+    <div class="mod-side-operation" style="position: fixed;
+    right: 40px;
+    bottom: 500px;
+    z-index: 999;
+    font-size: 14px;">
         
         <div class="jump-container" id="js-jump-container" style="display:none;">
             <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
@@ -329,7 +1011,11 @@
 </article>
 
 <aside class="wrap-side-operation">
-    <div class="mod-side-operation">
+    <div class="mod-side-operation" style="position: fixed;
+    right: 40px;
+    bottom: 500px;
+    z-index: 999;
+    font-size: 14px;">
         
         <div class="jump-container" id="js-jump-container" style="display:none;">
             <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
@@ -417,7 +1103,11 @@
 </article>
 
 <aside class="wrap-side-operation">
-    <div class="mod-side-operation">
+    <div class="mod-side-operation" style="position: fixed;
+    right: 40px;
+    bottom: 500px;
+    z-index: 999;
+    font-size: 14px;">
         
         <div class="jump-container" id="js-jump-container" style="display:none;">
             <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
@@ -506,541 +1196,11 @@
 </article>
 
 <aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JavaScript笔记——01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/24/JavaScript%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/">JavaScript笔记——01</a>
-    </h1>
-  
-
-        
-        
-<a href="/2021/01/24/JavaScript%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/" class="archive-article-date">
-  	<time datetime="2021-01-24T09:03:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Q1：JavaScript的引入方式？"><a href="#Q1：JavaScript的引入方式？" class="headerlink" title="Q1：JavaScript的引入方式？"></a>Q1：JavaScript的引入方式？</h3><p>内部引入：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;     </span><br><span class="line">	&lt;script&gt;         </span><br><span class="line">		alert(<span class="string">'hello,world'</span>);     </span><br><span class="line">	&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>head&gt;</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2021/01/24/JavaScript%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/JavaScript/" class="article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/01/24/JavaScript%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java编程思想——第四章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/17/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E5%9B%9B%E7%AB%A0/">Java编程思想——第四章</a>
-    </h1>
-  
-
-        
-        
-<a href="/2021/01/17/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E5%9B%9B%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2021-01-17T15:28:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Q1：continue和break的详细用法？"><a href="#Q1：continue和break的详细用法？" class="headerlink" title="Q1：continue和break的详细用法？"></a>Q1：continue和break的详细用法？</h3><ol>
-<li>一般的continue会退回最内层循环的开头（顶部），并继续执行。</li>
-<li>带标签的continue会到达标签的位置，并重新进入紧接在那个标签后的循环。</li></ol>
-        
-          <a class="article-more-a" href="/2021/01/17/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E5%9B%9B%E7%AB%A0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/JAVA编程思想/" class="article-tag-list-link color4">JAVA编程思想</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/01/17/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E5%9B%9B%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-CSS笔记——01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/15/CSS%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/">CSS笔记——01</a>
-    </h1>
-  
-
-        
-        
-<a href="/2021/01/15/CSS%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/" class="archive-article-date">
-  	<time datetime="2021-01-15T06:40:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Q1：CSS链接格式？"><a href="#Q1：CSS链接格式？" class="headerlink" title="Q1：CSS链接格式？"></a>Q1：CSS链接格式？</h3><p>内部链接：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">style</span>&gt;</span>         </span><br><span class="line">    h1&#123;             </span><br><span class="line"><span class="css">        <span class="selector-tag">font-size</span><span class="selector-pseudo">:17px</span>;</span></span><br><span class="line">    &#125;    </span><br><span class="line">	<span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2021/01/15/CSS%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/CSS（层叠样式表）/" class="article-tag-list-link color1">CSS（层叠样式表）</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/01/15/CSS%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-HTML笔记——01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/10/HTML%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/">HTML笔记——01</a>
-    </h1>
-  
-
-        
-        
-<a href="/2021/01/10/HTML%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/" class="archive-article-date">
-  	<time datetime="2021-01-10T06:25:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Q13：网页机构常见标签？"><a href="#Q13：网页机构常见标签？" class="headerlink" title="Q13：网页机构常见标签？"></a>Q13：网页机构常见标签？</h3><p>header 头部 </p>
-<p>footer 尾部</p>
-<p>section 独立区域</p>
-        
-          <a class="article-more-a" href="/2021/01/10/HTML%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/HTML/" class="article-tag-list-link color5">HTML</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/01/10/HTML%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java编程思想——第三章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/12/28/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%89%E7%AB%A0/">Java编程思想——第三章</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/12/28/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%89%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-12-28T15:03:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Q1：请简述-与equals（）的区别？"><a href="#Q1：请简述-与equals（）的区别？" class="headerlink" title="Q1：请简述==与equals（）的区别？"></a>Q1：请简述==与equals（）的区别？</h3><p>当使用==进行关于对象之间的比较时，是进行的对象引用之间的比较。也就是说即使对象的内容完全一致，但只要对象引用指向的不是相同的对象，则也会输出false。</p>
-        
-          <a class="article-more-a" href="/2020/12/28/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%89%E7%AB%A0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/JAVA编程思想/" class="article-tag-list-link color4">JAVA编程思想</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/28/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%89%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java编程思想——第二章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/12/26/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%8C%E7%AB%A0/">Java编程思想——第二章</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/12/26/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%8C%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-12-26T12:04:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Q1-在JAVA中程序员是如何操纵对象的？是直接操纵元素，还是基于某种特殊语法来间接操纵（例如C与C-中的指针）？"><a href="#Q1-在JAVA中程序员是如何操纵对象的？是直接操纵元素，还是基于某种特殊语法来间接操纵（例如C与C-中的指针）？" class="headerlink" title="Q1:在JAVA中程序员是如何操纵对象的？是直接操纵元素，还是基于某种特殊语法来间接操纵（例如C与C++中的指针）？"></a>Q1:在JAVA中程序员是如何操纵对象的？是直接操纵元素，还是基于某种特殊语法来间接操纵（例如C与C++中的指针）？</h3><p>每种编程语言都有自己的操纵元素的方式，有时候，程序员必须注意将要处理的数据是什么类型。但所有这一切在JAVA中都得到了简化。</p>
-        
-          <a class="article-more-a" href="/2020/12/26/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%8C%E7%AB%A0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/JAVA编程思想/" class="article-tag-list-link color4">JAVA编程思想</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/26/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%8C%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
+    <div class="mod-side-operation" style="position: fixed;
+    right: 40px;
+    bottom: 500px;
+    z-index: 999;
+    font-size: 14px;">
         
         <div class="jump-container" id="js-jump-container" style="display:none;">
             <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
@@ -1061,7 +1221,7 @@
   
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
     </nav>
   
 
@@ -1185,11 +1345,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">火锅实验</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color5">火锅实验</a>
               </li>
             
             <div class="clearfix"></div>
