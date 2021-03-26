@@ -6,20 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>MySQL笔记——01 | ShenQi Blog</title>
+  <title>Netty笔记——01 | ShenQi Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Q2：操作数据库？创建数据库 1create database [if not exists] &#96;school&#96;">
+  <meta name="description" content="Q1：Netty是啥?Netty  本质：网络应用程序框架 实现：异步 事件驱动 特性：高性能，可维护，快速开发 用途：开发服务器和客户端">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MySQL笔记——01">
-<meta property="og:url" content="http://yoursite.com/2021/03/24/MySQL%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/index.html">
+<meta property="og:title" content="Netty笔记——01">
+<meta property="og:url" content="http://yoursite.com/2021/03/21/Netty%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/index.html">
 <meta property="og:site_name" content="ShenQi Blog">
-<meta property="og:description" content="Q2：操作数据库？创建数据库 1create database [if not exists] &#96;school&#96;">
+<meta property="og:description" content="Q1：Netty是啥?Netty  本质：网络应用程序框架 实现：异步 事件驱动 特性：高性能，可维护，快速开发 用途：开发服务器和客户端">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-03-24T12:00:46.000Z">
-<meta property="article:modified_time" content="2021-03-24T13:35:01.779Z">
+<meta property="og:image" content="http://yoursite.com/2021/03/21/Netty%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/Netty01.jpg">
+<meta property="og:image" content="http://yoursite.com/2021/03/21/Netty%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/Netty02.jpg">
+<meta property="og:image" content="http://yoursite.com/2021/03/21/Netty%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/Netty03.jpg">
+<meta property="og:image" content="http://yoursite.com/2021/03/21/Netty%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/Netty04.jpg">
+<meta property="og:image" content="http://yoursite.com/2021/03/21/Netty%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/Netty05.jpg">
+<meta property="og:image" content="http://yoursite.com/2021/03/21/Netty%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/Netty06.jpg">
+<meta property="article:published_time" content="2021-03-21T07:22:53.000Z">
+<meta property="article:modified_time" content="2021-03-26T03:49:41.534Z">
 <meta property="article:author" content="Shen Qi">
-<meta property="article:tag" content="数据库">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2021/03/21/Netty%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/Netty01.jpg">
   
     <link rel="alternative" href="/atom.xml" title="ShenQi Blog" type="application/atom+xml">
   
@@ -169,14 +175,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-MySQL笔记——01" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Netty笔记——01" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      MySQL笔记——01
+      Netty笔记——01
     </h1>
   
 
@@ -187,327 +193,246 @@
 		  <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
 	</span>
 
-<a href="/2021/03/24/MySQL%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/" class="archive-article-date">
-  	<time datetime="2021-03-24T12:00:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-24</time>
+<a href="/2021/03/21/Netty%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/" class="archive-article-date">
+  	<time datetime="2021-03-21T07:22:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-21</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Q2：操作数据库？"><a href="#Q2：操作数据库？" class="headerlink" title="Q2：操作数据库？"></a>Q2：操作数据库？</h3><p>创建数据库</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database [if not exists] &#96;school&#96;</span><br></pre></td></tr></table></figure>
-
+        <h3 id="Q1：Netty是啥"><a href="#Q1：Netty是啥" class="headerlink" title="Q1：Netty是啥?"></a>Q1：Netty是啥?</h3><p>Netty </p>
+<p>本质：网络应用程序框架</p>
+<p>实现：异步 事件驱动</p>
+<p>特性：高性能，可维护，快速开发</p>
+<p>用途：开发服务器和客户端</p>
 <a id="more"></a>
 
+<h3 id="Q2-为什么不直接用JDK-NIO？"><a href="#Q2-为什么不直接用JDK-NIO？" class="headerlink" title="Q2:为什么不直接用JDK NIO？"></a>Q2:为什么不直接用JDK NIO？</h3><p><strong>Netty做的更多一些：</strong></p>
+<p>支持常用应用层协议</p>
+<p>解决传输问题:粘包，半包现象</p>
+<p>支持流量整形；</p>
+<p>完善的断连，Idle等异常处理</p>
+<p><strong>做的更好：</strong></p>
+<p>规避JDKNIO bug</p>
+<p>经典的epoll bug 异常唤醒空转导致cpu100%</p>
+<p>在JDK中并没有完全解决这个bug，只是减少了出现的次数</p>
+<p>netty会检测空转次数，并退出</p>
+<h3 id="Q3：有和Netty类似的框架，为什么不用别的？"><a href="#Q3：有和Netty类似的框架，为什么不用别的？" class="headerlink" title="Q3：有和Netty类似的框架，为什么不用别的？"></a>Q3：有和Netty类似的框架，为什么不用别的？</h3><p>apache mina 同样的作者，但是作者更推荐netty</p>
+<p>sun Grizzly 用的少，文档少，更新少</p>
+<p>Tomcat，Jetty 不属于统一层次，有自己的通信层实现，并没有独立出来，是为了支持servlet容器做的</p>
+<h3 id="Q4：什么是经典的三种IO模式？"><a href="#Q4：什么是经典的三种IO模式？" class="headerlink" title="Q4：什么是经典的三种IO模式？"></a>Q4：什么是经典的三种IO模式？</h3><p>以生活场景举例，去饭店吃饭有三种模式</p>
+<p>1.食堂排队模式</p>
+<p>2.取号，等待被叫模式</p>
+<p>3.包厢模式，点单等着被送到</p>
+<p>类比：饭店等于服务器，饭菜等于数据，饭菜好了等于数据就绪，端菜|送菜就等于数据传输</p>
+<p>BIO（阻塞IO）就相当于 排队打饭模式</p>
+<p>NIO（非阻塞同步IO）就相当于 取号等待被叫模式</p>
+<p>AIO（异步IO）就相当于 包厢模式</p>
+<p><strong>阻塞与非阻塞</strong></p>
+<p>菜没好，要不要死等 <strong>-&gt;</strong> 数据就绪前要不要等待？</p>
+<p>阻塞：没有数据传过来时，读会阻塞直到有数据；缓冲区满时，写操作也会阻塞</p>
+<p>非阻塞遇到这些情况时，都是直接返回</p>
+<p><strong>同步与异步</strong></p>
+<p>菜好了，谁端 <strong>-&gt;</strong> 数据就绪后，数据操作谁来完成？</p>
+<p>数据就绪后，需要自己去读，就是同步</p>
+<p>数据就绪之后直接读好再回调就是异步</p>
+<h3 id="Q6-为什么Netty仅支持NIO了？"><a href="#Q6-为什么Netty仅支持NIO了？" class="headerlink" title="Q6:为什么Netty仅支持NIO了？"></a>Q6:为什么Netty仅支持NIO了？</h3><p>曾经三种io都支持，但是后来不支持BIO和AIO了</p>
+<p><strong>不支持BIO</strong>是因为阻塞需要耗费资源，效率低</p>
+<p><strong>不支持AIO</strong>是因为：</p>
+<pre><code>windows实现成熟，但是windows很少用来做服务器
 
+linux常用来做服务器，但是aio实现不够成熟
 
-<p>删除数据库</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop database [if exists] &#96;school&#96;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>使用数据库</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">USE &#96;school&#96;</span><br></pre></td></tr></table></figure>
-
-<p>这个`符号，在tab键的上方，如果你的表名或者字段是一个特殊字符，就需要带`</p>
-<p>查看数据库</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">show databases </span><br><span class="line">&#x2F;&#x2F;查看所有数据库</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="Q3-数据库列类型（数据类型）"><a href="#Q3-数据库列类型（数据类型）" class="headerlink" title="Q3: 数据库列类型（数据类型）"></a>Q3: 数据库列类型（数据类型）</h3><p><strong>数值</strong>  </p>
+linux下aio与nio的性能提升不明显</code></pre><h3 id="Q7：为什么Netty有多种NIO实现？"><a href="#Q7：为什么Netty有多种NIO实现？" class="headerlink" title="Q7：为什么Netty有多种NIO实现？"></a>Q7：为什么Netty有多种NIO实现？</h3><p>通用的nio实现在linux下也是使用epoll，但是netty实现的更好</p>
 <ul>
-<li><p>tinyint 1个字节  </p>
+<li><p>netty暴露了更多的可控参数，例如</p>
 </li>
-<li><p>smallint 2个字节    </p>
+<li><ul>
+<li>jdk的nio默认是水平触发</li>
+</ul>
 </li>
-<li><p>mediumint 3个字节  </p>
-</li>
-<li><p><strong>int 4个字节 int设置的位数与零填充有关，设置了零填充之后位数不足的将会被填充至满</strong>  </p>
-</li>
-<li><p>bigint 8个字节    </p>
+<li><ul>
+<li>netty默认是边缘触发，而且水平触发和边缘触发可切换</li>
+</ul>
 </li>
 </ul>
 <ul>
-<li><p>float 4个字节  </p>
-</li>
-<li><p>double 8个字节  </p>
-</li>
-<li><p>decimal 字符串形式的浮点数，一般用于金融计算</p>
-</li>
+<li>netty实现的垃圾回收更少，性能更好</li>
 </ul>
-<p><strong>字符串</strong>  </p>
-<ul>
-<li><p>char 0～255  </p>
-</li>
-<li><p><strong>varchar 0～65535 可变字符串</strong> </p>
-</li>
-<li><p>tinytext  2^8-1 微型文本  </p>
-</li>
-<li><p><strong>text   2^16-1 文本串</strong></p>
-</li>
-</ul>
-<p><strong>日期</strong>  </p>
-<ul>
-<li><p>date YYYY-MM-DD 日期  </p>
-</li>
-<li><p>time HH：MM：SS 时间格式  </p>
-</li>
-<li><p><strong>datetime YYYY-MM-DD HH：MM：SS 最常用的时间格式</strong>  </p>
-</li>
-<li><p>timestamp 时间戳指的是1970.1.1到现在的毫秒数 </p>
-</li>
-<li><p>year 年份表示</p>
-</li>
-</ul>
-<p><strong>null</strong>  </p>
-<p> 没有值。尽量不要用null值进行运算，使用null运算后，结果一定为null</p>
-<h3 id="Q4：数据库字段属性？"><a href="#Q4：数据库字段属性？" class="headerlink" title="Q4：数据库字段属性？"></a>Q4：数据库字段属性？</h3><p>unsigned：  </p>
-<p>​    无符号整数，声明之后该列不能为负数</p>
-<p>zerofill：  </p>
-<p>​    不足位数用零填充</p>
-<p>自增 auto_increment： </p>
-<p>​    通常理解为自增，自动在上一条记录的基础上加一  </p>
-<p>​    通常用来设计唯一的主键，必须是整数类型  </p>
-<p>​    可以自定义设计逐渐的起始值和步长</p>
-<p>非空 not null： </p>
-<p>​     not null 如果不幅值就报错</p>
-<p>默认 default： </p>
-<p>​     设置默认的值  </p>
-<p>如果不设置值，就会赋给默认的值</p>
-<h3 id="Q5：建议每一个表都需要存在的五个字段？"><a href="#Q5：建议每一个表都需要存在的五个字段？" class="headerlink" title="Q5：建议每一个表都需要存在的五个字段？"></a>Q5：建议每一个表都需要存在的五个字段？</h3><p>id 主键 一定非空</p>
-<p>`version` 乐观锁</p>
-<p>is_delete 伪删除</p>
-<p>gmt_create 创建时间</p>
-<p>gmt_update 修改时间</p>
-<h3 id="Q6-写一个创建数据表的实例？"><a href="#Q6-写一个创建数据表的实例？" class="headerlink" title="Q6:写一个创建数据表的实例？"></a>Q6:写一个创建数据表的实例？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE IF NOT EXISTS &#96;student&#96; (     </span><br><span class="line">	&#96;id&#96; INT(4) NOT NULL AUTO_INCREMENT COMMENT &#39;学号&#39;,     </span><br><span class="line">	&#96;name&#96; VARCHAR(30) NOT NULL DEFAULT &#39;匿名&#39; COMMENT &#39;姓名&#39;,      </span><br><span class="line">	&#96;pwd&#96; VARCHAR(20) NOT NULL DEFAULT &#39;123456&#39; COMMENT&#39;密码&#39;,      </span><br><span class="line">&#96;sex&#96; VARCHAR(2) NOT NULL DEFAULT &#39;女&#39; COMMENT &#39;性别&#39;,     </span><br><span class="line">	&#96;birthday&#96; DATETIME DEFAULT NULL COMMENT &#39;出生日期&#39;,     </span><br><span class="line">	&#96;address&#96; VARCHAR(100) DEFAULT NULL COMMENT &#39;家庭住址&#39;,      </span><br><span class="line">&#96;email&#96; VARCHAR(50) DEFAULT NULL COMMENT&#39;邮箱&#39;,   </span><br><span class="line">PRIMARY KEY (&#96;id&#96;) </span><br><span class="line">) ENGINE&#x3D;INNODB DEFAULT CHARSET&#x3D;utf8</span><br></pre></td></tr></table></figure>
-
-<p>使用表的名称，和字段尽量用``(tab上面那个键)扩起来</p>
-<p>字符串要使用‘’英文单引号扩起来</p>
-<p>所有语句后面要加逗号，最后一个不用加</p>
-<p>主键一般一个表里只有唯一的一个</p>
-<p>IF NOT EXISTS 如果不存在</p>
-<p>NOT NULL 非空</p>
-<p>AUTO_INCREMENT 自增</p>
-<p>DEFAULT 设置默认值</p>
-<p>DEFAULT NULL 默认值为空</p>
-<p>COMMENT 注释</p>
-<p>PRIMARY KEY 主键</p>
-<p>ENGINE 引擎</p>
-<p>DEFAULT CHARSET 默认编码</p>
-<h3 id="Q7：查看数据库语句？"><a href="#Q7：查看数据库语句？" class="headerlink" title="Q7：查看数据库语句？"></a>Q7：查看数据库语句？</h3><p>查看数据库语句</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show create database &#96;school&#96;;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>查看数据表的语句</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show create table &#96;student&#96;;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>显示表的结构</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DESC &#96;student&#96;;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="Q8-数据库引擎？数据库存储？"><a href="#Q8-数据库引擎？数据库存储？" class="headerlink" title="Q8:数据库引擎？数据库存储？"></a>Q8:数据库引擎？数据库存储？</h3><p><strong>常用的数据引擎：</strong></p>
-<p>INNODB 默认使用</p>
-<p>MYISAM 早些年使用</p>
-<p><strong>区别：</strong></p>
-<p>INNODB：事务支持，数据行锁定，外键约束</p>
-<p>MYISAM：全文索引</p>
-<p>表空格大小，MYISAM较小，INNODB较大约为前者2倍</p>
-<p><strong>常规使用操作：</strong></p>
-<p>MYISAM：节约空间，速度较快</p>
-<p>INNODB：安全性好，事务的处理，多表多用户操作</p>
-<p><strong>在物理空间存在的位置：</strong></p>
-<p>所有数据库文件夹都存在data目录下，一个文件夹就对应一个数据库本质还是文件的存储</p>
-<p><strong>MYSQL引擎在物理文件上的区别</strong>  </p>
-<p>innodb在数据库表：</p>
-<p>*.frm文件，保存了每个表的元数据，包括表结构的定义等</p>
-<p>.ibd文件：InnoDB引擎开启了独立表空间(my.ini中配置innodb_file_per_table = 1)产生的存放该表的数据和索引的文件。 </p>
-<p> MYISAM对应文件：   </p>
-<p>*.frm 表结构的定义文件     </p>
-<p>*.MYD 数据文件（data）     </p>
-<p>*.MYI 索引文件（index）</p>
-<p><strong>设置数据库表的字符集编码</strong>  </p>
-<p>CHARSET=utf8  如果不设置的话，会是mysql默认的字符集编码Latin1（不支持中文）</p>
-<h3 id="Q9：修改表？删除表？操作表的字段？"><a href="#Q9：修改表？删除表？操作表的字段？" class="headerlink" title="Q9：修改表？删除表？操作表的字段？"></a>Q9：修改表？删除表？操作表的字段？</h3><p><strong>修改表</strong> </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE &#96;teacher&#96; RENAME AS &#96;teacher1&#96;;</span><br></pre></td></tr></table></figure>
-
-<p><strong>增加表的字段</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE &#96;teacher&#96; ADD &#96;age&#96; INT（11）;</span><br></pre></td></tr></table></figure>
-
-<p><strong>修改表的字段（重命名，修改约束！）</strong></p>
-<p><strong>重命名：</strong> </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE &#96;teacher&#96; CHANGE &#96;age&#96; &#96;age1&#96; INT（11）;         </span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;字段重命名，将age改成age1</span><br></pre></td></tr></table></figure>
-
-<p><strong>修改约束：</strong> </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE &#96;teacher&#96; MODIFY &#96;age&#96; VARCHAR(11) ;        </span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;修改约束，将INT改成VARCHAR</span><br></pre></td></tr></table></figure>
-
-<p><strong>删除表的字段:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE &#96;teacher1&#96; DROP &#96;age1&#96;;</span><br></pre></td></tr></table></figure>
-
-<p><strong>删除表</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DROP TABLE IF EXISTS &#96;teacher1&#96;;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="Q10-增加外键？"><a href="#Q10-增加外键？" class="headerlink" title="Q10:增加外键？"></a>Q10:增加外键？</h3><p>方式一：在创建表的时候，增加约束（麻烦，比较复杂）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE &#96;grade&#96;(    </span><br><span class="line">&#96;gradeid&#96; INT(10) NOT NULL AUTO_INCREMENT COMMENT &#39;年级id&#39;，  </span><br><span class="line">&#96;gradename&#96; VARCHAR(50) NOT NULL COMMENT &#39;年级名称&#39;，  </span><br><span class="line">PRIMARY KEY（&#96;gradeid&#96;）)</span><br><span class="line">ENGINE&#x3D;INNODB DEFAULT CHARSET&#x3D;utf8</span><br><span class="line"></span><br><span class="line">CREATE TABLE IF NOT EXISTS &#96;student&#96; (     </span><br><span class="line">&#96;id&#96; INT(4) NOT NULL AUTO_INCREMENT COMMENT &#39;学号&#39;,     </span><br><span class="line">&#96;name&#96; VARCHAR(30) NOT NULL DEFAULT &#39;匿名&#39; COMMENT &#39;姓名&#39;,      </span><br><span class="line">&#96;pwd&#96; VARCHAR(20) NOT NULL DEFAULT &#39;123456&#39; COMMENT&#39;密码&#39;,      </span><br><span class="line">&#96;sex&#96; VARCHAR(2) NOT NULL DEFAULT &#39;女&#39; COMMENT &#39;性别&#39;,     </span><br><span class="line">&#96;birthday&#96; DATETIME DEFAULT NULL COMMENT &#39;出生日期&#39;,     </span><br><span class="line">&#96;address&#96; VARCHAR(100) DEFAULT NULL COMMENT &#39;家庭住址&#39;,      </span><br><span class="line">&#96;email&#96; VARCHAR(50) DEFAULT NULL COMMENT&#39;邮箱&#39;,      </span><br><span class="line">PRIMARY KEY (&#96;id&#96;) ,    </span><br><span class="line">KEY &#96;FK_gradeid&#96; (&#96;gradeid&#96;), &#x2F;&#x2F;定义外键key   </span><br><span class="line">CONSTRAINT &#96;FK_gradeid&#96; FOREIGN KEY (&#96;gradeid&#96;) REFERENCES &#96;grade&#96; (&#96;gradeid&#96;) </span><br><span class="line">&#x2F;&#x2F;给这个外键添加约束（执行引用）</span><br><span class="line">&#x2F;&#x2F;references 引用</span><br><span class="line">) ENGINE&#x3D;INNODB DEFAULT CHARSET&#x3D;utf8</span><br></pre></td></tr></table></figure>
-
-<p>需要注意的是，删除有外键关系的表的时候，必须要删除引用别人的表（从表），再删除被引用的表（主表）<br>主表是被引用的表，从表是引用的表</p>
-<p>方式二，创建表的时候不声明外键关系，然后再添加外键关系</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE &#96;student&#96;ADD CONSTRAINT &#96;FK_gradeid&#96; FOREIGN_KEY(&#96;gradeid&#96;) REFENCES &#96;grade&#96;(&#96;gradeid&#96;);</span><br></pre></td></tr></table></figure>
-
-<p>以上操作都是物理外键，是数据库级别的外键，不建议使用（避免数据库过多造成困扰）<br>最佳实践：数据库就是单纯的表，只用来存数据，只用行（数据）和列（字段）我们使用多张表的数据，想使用外键（用程序去实现）</p>
-<h3 id="Q11-DML语句？"><a href="#Q11-DML语句？" class="headerlink" title="Q11:DML语句？"></a>Q11:DML语句？</h3><p><strong>插入语句</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO &#96;garde&#96;(&#96;gradename&#96;) VALUES(&#39;大四&#39;);</span><br></pre></td></tr></table></figure>
-
-<p>如果主键自增，则可以省略主键（如果不写表的字段，他就会一一匹配）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO &#96;grade&#96; VALUES(&#39;大三&#39;);</span><br></pre></td></tr></table></figure>
-
-<p>所以如果一般写插入语句，我们一定要字段和数据一一对应。</p>
-<p>使用插入语句也可以同时插入多个值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO &#96;grade&#96; (&#96;gradename&#96;)VALUES(&#39;大一&#39;)(&#39;大二&#39;);</span><br></pre></td></tr></table></figure>
-
-<p>如果同时插入多个字段的多个值，则需要一一对应</p>
-<p><strong>修改语句</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">UPDATE &#96;student&#96; SET &#96;name&#96;&#x3D;&#39;shenqi&#39; WHERE id &#x3D; 1;</span><br><span class="line">UPDATE &#96;student&#96; SET &#96;name&#96;&#x3D;&#39;shenqi&#39;;</span><br></pre></td></tr></table></figure>
-
-<p>需要注意的是，如果不指定条件，将会修改表内所有数据<br>如果想要同时修改多个属性</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UPDATE &#96;student&#96; SET &#96;name&#96;&#x3D;&#39;shenqi&#39;,email&#x3D;&#39;@qq.com&#39; WHERE id &#x3D; 1;</span><br></pre></td></tr></table></figure>
-
-
-
-<p><strong>删除语句</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DELETE FROM &#96;stduent&#96; WHERE id &gt; 2;</span><br></pre></td></tr></table></figure>
-
-
-
-<p><strong>清空表</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TRUNCATE &#96;student&#96;;</span><br></pre></td></tr></table></figure>
-
-<p>TRUNCATE和DELETE都能删除数据，都不会删除表结构但是TRUNCATE 可以重置自增列，DELETE不能重置自增列而且，TRUNCATE不会影响事务所以不推荐使用delete删除表数据<br>另外，当使用DELETE时，数据库引擎不用，重启后现象也不同InnoDB，重启后自增列会从1开始（存在内存当中，断电既失）MyISAM 继续从上一个自增量开始（存在文件当中，不会丢失）</p>
-<h3 id="Q12-DQL语句"><a href="#Q12-DQL语句" class="headerlink" title="Q12:DQL语句?"></a>Q12:DQL语句?</h3><p><strong>数据查询语句，数据库最核心语句</strong></p>
-<p><strong>查询全部学生</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from &#96;student&#96;;</span><br></pre></td></tr></table></figure>
-
-<p><strong>查询指定字段</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT &#96;StudentNo&#96; ,&#96;StudentName&#96; FROM &#96;student&#96;;</span><br></pre></td></tr></table></figure>
-
-<p><strong>可以给字段或者表起别名</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT &#96;StudentNo&#96; AS 学号 ,&#96;StudentName&#96; AS 学生姓名 FROM &#96;student&#96; AS 学生;</span><br></pre></td></tr></table></figure>
-
-<p><strong>字符串拼接函数CONCAT（a，b）</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT CONCAT(&#39;姓名： &#39; ,&#96;StudentName&#96;) AS 新名字 FROM &#96;student&#96; ;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="Q13-去重关键字？"><a href="#Q13-去重关键字？" class="headerlink" title="Q13:去重关键字？"></a>Q13:去重关键字？</h3><p><strong>去重 DISTINGCT</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT DISTINCT &#96;StudentNo&#96; FROM result;</span><br></pre></td></tr></table></figure>
-
-<p><strong>查询系统版本(函数)</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT VERSION();</span><br></pre></td></tr></table></figure>
-
-<p><strong>用来计算（表达式）</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT 100-1 AS 计算结果</span><br></pre></td></tr></table></figure>
-
-<p><strong>查询自增的步长（变量）</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT @@auto_increment_increment;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="Q14-模糊查询？"><a href="#Q14-模糊查询？" class="headerlink" title="Q14:模糊查询？"></a>Q14:模糊查询？</h3><p>IS NULL 是空</p>
-<p>IS NOT NULL 非空</p>
-<p>BETWEEN AND 在区间内</p>
-<p>LIKE （SQL匹配，两个匹配符，%不限定长度，_限定长度）</p>
-<p>IN （匹配是不是在范围内）</p>
-<h3 id="Q15：联表查询？三种Join的区别？"><a href="#Q15：联表查询？三种Join的区别？" class="headerlink" title="Q15：联表查询？三种Join的区别？"></a>Q15：联表查询？三种Join的区别？</h3><p><strong>联表查询</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT s.&#96;studentNo&#96;, &#96;studentName&#96;, &#96;SubjectNo&#96;, &#96;StudentResult&#96;</span><br><span class="line">FROM &#96;student&#96; AS &#39;s&#39;</span><br><span class="line">INNER JOIN &#96;result&#96; AS &#39;r&#39;</span><br><span class="line">WHERE s.&#96;studentNo&#96; &#x3D; r.&#96;studentNo&#96;</span><br></pre></td></tr></table></figure>
-
-<p>这里的WHERE也可以使用ON来替换如果是on </p>
-<p>就是于join一起使用的连接查询</p>
-<p>where被称为等值查询</p>
-<p>区别在于ON是先筛选再关联，WHERE是先关联再筛选，相对而言，ON对于大量数据的处理上效率更高一点</p>
-<p><strong>三种匹配的区别：</strong></p>
-<p>INNER JOIN 如果表中至少有一个匹配，就返回行</p>
-<p>LEFT JOIN 从左表中返回所有数据，哪怕右表中没有匹配</p>
-<p>RIGHT JOIN 从右表中返回所有数据，哪怕左表中没有匹配</p>
-<p><strong>三表联查:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SELECT s.&#96;studentNo&#96;,&#96;studentName&#96;,&#96;SubjectName&#96;,&#96;StudentResult&#96;</span><br><span class="line">FROM &#96;studentAS&#96; &#39;s&#39;</span><br><span class="line">RIGHT JOIN &#96;result&#96; AS &#39;r&#39;</span><br><span class="line">ON s.&#96;studentNo&#96; &#x3D; r.&#96;studentNo&#96;</span><br><span class="line">INNER JOIN &#96;subject&#96; AS &#39;sub&#39;</span><br><span class="line">ON r.&#96;SubjectNo&#96; &#x3D; sub.&#96;SubjectNo&#96;</span><br></pre></td></tr></table></figure>
-
-
-
-<p><strong>自连接:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT a.&#96;catrgoryName&#96; AS &#39;父栏目&#39;,b.&#96;categoryName&#96; AS &#39;子栏目&#39;</span><br><span class="line">FROM &#96;category&#96; AS &#39;a&#39;,&#96;category&#96; AS &#39;b&#39;</span><br><span class="line">WHERE a.&#96;category&#96; &#x3D; b.&#96;pid&#96;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="Q16-分页和排序？"><a href="#Q16-分页和排序？" class="headerlink" title="Q16:分页和排序？"></a>Q16:分页和排序？</h3><p>排序 order by</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SELECT s.&#96;studentNo&#96;,&#96;studentName&#96;,&#96;SubjectNo&#96;,&#96;StudentResult&#96;</span><br><span class="line">FROM &#96;student&#96; AS &#39;s&#39;</span><br><span class="line">INNER JOIN &#96;result&#96; AS &#39;r&#39;</span><br><span class="line">WHERE s.&#96;studentNo&#96; &#x3D; r.&#96;studentNo&#96;</span><br><span class="line">ORDER BY &#96;studentNo&#96; </span><br><span class="line">DESC</span><br></pre></td></tr></table></figure>
-
-<p>DESC 降序</p>
-<p> ASC 升序</p>
-<p>分页limit</p>
-<p>缓解数据库压力，美观与分页相对的是 瀑布流，就是完全不分页，跟抖音的形式有点相似</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM &#96;student&#96;limit 5,5</span><br></pre></td></tr></table></figure>
-
-<p>limit 有两个参数，第一个是页面起始值，第二个是页面大小</p>
-<p>上例中就代表着从第五条数据开始，本页展示5条数据</p>
-<p>将上述知识点综合起来就是：查询JAVA第一学年，课程成绩排名前十的同学，并且分数要大于80的学生信息（学号，姓名，课程名称，分数）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">select s.&#96;studentNO&#96;,&#96;studentName&#96;,&#96;subjectName&#96;,&#96;studentResult&#96;</span><br><span class="line">from &#96;student&#96; s</span><br><span class="line">inner join &#96;result&#96; r</span><br><span class="line">on s.&#96;studentNo&#96; &#x3D; r.&#96;studentNo&#96;</span><br><span class="line">inner join &#96;subject&#96; sub</span><br><span class="line">on r.&#96;subjectName&#96;&#x3D; sub.&#96;subjectName&#96;</span><br><span class="line">where &#96;subjectName&#96; &#x3D; &#39;JAVA&#39; and &#96;subjectResult&#96; &gt;80</span><br><span class="line">order by &#96;subjectResult&#96; </span><br><span class="line">asc             &#x2F;&#x2F;前十名</span><br><span class="line">limit 0,10 ;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="Q17-子查询？"><a href="#Q17-子查询？" class="headerlink" title="Q17:子查询？"></a>Q17:子查询？</h3><p>子查询（具体功能与联表查询类似）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SELECT &#96;studentNo&#96;,&#96;subjectNo&#96;,&#96;sutdentResult&#96;</span><br><span class="line">from &#96;result&#96; </span><br><span class="line">where &#96;subjectNo&#96;&#x3D;&#123;  </span><br><span class="line">	select &#96;subjectNo&#96; from &#96;subject&#96;  </span><br><span class="line">	where &#96;subjectName&#96; &#x3D; &#39;数据库&#39;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>运算顺序，由里及外</p>
-<h3 id="Q18-MySQL常用函数？"><a href="#Q18-MySQL常用函数？" class="headerlink" title="Q18:MySQL常用函数？"></a>Q18:MySQL常用函数？</h3><p><strong>数学函数:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">select abs(-8); </span><br><span class="line">&#x2F;&#x2F;绝对值</span><br><span class="line"></span><br><span class="line">select ceiling(9.4);</span><br><span class="line">&#x2F;&#x2F;向上取整</span><br><span class="line"></span><br><span class="line">selcect floot（9.4)；</span><br><span class="line">&#x2F;&#x2F;向下取整</span><br><span class="line"></span><br><span class="line">select rand();</span><br><span class="line">&#x2F;&#x2F;返回一个0，1之间的随机数</span><br><span class="line"></span><br><span class="line">select sign(10);</span><br><span class="line">&#x2F;&#x2F;判断一个数的符号，正数返回1，负数返回-1</span><br></pre></td></tr></table></figure>
-
-
-
-<p><strong>字符串函数:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">select char_length(&#39;hhhhhh&#39;); </span><br><span class="line">&#x2F;&#x2F;返回字符串长度</span><br><span class="line"></span><br><span class="line">select concat(&#39;12&#39;,&#39;23&#39;,&#39;34&#39;);</span><br><span class="line">&#x2F;&#x2F;字符串拼接</span><br><span class="line"></span><br><span class="line">select insert(&#39;helloworld&#39;,1,2,&#39;123&#39;);</span><br><span class="line">&#x2F;&#x2F;插入替换字符串，在第一个位置，替换两个长度的字符串</span><br><span class="line"></span><br><span class="line">select lower(&#39;AAA&#39;);</span><br><span class="line">&#x2F;&#x2F;小写字母</span><br><span class="line"></span><br><span class="line">select upper(&#39;BBB&#39;);</span><br><span class="line">&#x2F;&#x2F;大写字母</span><br><span class="line"></span><br><span class="line">select instr(&#39;asd&#39;,&#39;s&#39;);</span><br><span class="line">&#x2F;&#x2F;子字符串第一次出现的索引</span><br><span class="line"></span><br><span class="line">select replace(&#39;123456&#39;,&#39;23&#39;,&#39;78&#39;);</span><br><span class="line">&#x2F;&#x2F;将指定的字符串替换成另外的字符串</span><br><span class="line"></span><br><span class="line">select substr(&#39;45678912156468&#39;,4,6); </span><br><span class="line">&#x2F;&#x2F;返回指定的字符串（源字符串，截取的位置，截取的长度）</span><br><span class="line"></span><br><span class="line">select reverse(&#39;asdfgh&#39;); </span><br><span class="line">&#x2F;&#x2F;反转字符串</span><br></pre></td></tr></table></figure>
-
-
-
-<p><strong>时间和日期函数:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">select current_date();</span><br><span class="line">&#x2F;&#x2F;获取当前日期</span><br><span class="line"></span><br><span class="line">select curdate();</span><br><span class="line">&#x2F;&#x2F;获取当前日期</span><br><span class="line"></span><br><span class="line">select now();</span><br><span class="line">&#x2F;&#x2F;获取当前时间</span><br><span class="line"></span><br><span class="line">select localtime();</span><br><span class="line">&#x2F;&#x2F;本地时间</span><br><span class="line"></span><br><span class="line">select sysdate();</span><br><span class="line">&#x2F;&#x2F;系统时间</span><br><span class="line"></span><br><span class="line">select year(now()); </span><br><span class="line">&#x2F;&#x2F;可以把year换成month，day，hour，minute，second</span><br></pre></td></tr></table></figure>
-
-
-
-<p><strong>系统相关信息:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">select system_user();</span><br><span class="line"></span><br><span class="line">select user();</span><br><span class="line"></span><br><span class="line">select version();</span><br></pre></td></tr></table></figure>
-
-<h3 id="Q19-聚合函数？"><a href="#Q19-聚合函数？" class="headerlink" title="Q19:聚合函数？"></a>Q19:聚合函数？</h3><p>聚合函数（常用）</p>
-<p>COUNT 计数</p>
-<p>sum 求和</p>
-<p>avg 平均值</p>
-<p>max 最大值</p>
-<p>min 最小值</p>
-<h3 id="Q20：分组-过滤？"><a href="#Q20：分组-过滤？" class="headerlink" title="Q20：分组/过滤？"></a>Q20：分组/过滤？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">select &#96;subjectName&#96;，AVG(&#96;StudentResult&#96;)，Max(&#96;StudentResult&#96;)，Min(&#96;StudentResult&#96;)</span><br><span class="line">FROM &#96;result&#96; r</span><br><span class="line">inner join &#96;subject&#96; sub</span><br><span class="line">on r.&#96;subjectNo&#96; &#x3D; sub.&#96;subjectNo&#96;</span><br><span class="line">group by r.&#96;subjectName&#96;</span><br><span class="line">having AVG(&#96;StudentResult&#96;)</span><br></pre></td></tr></table></figure>
-
-<p>根据平均成绩超过80分的科目名称分组，求每科的平均分，最高分，最低分</p>
-<p>需要注意的是，分组的过滤条件不能使用where，只能使用having</p>
-<p>所以having也叫分组过滤</p>
-<h3 id="Q21-数据库级别的MD5摘要？"><a href="#Q21-数据库级别的MD5摘要？" class="headerlink" title="Q21:数据库级别的MD5摘要？"></a>Q21:数据库级别的MD5摘要？</h3><p>MD5 信息摘要算法</p>
-<p>MD5不可逆，但是相同内容加密后密文一样MD5的破解本质上是，对密文的对比<br>UPDATE 表名 SET 字段名=MD5(字段名) </p>
-<p>例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UPDATE &#96;test&#96; SET &#96;pwd&#96;&#x3D;MD5(&#96;pwd&#96;) where &#96;id&#96; &#x3D; 1;</span><br></pre></td></tr></table></figure>
-
-
-<p>还可以在插入的时候就进行加密</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO &#96;test&#96; VALUES(1,&#39;xiamming&#39;,MD5(&#39;123456&#39;));</span><br></pre></td></tr></table></figure>
-
-<p>将用户传进来的密码进行MD5加密后比对</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM &#96;test&#96; WHERE &#96;name&#96;&#x3D;&#39;xiaoming&#39; AND &#96;pwd&#96;&#x3D;MD5(&#39;123456&#39;)</span><br></pre></td></tr></table></figure>
-
-
-
+<h3 id="Q8：NIO一定优于BIO么？"><a href="#Q8：NIO一定优于BIO么？" class="headerlink" title="Q8：NIO一定优于BIO么？"></a>Q8：NIO一定优于BIO么？</h3><p>不一定 </p>
+<p>BIO代码更简单</p>
+<p>在连接数少，并发度低的情况下，BIO性能不输NIO</p>
+<h3 id="Q9：Netty怎么切换IO模式？"><a href="#Q9：Netty怎么切换IO模式？" class="headerlink" title="Q9：Netty怎么切换IO模式？"></a>Q9：Netty怎么切换IO模式？</h3><p>直接将EventLoopGroup和channel 上NIO的API改成OIO就行了</p>
+<p>channel 是反射+泛型+工厂</p>
+<p>NioEventLoopGroup 死循环监听，处理事件</p>
+<p>如果频繁的进行线程上下文切换，会带来额外的性能损耗。多线程并发执行某个业务流程，业务开发者还需要时刻对线程安全保持警惕，哪些数据可能会被并发修改，如何保护？这不仅降低了开发效率，也会带来额外的性能损耗。</p>
+<p>为了解决上述问题，Netty采用了串行化设计理念，从消息的读取、编码以及后续 ChannelHandler 的执行，始终都由 IO 线程 EventLoop 负责，这就意外着整个流程不会进行线程上下文的切换，数据也不会面临被并发修改的风险。</p>
+<p>EventLoopGroup 是一组 EventLoop 的抽象，一个 EventLoopGroup 当中会包含一个或多个 EventLoop，EventLoopGroup 提供 next 接口，可以从一组 EventLoop 里面按照一定规则获取其中一个 EventLoop 来处理任务。</p>
+<p>在 Netty 服务器端编程中我们需要 BossEventLoopGroup 和WorkerEventLoopGroup 两个 EventLoopGroup 来进行工作。</p>
+<p>BossEventLoopGroup 通常是一个单线程的 EventLoop，EventLoop 维护着一个注册了 ServerSocketChannel 的 Selector 实例，EventLoop 的实现涵盖 IO 事件的分离，和分发（Dispatcher），EventLoop 的实现充当 Reactor 模式中的分发（Dispatcher）的角色。</p>
+<p>NioEventLoopGroup 实际上就是个线程池，一个 EventLoopGroup 包含一个或者多个 EventLoop；</p>
+<p>一个 EventLoop 在它的生命周期内只和一个 Thread 绑定；</p>
+<p>所有有 EnventLoop 处理的 I/O 事件都将在它专有的 Thread 上被处理；</p>
+<p>一个 Channel 在它的生命周期内只注册于一个 EventLoop；</p>
+<p>每一个 EventLoop 负责处理一个或多个 Channel；</p>
+<h3 id="Q10：什么是Reactor及三种版本？"><a href="#Q10：什么是Reactor及三种版本？" class="headerlink" title="Q10：什么是Reactor及三种版本？"></a>Q10：什么是Reactor及三种版本？</h3><p>饭店规模变化</p>
+<p>一个人包揽所有：迎宾，点菜，做饭，上菜，送客</p>
+<p>多招几个伙计：大家一起做上面的事情</p>
+<p>进一步分工：专人做专事</p>
+<p>饭店伙计：线程</p>
+<p>迎宾：接入线程</p>
+<p>点菜：请求</p>
+<p>做菜:业务处理</p>
+<p>上菜：相应</p>
+<p>送客：断连</p>
+<p>那么一个人包揽所有，就是reactor 单线程</p>
+<p>多招几个伙计：就是reactor多线程</p>
+<p>专人专事：主从reactor多线程模式</p>
+<h3 id="Q11：如何在Netty中实现Reactor模式？"><a href="#Q11：如何在Netty中实现Reactor模式？" class="headerlink" title="Q11：如何在Netty中实现Reactor模式？"></a>Q11：如何在Netty中实现Reactor模式？</h3><p><img src="/2021/03/21/Netty%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/Netty01.jpg" alt="UML演示图片"></p>
+<h3 id="Q13：什么是粘包和半包？"><a href="#Q13：什么是粘包和半包？" class="headerlink" title="Q13：什么是粘包和半包？"></a>Q13：什么是粘包和半包？</h3><p>粘包：本来应该多次发送的信息被粘合在了一起</p>
+<p>半包：这个数据包内的信息被分隔成了多个包，每个包的数据不完整</p>
+<h3 id="Q14：为什么TCP应用中会出现粘包和半包？"><a href="#Q14：为什么TCP应用中会出现粘包和半包？" class="headerlink" title="Q14：为什么TCP应用中会出现粘包和半包？"></a>Q14：为什么TCP应用中会出现粘包和半包？</h3><p><strong>粘包的主要原因：</strong></p>
+<p>发送方每次写入数据&lt;套接字缓冲区大小               </p>
+<p>接收方读取套接字缓冲区数据不够及时</p>
+<p><strong>半包的主要原因：</strong></p>
+<p>发送方每次写入数据&gt;套接字缓冲区大小              </p>
+<p>发送的数据大于协议的MTU时，必须拆包</p>
+<p><strong>tcp协议中粘包发生的根本原因：</strong></p>
+<p>TCP是流式协议 消息无边界                         </p>
+<p>UDP像邮寄的包裹，虽然一次运输多个，但是每个都有界限，所以没有这个问题</p>
+<h3 id="Q15-解决粘包和半包的几种常用方法？"><a href="#Q15-解决粘包和半包的几种常用方法？" class="headerlink" title="Q15:解决粘包和半包的几种常用方法？"></a>Q15:解决粘包和半包的几种常用方法？</h3><p>解决问题的根本手段：找出消息的边界</p>
+<p>1.把TCP连接改成短链接，发送一个请求就结束一次连接  简单，但是效率低下</p>
+<p>2.封装成帧：   </p>
+<p>固定长度：简单,空间浪费  </p>
+<p>分隔符：空间不浪费，也比较简单。传输前需要扫描内容，如果出现了分隔符就要对他进行转义  </p>
+<p>固定长度字段，来存储内容的长度信息：小缺点，长度可能有限制（推荐）  </p>
+<p>其他方式：json——看{}是否成对 需要衡量具体场景</p>
+<h3 id="Q16：Netty对三种常用封帧方式的支持？"><a href="#Q16：Netty对三种常用封帧方式的支持？" class="headerlink" title="Q16：Netty对三种常用封帧方式的支持？"></a>Q16：Netty对三种常用封帧方式的支持？</h3><p><img src="/2021/03/21/Netty%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/Netty02.jpg" alt="UML演示图片"></p>
+<h3 id="Q17：为什么需要”二次“编码？"><a href="#Q17：为什么需要”二次“编码？" class="headerlink" title="Q17：为什么需要”二次“编码？"></a>Q17：为什么需要”二次“编码？</h3><p>假设我们把解决半包粘包问题的常用三种解码器叫做一次解码器</p>
+<p>那么我们在项目中，除了可选的压缩解压缩之外，还需要一层解码，因为一次解码的结果式字节，需要和项目中所使用的对象做转化，方便使用，这层解码器可以称为二次解码器，相应的，对应的编码器是为了将JAVA对象转化为字节流方便存储或者传输</p>
+<p>一次解码器都是继承于 byteToMessageDecoder</p>
+<p>将io.netty.buffer.ByteBuf（原始数据流）转化成为了 io.netty.buffer.ByteBuf（用户数据）</p>
+<p>二次解码器则是继承于MessageToMessageDecoder&lt;&gt;</p>
+<p>将io.netty.buffer.ByteBuf（用户数据） 转化成为了Java Object</p>
+<p>为什么二级编解码不能一次到位？</p>
+<p>可以，但是不建议没有分层，不够清晰；耦合性高，不容易置换方案</p>
+<h3 id="Q18：常用的二次编解码技术？"><a href="#Q18：常用的二次编解码技术？" class="headerlink" title="Q18：常用的二次编解码技术？"></a>Q18：常用的二次编解码技术？</h3><p>java 序列化</p>
+<p>Marshaling</p>
+<p>XML</p>
+<p>JSON</p>
+<p>MessagePack</p>
+<p>protobuf（性能好，可读性差）</p>
+<p>其他</p>
+<h3 id="Q19：选择编解码方式的要点？"><a href="#Q19：选择编解码方式的要点？" class="headerlink" title="Q19：选择编解码方式的要点？"></a>Q19：选择编解码方式的要点？</h3><p>选择编结码方式的要点编码后占用的空间：</p>
+<p>json，protocol，msgpack </p>
+<p>通常来讲，可读性越差，空间占用越小</p>
+<p>编解码速度：</p>
+<p>json，protocol，msgpack</p>
+<p>是否追求可读性：</p>
+<p>json可读性比较好</p>
+<p>多语言的支持：</p>
+<p>msgpack多语言支持非常好</p>
+<h3 id="Q20-Protobuf的简介和使用？"><a href="#Q20-Protobuf的简介和使用？" class="headerlink" title="Q20:Protobuf的简介和使用？"></a>Q20:Protobuf的简介和使用？</h3><p>protobuf相较于xml和json：更小更快，更便捷</p>
+<p>protobuf自带编译器，只需要对他进行编译，可以自动生成java，python，c++等代码，不需要再写其他代码使用非常简单</p>
+<p><img src="/2021/03/21/Netty%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/Netty03.jpg" alt="UML演示图片"></p>
+<p>先序列化，再反序列化就完成了相关的事情</p>
+<p>在netty-codec包里就是对各种编解码的支持支持</p>
+<p>base64，bytes（将netty的ByteBuffer，转换成java的字节数组），json，marshalling，protobuf，序列化方法</p>
+<h3 id="Q21：为什么需要KeepAlive？"><a href="#Q21：为什么需要KeepAlive？" class="headerlink" title="Q21：为什么需要KeepAlive？"></a>Q21：为什么需要KeepAlive？</h3><p>假设你开了一个饭店，别人电话来订餐，电话通了之后，订餐的说了一堆订餐要求，说着说着，对方不说话了（可能忘记挂机、出去办事、线路故障等）</p>
+<p>这时你会握着电话一直等么？</p>
+<p>不会</p>
+<p>如果不会一般会怎么做？</p>
+<p>会确认一句，在么？如果对方没回复，就挂掉。这套机制就被称作keepalive</p>
+<p>类比：电话线路<strong>-&gt;</strong>数据连接交谈的话<strong>-&gt;</strong>数据通话双方<strong>-&gt;</strong>数据的发送和接收方</p>
+<p>需要keepalive的场景就是 : </p>
+<p>对方临时着急走开                                               对端异常崩溃                       </p>
+<p>对方在，但是很忙不知道什么时候忙忘完        对端在，但是处理不完数据                       </p>
+<p>电话线路故障                                                      对端在，但是不可达不做keepalive           </p>
+<p>线路占用，耽误别人用餐                     连接已坏，但是还是浪费资源维持，下回直接用还有可能报错</p>
+<h3 id="Q22-怎么设计KeepAlive？以TCP-KeepAlive为例"><a href="#Q22-怎么设计KeepAlive？以TCP-KeepAlive为例" class="headerlink" title="Q22:怎么设计KeepAlive？以TCP KeepAlive为例"></a>Q22:怎么设计KeepAlive？以TCP KeepAlive为例</h3><p><img src="/2021/03/21/Netty%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/Netty04.jpg" alt="UML演示图片"></p>
+<p>time代表的是7200秒没有数据传过来，intvl代表的是，下一个探测报的间隔时间，75秒，具体有探测报多少个，要看probes，是9个</p>
+<h3 id="Q23：为什么需要应用层KeepAlive？"><a href="#Q23：为什么需要应用层KeepAlive？" class="headerlink" title="Q23：为什么需要应用层KeepAlive？"></a>Q23：为什么需要应用层KeepAlive？</h3><p>协议分层，各层关注点</p>
+<p>不同传输层关注是否“通”，应用层关注是否可以服务</p>
+<p>tcp层的keepalive默认关闭，且经由路由等中转设备keepalive包也可能被丢弃</p>
+<p>tcp层的keepalive时间太长，虽然可以修改，但是会影响所有应用（所以不推荐修改系统参数）</p>
+<p>在平时会经常听到HTTP的keepalive 而且会混为一谈http的keepalive指的是对长连接和短链接的选择</p>
+<p>connection：keep-alive 长连接（http/1.1 默认长连接，不要带这个header）</p>
+<p>connection：close 短链接</p>
+<h3 id="Q24：Idle监测是什么？"><a href="#Q24：Idle监测是什么？" class="headerlink" title="Q24：Idle监测是什么？"></a>Q24：Idle监测是什么？</h3><p>假设你开了一个饭店，别人电话来订餐，电话通了之后，订餐的说了一堆订餐要求，说着说着，对方不说话了（可能忘记挂机、出去办事、线路故障等）</p>
+<p>你会立刻发问说：你还在么？</p>
+<p>不会</p>
+<p>一般会稍微等一段时间，在这个时间内看看别人还会不会说话（Idle检测），如果还不说，认定对方存在问题（idle），于是发问“你还在么？”（keepalive），或者问都不问直接挂掉（关闭连接）</p>
+<p>idle检测，只是负责诊断，诊断后，做出不同行为，决定idle检测的最终用途</p>
+<p>发送keepalive，一般用来配合keepalive，减少keepalive消息</p>
+<p>keepalive设计演进：</p>
+<p>verison1 定时发送keepalive消息                 </p>
+<p>keepalive消息于服务器正常消息交换完全不关联，定时就发送 <strong>-&gt;</strong>                  </p>
+<p>version2 空闲检测，判定为idle时才会发送keepalive                 </p>
+<p>有其他数据发送时，就不发送keepalive，无数据传输超过一定时间，判定为idle，才会发送keepalive</p>
+<p>直接关闭连接：</p>
+<p>快速释放损坏的，恶意的，很久不用的连接，让系统保持最好的状态</p>
+<p>简单粗暴，客户端可能要重连</p>
+<p>实际应用中：结合起来使用。按需keepalive，保证不会空闲，如果空闲，关闭连接</p>
+<h3 id="Q25-如何在Netty中开启TCPkeepAlive和Idle检测？"><a href="#Q25-如何在Netty中开启TCPkeepAlive和Idle检测？" class="headerlink" title="Q25:如何在Netty中开启TCPkeepAlive和Idle检测？"></a>Q25:如何在Netty中开启TCPkeepAlive和Idle检测？</h3><p><img src="/2021/03/21/Netty%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/Netty05.jpg" alt="UML演示图片"></p>
+<p><img src="/2021/03/21/Netty%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/Netty06.jpg" alt="UML演示图片"></p>
+<h3 id="Q26：分析同步问题的核心三要素"><a href="#Q26：分析同步问题的核心三要素" class="headerlink" title="Q26：分析同步问题的核心三要素"></a>Q26：分析同步问题的核心三要素</h3><p>原子性 </p>
+<p>可见性 </p>
+<p>有序性</p>
+<h3 id="Q27：锁的分类？"><a href="#Q27：锁的分类？" class="headerlink" title="Q27：锁的分类？"></a>Q27：锁的分类？</h3><p>对竞争的态度：</p>
+<p>乐观锁（java.util.concurrent包中的原子类）</p>
+<p>悲观锁（Synchronized）</p>
+<p>对等待锁的人是否公平：</p>
+<p>公平锁：new ReentrantLock（true）</p>
+<p>非公平锁：new ReentrantLock（）</p>
+<p>是否可以共享：</p>
+<p>共享锁与独享锁：ReadWriteLock </p>
+<p>其读锁时共享锁，</p>
+<p>写锁时独享锁</p>
+<h3 id="Q28：Netty中锁的五个关键点？"><a href="#Q28：Netty中锁的五个关键点？" class="headerlink" title="Q28：Netty中锁的五个关键点？"></a>Q28：Netty中锁的五个关键点？</h3><p>（1）注意锁的大小 能锁对象不锁方法  </p>
+<p>（2）减小锁的大小 使用更小的数据类型  </p>
+<p>（3）注意锁的速度 提高并发性（即使衡量，使用最新的JDK）  </p>
+<p>（4） 不同服务使用不同的包  </p>
+<p>（5） 能不用则不用</p>
+<h3 id="Q29：Netty内存使用技巧？"><a href="#Q29：Netty内存使用技巧？" class="headerlink" title="Q29：Netty内存使用技巧？"></a>Q29：Netty内存使用技巧？</h3><p>（1）能用基本类型就不用包装类型      </p>
+<p>应该定义成类变量的不要定义为实例变量</p>
+<p>（2）类似HashMap的扩容</p>
+<p>（3)使用逻辑组合，代替实际复制     </p>
+<p>使用包装，代替实际复制     </p>
+<p>使用jdk的zero-copy接口FileChannel.transferTo（），实现<strong>零拷贝</strong>     </p>
+<p>堆外内存     </p>
+<p>夏日，小区周边的烧烤店铺，人满为患坐不下，店家常常怎么办？    </p>
+<p> 解决思路：</p>
+<p>店铺门口摆很多桌子招待客人     </p>
+<p>店内 <strong>-&gt;</strong> JVM内部 <strong>-&gt;</strong> 堆+非堆     </p>
+<p>店外 <strong>-&gt; *<em>JVM外部 *</em>-&gt;</strong> 堆外</p>
+<p>优点：</p>
+<p>更广阔的空间，缓解店铺内部压力 <strong>-&gt;</strong> 破除堆空间限制，减轻GC压力     </p>
+<p>减少冗余细节 <strong>-&gt;</strong> 避免复制</p>
+<p>缺点：</p>
+<p>需要搬桌子 <strong>-&gt;</strong> 创建速度满       </p>
+<p>受城管管，风险大 <strong>-&gt;</strong> 堆外内存受操作系统管理     </p>
+<p>内存池     </p>
+<p>点菜单的演进：</p>
+<p>一张纸-》点菜平板     </p>
+<p>为什么引入对象池：     </p>
+<p>创建对象开销大     </p>
+<p>对象高频率创建而且可以复用     </p>
+<p>支持并发又能保护系统     </p>
+<p>维护，共享有限的资源</p>
+<p>如何实现对象池？     </p>
+<p>开源实现：APACHE commons Pool     </p>
+<p>Netty轻量级对象池实现 io.netty.util.Recycler</p>
+<p>内存池、非内存池的默认选择和切换方式？</p>
+<p>安卓平台使用非内存池不是安卓使用内存池</p>
+<p>内存池实现？</p>
+<p>NEtty轻量级对象池实现 </p>
+<p>堆外内存、堆内存的默认选择和切换方式？</p>
+<p>默认是堆外内存，可以显示的切换</p>
+<p>堆外内存的分配本质？</p>
+<p>此处调用jdk的allocateDirect来分配堆外内存</p>
+<h3 id="Q31：Netty启动主线？"><a href="#Q31：Netty启动主线？" class="headerlink" title="Q31：Netty启动主线？"></a>Q31：Netty启动主线？</h3><p>待施工</p>
+<h3 id="Q32：Netty实战？"><a href="#Q32：Netty实战？" class="headerlink" title="Q32：Netty实战？"></a>Q32：Netty实战？</h3><p>待施工</p>
 
       
 
@@ -547,29 +472,7 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/MySQL/" class="article-tag-list-link color1">MySQL</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
 
       
 
@@ -619,7 +522,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/03/24/MySQL%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/03/21/Netty%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -633,18 +536,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/03/24/MySQL%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9402/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/03/22/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          MySQL笔记——02
+          Java编程思想——第十一章
         
       </div>
     </a>
   
   
-    <a href="/2021/01/31/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%94%E7%AB%A0/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Java编程思想——第五章</div>
+    <a href="/2021/03/21/MyBatis%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MyBatis笔记——01</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -675,7 +578,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Q2：操作数据库？"><span class="toc-number">1.</span> <span class="toc-text">Q2：操作数据库？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q3-数据库列类型（数据类型）"><span class="toc-number">2.</span> <span class="toc-text">Q3: 数据库列类型（数据类型）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q4：数据库字段属性？"><span class="toc-number">3.</span> <span class="toc-text">Q4：数据库字段属性？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q5：建议每一个表都需要存在的五个字段？"><span class="toc-number">4.</span> <span class="toc-text">Q5：建议每一个表都需要存在的五个字段？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q6-写一个创建数据表的实例？"><span class="toc-number">5.</span> <span class="toc-text">Q6:写一个创建数据表的实例？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q7：查看数据库语句？"><span class="toc-number">6.</span> <span class="toc-text">Q7：查看数据库语句？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q8-数据库引擎？数据库存储？"><span class="toc-number">7.</span> <span class="toc-text">Q8:数据库引擎？数据库存储？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q9：修改表？删除表？操作表的字段？"><span class="toc-number">8.</span> <span class="toc-text">Q9：修改表？删除表？操作表的字段？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q10-增加外键？"><span class="toc-number">9.</span> <span class="toc-text">Q10:增加外键？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q11-DML语句？"><span class="toc-number">10.</span> <span class="toc-text">Q11:DML语句？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q12-DQL语句"><span class="toc-number">11.</span> <span class="toc-text">Q12:DQL语句?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q13-去重关键字？"><span class="toc-number">12.</span> <span class="toc-text">Q13:去重关键字？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q14-模糊查询？"><span class="toc-number">13.</span> <span class="toc-text">Q14:模糊查询？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q15：联表查询？三种Join的区别？"><span class="toc-number">14.</span> <span class="toc-text">Q15：联表查询？三种Join的区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q16-分页和排序？"><span class="toc-number">15.</span> <span class="toc-text">Q16:分页和排序？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q17-子查询？"><span class="toc-number">16.</span> <span class="toc-text">Q17:子查询？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q18-MySQL常用函数？"><span class="toc-number">17.</span> <span class="toc-text">Q18:MySQL常用函数？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q19-聚合函数？"><span class="toc-number">18.</span> <span class="toc-text">Q19:聚合函数？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q20：分组-过滤？"><span class="toc-number">19.</span> <span class="toc-text">Q20：分组&#x2F;过滤？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q21-数据库级别的MD5摘要？"><span class="toc-number">20.</span> <span class="toc-text">Q21:数据库级别的MD5摘要？</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Q1：Netty是啥"><span class="toc-number">1.</span> <span class="toc-text">Q1：Netty是啥?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q2-为什么不直接用JDK-NIO？"><span class="toc-number">2.</span> <span class="toc-text">Q2:为什么不直接用JDK NIO？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q3：有和Netty类似的框架，为什么不用别的？"><span class="toc-number">3.</span> <span class="toc-text">Q3：有和Netty类似的框架，为什么不用别的？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q4：什么是经典的三种IO模式？"><span class="toc-number">4.</span> <span class="toc-text">Q4：什么是经典的三种IO模式？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q6-为什么Netty仅支持NIO了？"><span class="toc-number">5.</span> <span class="toc-text">Q6:为什么Netty仅支持NIO了？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q7：为什么Netty有多种NIO实现？"><span class="toc-number">6.</span> <span class="toc-text">Q7：为什么Netty有多种NIO实现？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q8：NIO一定优于BIO么？"><span class="toc-number">7.</span> <span class="toc-text">Q8：NIO一定优于BIO么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q9：Netty怎么切换IO模式？"><span class="toc-number">8.</span> <span class="toc-text">Q9：Netty怎么切换IO模式？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q10：什么是Reactor及三种版本？"><span class="toc-number">9.</span> <span class="toc-text">Q10：什么是Reactor及三种版本？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q11：如何在Netty中实现Reactor模式？"><span class="toc-number">10.</span> <span class="toc-text">Q11：如何在Netty中实现Reactor模式？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q13：什么是粘包和半包？"><span class="toc-number">11.</span> <span class="toc-text">Q13：什么是粘包和半包？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q14：为什么TCP应用中会出现粘包和半包？"><span class="toc-number">12.</span> <span class="toc-text">Q14：为什么TCP应用中会出现粘包和半包？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q15-解决粘包和半包的几种常用方法？"><span class="toc-number">13.</span> <span class="toc-text">Q15:解决粘包和半包的几种常用方法？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q16：Netty对三种常用封帧方式的支持？"><span class="toc-number">14.</span> <span class="toc-text">Q16：Netty对三种常用封帧方式的支持？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q17：为什么需要”二次“编码？"><span class="toc-number">15.</span> <span class="toc-text">Q17：为什么需要”二次“编码？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q18：常用的二次编解码技术？"><span class="toc-number">16.</span> <span class="toc-text">Q18：常用的二次编解码技术？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q19：选择编解码方式的要点？"><span class="toc-number">17.</span> <span class="toc-text">Q19：选择编解码方式的要点？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q20-Protobuf的简介和使用？"><span class="toc-number">18.</span> <span class="toc-text">Q20:Protobuf的简介和使用？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q21：为什么需要KeepAlive？"><span class="toc-number">19.</span> <span class="toc-text">Q21：为什么需要KeepAlive？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q22-怎么设计KeepAlive？以TCP-KeepAlive为例"><span class="toc-number">20.</span> <span class="toc-text">Q22:怎么设计KeepAlive？以TCP KeepAlive为例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q23：为什么需要应用层KeepAlive？"><span class="toc-number">21.</span> <span class="toc-text">Q23：为什么需要应用层KeepAlive？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q24：Idle监测是什么？"><span class="toc-number">22.</span> <span class="toc-text">Q24：Idle监测是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q25-如何在Netty中开启TCPkeepAlive和Idle检测？"><span class="toc-number">23.</span> <span class="toc-text">Q25:如何在Netty中开启TCPkeepAlive和Idle检测？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q26：分析同步问题的核心三要素"><span class="toc-number">24.</span> <span class="toc-text">Q26：分析同步问题的核心三要素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q27：锁的分类？"><span class="toc-number">25.</span> <span class="toc-text">Q27：锁的分类？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q28：Netty中锁的五个关键点？"><span class="toc-number">26.</span> <span class="toc-text">Q28：Netty中锁的五个关键点？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q29：Netty内存使用技巧？"><span class="toc-number">27.</span> <span class="toc-text">Q29：Netty内存使用技巧？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q31：Netty启动主线？"><span class="toc-number">28.</span> <span class="toc-text">Q31：Netty启动主线？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q32：Netty实战？"><span class="toc-number">29.</span> <span class="toc-text">Q32：Netty实战？</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -843,11 +746,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color5">火锅实验</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">火锅实验</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
             
             <div class="clearfix"></div>

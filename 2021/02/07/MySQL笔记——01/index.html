@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>算法——位运算 | ShenQi Blog</title>
+  <title>MySQL笔记——01 | ShenQi Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Q1:6种常用位运算符？   符号 描述 运算规则    &amp; 与 两个位都为1时，结果才为1   | 或 两个位都为0时，结果才为0   ^ 异或 两个位相同位0，不同为1（可以理解为不仅位的加法）   ~ 取反 0变1，1变0">
+  <meta name="description" content="Q2：操作数据库？创建数据库 1create database [if not exists] &#96;school&#96;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="算法——位运算">
-<meta property="og:url" content="http://yoursite.com/2021/03/25/%E7%AE%97%E6%B3%95%E2%80%94%E2%80%94%E4%BD%8D%E8%BF%90%E7%AE%97/index.html">
+<meta property="og:title" content="MySQL笔记——01">
+<meta property="og:url" content="http://yoursite.com/2021/02/07/MySQL%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/index.html">
 <meta property="og:site_name" content="ShenQi Blog">
-<meta property="og:description" content="Q1:6种常用位运算符？   符号 描述 运算规则    &amp; 与 两个位都为1时，结果才为1   | 或 两个位都为0时，结果才为0   ^ 异或 两个位相同位0，不同为1（可以理解为不仅位的加法）   ~ 取反 0变1，1变0">
+<meta property="og:description" content="Q2：操作数据库？创建数据库 1create database [if not exists] &#96;school&#96;">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-03-25T01:38:06.000Z">
-<meta property="article:modified_time" content="2021-03-25T05:22:33.491Z">
+<meta property="article:published_time" content="2021-02-07T12:00:46.000Z">
+<meta property="article:modified_time" content="2021-03-26T03:47:38.345Z">
 <meta property="article:author" content="Shen Qi">
+<meta property="article:tag" content="数据库">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="ShenQi Blog" type="application/atom+xml">
@@ -168,14 +169,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-算法——位运算" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-MySQL笔记——01" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      算法——位运算
+      MySQL笔记——01
     </h1>
   
 
@@ -186,61 +187,327 @@
 		  <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
 	</span>
 
-<a href="/2021/03/25/%E7%AE%97%E6%B3%95%E2%80%94%E2%80%94%E4%BD%8D%E8%BF%90%E7%AE%97/" class="archive-article-date">
-  	<time datetime="2021-03-25T01:38:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-25</time>
+<a href="/2021/02/07/MySQL%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/" class="archive-article-date">
+  	<time datetime="2021-02-07T12:00:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-07</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Q1-6种常用位运算符？"><a href="#Q1-6种常用位运算符？" class="headerlink" title="Q1:6种常用位运算符？"></a>Q1:6种常用位运算符？</h3><table>
-<thead>
-<tr>
-<th>符号</th>
-<th>描述</th>
-<th>运算规则</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>&amp;</td>
-<td>与</td>
-<td>两个位都为1时，结果才为1</td>
-</tr>
-<tr>
-<td>|</td>
-<td>或</td>
-<td>两个位都为0时，结果才为0</td>
-</tr>
-<tr>
-<td>^</td>
-<td>异或</td>
-<td>两个位相同位0，不同为1（<strong>可以理解为不仅位的加法</strong>）</td>
-</tr>
-<tr>
-<td>~</td>
-<td>取反</td>
-<td>0变1，1变0</td>
-</tr>
-</tbody></table>
+        <h3 id="Q2：操作数据库？"><a href="#Q2：操作数据库？" class="headerlink" title="Q2：操作数据库？"></a>Q2：操作数据库？</h3><p>创建数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database [if not exists] &#96;school&#96;</span><br></pre></td></tr></table></figure>
+
 <a id="more"></a>
 
-<p>&lt;&lt;    :   左移运算符，num &lt;&lt; 1,相当于num乘以2</p>
-<p>&gt;&gt;    :   右移运算符，num &gt;&gt; 1,相当于num除以2</p>
-<p>&gt;&gt;&gt;   :   无符号右移，忽略符号位，空位都以0补齐</p>
-<p>需要注意的是，对于int型，1&lt;&lt;35与1&lt;&lt;3是一样的，因为int只有32位，而对于long型，则需要将操作数模64</p>
-<h3 id="Q2：获取奇偶数？"><a href="#Q2：获取奇偶数？" class="headerlink" title="Q2：获取奇偶数？"></a>Q2：获取奇偶数？</h3><p>X&amp;1=1 就是奇数，否则就是偶数</p>
-<h3 id="Q3：获取二进制位上是0是1？"><a href="#Q3：获取二进制位上是0是1？" class="headerlink" title="Q3：获取二进制位上是0是1？"></a>Q3：获取二进制位上是0是1？</h3><p>将需要获取到的二进制位置1后与原数值进行&amp;运算，若当前位数值为1，则结果不为零。</p>
-<h3 id="Q4：找出1001位数组里唯一重复的数（不适用额外空间）？"><a href="#Q4：找出1001位数组里唯一重复的数（不适用额外空间）？" class="headerlink" title="Q4：找出1001位数组里唯一重复的数（不适用额外空间）？"></a>Q4：找出1001位数组里唯一重复的数（不适用额外空间）？</h3><p>连续异或</p>
-<p>如果可以使用辅助空间，就建立一个长度为1000的数组，将原数组出现的次数，对应到新建的辅助空间中，当某一个数出现了两次之后，就可以结束运算了</p>
-<h3 id="Q5：找出二进制种1的位数的三种方法？"><a href="#Q5：找出二进制种1的位数的三种方法？" class="headerlink" title="Q5：找出二进制种1的位数的三种方法？"></a>Q5：找出二进制种1的位数的三种方法？</h3><p>（1）循环比对每一位是不是1  </p>
-<p>（2）使用&gt;&gt;&gt;运算符，连续比对末尾是不是1  </p>
-<p>（3）使用减一方法，二进制数减一后，在前一个1后面的数字与减一后的这部分进行&amp;运算后结果为零，利用这一原理，可以依次消除所有的1</p>
-<h3 id="Q6：是不是二的整数次方（1条语句）？"><a href="#Q6：是不是二的整数次方（1条语句）？" class="headerlink" title="Q6：是不是二的整数次方（1条语句）？"></a>Q6：是不是二的整数次方（1条语句）？</h3><p>用减一方法，一次运算就能得到结果</p>
-<h3 id="Q7：奇偶位互换？"><a href="#Q7：奇偶位互换？" class="headerlink" title="Q7：奇偶位互换？"></a>Q7：奇偶位互换？</h3><p>（1）转化为字符数组，i和i+1交换，步进2     </p>
-<p>（2）在&amp;运算中，&amp;0就等于消除某一位，&amp;1就等于保留某一位       那么&amp;01010101010101010101010101010101（0xaaaaaaaa） 就等于保留奇数位       那么&amp;10101010101010101010101010101010 （0x55555555）就等于保留偶数位       将奇数位左移，偶数位右移，在进行异或运算后就可以得到最后的结果了。</p>
-<h3 id="Q8：0-1浮点实数的二进制表示？"><a href="#Q8：0-1浮点实数的二进制表示？" class="headerlink" title="Q8：0~1浮点实数的二进制表示？"></a>Q8：0~1浮点实数的二进制表示？</h3><p>十进制数将小数部分乘2，如果大于1，则该位置为1。否则置为0</p>
-<h3 id="Q9：出现1次与出现k次，数组里只有一个数出现1次，请输出这个数？"><a href="#Q9：出现1次与出现k次，数组里只有一个数出现1次，请输出这个数？" class="headerlink" title="Q9：出现1次与出现k次，数组里只有一个数出现1次，请输出这个数？"></a>Q9：出现1次与出现k次，数组里只有一个数出现1次，请输出这个数？</h3><p>将一个出现了k次的数转换为k进制之后，将进制转换后的每一位都进行k次累加，那么每一位对应的结果毫无疑问就是零。所以可以将全部数组转换为k进制后，进行不进位计算，最后的结果就是只出现一次的那个数。（为了方便计算，可以将位数不足的置为0，也可以将数组位置全部翻转一遍）</p>
+
+
+<p>删除数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop database [if exists] &#96;school&#96;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>使用数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">USE &#96;school&#96;</span><br></pre></td></tr></table></figure>
+
+<p>这个`符号，在tab键的上方，如果你的表名或者字段是一个特殊字符，就需要带`</p>
+<p>查看数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">show databases </span><br><span class="line">&#x2F;&#x2F;查看所有数据库</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Q3-数据库列类型（数据类型）"><a href="#Q3-数据库列类型（数据类型）" class="headerlink" title="Q3: 数据库列类型（数据类型）"></a>Q3: 数据库列类型（数据类型）</h3><p><strong>数值</strong>  </p>
+<ul>
+<li><p>tinyint 1个字节  </p>
+</li>
+<li><p>smallint 2个字节    </p>
+</li>
+<li><p>mediumint 3个字节  </p>
+</li>
+<li><p><strong>int 4个字节 int设置的位数与零填充有关，设置了零填充之后位数不足的将会被填充至满</strong>  </p>
+</li>
+<li><p>bigint 8个字节    </p>
+</li>
+</ul>
+<ul>
+<li><p>float 4个字节  </p>
+</li>
+<li><p>double 8个字节  </p>
+</li>
+<li><p>decimal 字符串形式的浮点数，一般用于金融计算</p>
+</li>
+</ul>
+<p><strong>字符串</strong>  </p>
+<ul>
+<li><p>char 0～255  </p>
+</li>
+<li><p><strong>varchar 0～65535 可变字符串</strong> </p>
+</li>
+<li><p>tinytext  2^8-1 微型文本  </p>
+</li>
+<li><p><strong>text   2^16-1 文本串</strong></p>
+</li>
+</ul>
+<p><strong>日期</strong>  </p>
+<ul>
+<li><p>date YYYY-MM-DD 日期  </p>
+</li>
+<li><p>time HH：MM：SS 时间格式  </p>
+</li>
+<li><p><strong>datetime YYYY-MM-DD HH：MM：SS 最常用的时间格式</strong>  </p>
+</li>
+<li><p>timestamp 时间戳指的是1970.1.1到现在的毫秒数 </p>
+</li>
+<li><p>year 年份表示</p>
+</li>
+</ul>
+<p><strong>null</strong>  </p>
+<p> 没有值。尽量不要用null值进行运算，使用null运算后，结果一定为null</p>
+<h3 id="Q4：数据库字段属性？"><a href="#Q4：数据库字段属性？" class="headerlink" title="Q4：数据库字段属性？"></a>Q4：数据库字段属性？</h3><p>unsigned：  </p>
+<p>​    无符号整数，声明之后该列不能为负数</p>
+<p>zerofill：  </p>
+<p>​    不足位数用零填充</p>
+<p>自增 auto_increment： </p>
+<p>​    通常理解为自增，自动在上一条记录的基础上加一  </p>
+<p>​    通常用来设计唯一的主键，必须是整数类型  </p>
+<p>​    可以自定义设计逐渐的起始值和步长</p>
+<p>非空 not null： </p>
+<p>​     not null 如果不幅值就报错</p>
+<p>默认 default： </p>
+<p>​     设置默认的值  </p>
+<p>如果不设置值，就会赋给默认的值</p>
+<h3 id="Q5：建议每一个表都需要存在的五个字段？"><a href="#Q5：建议每一个表都需要存在的五个字段？" class="headerlink" title="Q5：建议每一个表都需要存在的五个字段？"></a>Q5：建议每一个表都需要存在的五个字段？</h3><p>id 主键 一定非空</p>
+<p>`version` 乐观锁</p>
+<p>is_delete 伪删除</p>
+<p>gmt_create 创建时间</p>
+<p>gmt_update 修改时间</p>
+<h3 id="Q6-写一个创建数据表的实例？"><a href="#Q6-写一个创建数据表的实例？" class="headerlink" title="Q6:写一个创建数据表的实例？"></a>Q6:写一个创建数据表的实例？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE IF NOT EXISTS &#96;student&#96; (     </span><br><span class="line">	&#96;id&#96; INT(4) NOT NULL AUTO_INCREMENT COMMENT &#39;学号&#39;,     </span><br><span class="line">	&#96;name&#96; VARCHAR(30) NOT NULL DEFAULT &#39;匿名&#39; COMMENT &#39;姓名&#39;,      </span><br><span class="line">	&#96;pwd&#96; VARCHAR(20) NOT NULL DEFAULT &#39;123456&#39; COMMENT&#39;密码&#39;,      </span><br><span class="line">&#96;sex&#96; VARCHAR(2) NOT NULL DEFAULT &#39;女&#39; COMMENT &#39;性别&#39;,     </span><br><span class="line">	&#96;birthday&#96; DATETIME DEFAULT NULL COMMENT &#39;出生日期&#39;,     </span><br><span class="line">	&#96;address&#96; VARCHAR(100) DEFAULT NULL COMMENT &#39;家庭住址&#39;,      </span><br><span class="line">&#96;email&#96; VARCHAR(50) DEFAULT NULL COMMENT&#39;邮箱&#39;,   </span><br><span class="line">PRIMARY KEY (&#96;id&#96;) </span><br><span class="line">) ENGINE&#x3D;INNODB DEFAULT CHARSET&#x3D;utf8</span><br></pre></td></tr></table></figure>
+
+<p>使用表的名称，和字段尽量用``(tab上面那个键)扩起来</p>
+<p>字符串要使用‘’英文单引号扩起来</p>
+<p>所有语句后面要加逗号，最后一个不用加</p>
+<p>主键一般一个表里只有唯一的一个</p>
+<p>IF NOT EXISTS 如果不存在</p>
+<p>NOT NULL 非空</p>
+<p>AUTO_INCREMENT 自增</p>
+<p>DEFAULT 设置默认值</p>
+<p>DEFAULT NULL 默认值为空</p>
+<p>COMMENT 注释</p>
+<p>PRIMARY KEY 主键</p>
+<p>ENGINE 引擎</p>
+<p>DEFAULT CHARSET 默认编码</p>
+<h3 id="Q7：查看数据库语句？"><a href="#Q7：查看数据库语句？" class="headerlink" title="Q7：查看数据库语句？"></a>Q7：查看数据库语句？</h3><p>查看数据库语句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show create database &#96;school&#96;;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>查看数据表的语句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show create table &#96;student&#96;;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>显示表的结构</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DESC &#96;student&#96;;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Q8-数据库引擎？数据库存储？"><a href="#Q8-数据库引擎？数据库存储？" class="headerlink" title="Q8:数据库引擎？数据库存储？"></a>Q8:数据库引擎？数据库存储？</h3><p><strong>常用的数据引擎：</strong></p>
+<p>INNODB 默认使用</p>
+<p>MYISAM 早些年使用</p>
+<p><strong>区别：</strong></p>
+<p>INNODB：事务支持，数据行锁定，外键约束</p>
+<p>MYISAM：全文索引</p>
+<p>表空格大小，MYISAM较小，INNODB较大约为前者2倍</p>
+<p><strong>常规使用操作：</strong></p>
+<p>MYISAM：节约空间，速度较快</p>
+<p>INNODB：安全性好，事务的处理，多表多用户操作</p>
+<p><strong>在物理空间存在的位置：</strong></p>
+<p>所有数据库文件夹都存在data目录下，一个文件夹就对应一个数据库本质还是文件的存储</p>
+<p><strong>MYSQL引擎在物理文件上的区别</strong>  </p>
+<p>innodb在数据库表：</p>
+<p>*.frm文件，保存了每个表的元数据，包括表结构的定义等</p>
+<p>.ibd文件：InnoDB引擎开启了独立表空间(my.ini中配置innodb_file_per_table = 1)产生的存放该表的数据和索引的文件。 </p>
+<p> MYISAM对应文件：   </p>
+<p>*.frm 表结构的定义文件     </p>
+<p>*.MYD 数据文件（data）     </p>
+<p>*.MYI 索引文件（index）</p>
+<p><strong>设置数据库表的字符集编码</strong>  </p>
+<p>CHARSET=utf8  如果不设置的话，会是mysql默认的字符集编码Latin1（不支持中文）</p>
+<h3 id="Q9：修改表？删除表？操作表的字段？"><a href="#Q9：修改表？删除表？操作表的字段？" class="headerlink" title="Q9：修改表？删除表？操作表的字段？"></a>Q9：修改表？删除表？操作表的字段？</h3><p><strong>修改表</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE &#96;teacher&#96; RENAME AS &#96;teacher1&#96;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>增加表的字段</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE &#96;teacher&#96; ADD &#96;age&#96; INT（11）;</span><br></pre></td></tr></table></figure>
+
+<p><strong>修改表的字段（重命名，修改约束！）</strong></p>
+<p><strong>重命名：</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE &#96;teacher&#96; CHANGE &#96;age&#96; &#96;age1&#96; INT（11）;         </span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;字段重命名，将age改成age1</span><br></pre></td></tr></table></figure>
+
+<p><strong>修改约束：</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE &#96;teacher&#96; MODIFY &#96;age&#96; VARCHAR(11) ;        </span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;修改约束，将INT改成VARCHAR</span><br></pre></td></tr></table></figure>
+
+<p><strong>删除表的字段:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE &#96;teacher1&#96; DROP &#96;age1&#96;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>删除表</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DROP TABLE IF EXISTS &#96;teacher1&#96;;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Q10-增加外键？"><a href="#Q10-增加外键？" class="headerlink" title="Q10:增加外键？"></a>Q10:增加外键？</h3><p>方式一：在创建表的时候，增加约束（麻烦，比较复杂）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE &#96;grade&#96;(    </span><br><span class="line">&#96;gradeid&#96; INT(10) NOT NULL AUTO_INCREMENT COMMENT &#39;年级id&#39;，  </span><br><span class="line">&#96;gradename&#96; VARCHAR(50) NOT NULL COMMENT &#39;年级名称&#39;，  </span><br><span class="line">PRIMARY KEY（&#96;gradeid&#96;）)</span><br><span class="line">ENGINE&#x3D;INNODB DEFAULT CHARSET&#x3D;utf8</span><br><span class="line"></span><br><span class="line">CREATE TABLE IF NOT EXISTS &#96;student&#96; (     </span><br><span class="line">&#96;id&#96; INT(4) NOT NULL AUTO_INCREMENT COMMENT &#39;学号&#39;,     </span><br><span class="line">&#96;name&#96; VARCHAR(30) NOT NULL DEFAULT &#39;匿名&#39; COMMENT &#39;姓名&#39;,      </span><br><span class="line">&#96;pwd&#96; VARCHAR(20) NOT NULL DEFAULT &#39;123456&#39; COMMENT&#39;密码&#39;,      </span><br><span class="line">&#96;sex&#96; VARCHAR(2) NOT NULL DEFAULT &#39;女&#39; COMMENT &#39;性别&#39;,     </span><br><span class="line">&#96;birthday&#96; DATETIME DEFAULT NULL COMMENT &#39;出生日期&#39;,     </span><br><span class="line">&#96;address&#96; VARCHAR(100) DEFAULT NULL COMMENT &#39;家庭住址&#39;,      </span><br><span class="line">&#96;email&#96; VARCHAR(50) DEFAULT NULL COMMENT&#39;邮箱&#39;,      </span><br><span class="line">PRIMARY KEY (&#96;id&#96;) ,    </span><br><span class="line">KEY &#96;FK_gradeid&#96; (&#96;gradeid&#96;), &#x2F;&#x2F;定义外键key   </span><br><span class="line">CONSTRAINT &#96;FK_gradeid&#96; FOREIGN KEY (&#96;gradeid&#96;) REFERENCES &#96;grade&#96; (&#96;gradeid&#96;) </span><br><span class="line">&#x2F;&#x2F;给这个外键添加约束（执行引用）</span><br><span class="line">&#x2F;&#x2F;references 引用</span><br><span class="line">) ENGINE&#x3D;INNODB DEFAULT CHARSET&#x3D;utf8</span><br></pre></td></tr></table></figure>
+
+<p>需要注意的是，删除有外键关系的表的时候，必须要删除引用别人的表（从表），再删除被引用的表（主表）<br>主表是被引用的表，从表是引用的表</p>
+<p>方式二，创建表的时候不声明外键关系，然后再添加外键关系</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE &#96;student&#96;ADD CONSTRAINT &#96;FK_gradeid&#96; FOREIGN_KEY(&#96;gradeid&#96;) REFENCES &#96;grade&#96;(&#96;gradeid&#96;);</span><br></pre></td></tr></table></figure>
+
+<p>以上操作都是物理外键，是数据库级别的外键，不建议使用（避免数据库过多造成困扰）<br>最佳实践：数据库就是单纯的表，只用来存数据，只用行（数据）和列（字段）我们使用多张表的数据，想使用外键（用程序去实现）</p>
+<h3 id="Q11-DML语句？"><a href="#Q11-DML语句？" class="headerlink" title="Q11:DML语句？"></a>Q11:DML语句？</h3><p><strong>插入语句</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO &#96;garde&#96;(&#96;gradename&#96;) VALUES(&#39;大四&#39;);</span><br></pre></td></tr></table></figure>
+
+<p>如果主键自增，则可以省略主键（如果不写表的字段，他就会一一匹配）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO &#96;grade&#96; VALUES(&#39;大三&#39;);</span><br></pre></td></tr></table></figure>
+
+<p>所以如果一般写插入语句，我们一定要字段和数据一一对应。</p>
+<p>使用插入语句也可以同时插入多个值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO &#96;grade&#96; (&#96;gradename&#96;)VALUES(&#39;大一&#39;)(&#39;大二&#39;);</span><br></pre></td></tr></table></figure>
+
+<p>如果同时插入多个字段的多个值，则需要一一对应</p>
+<p><strong>修改语句</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">UPDATE &#96;student&#96; SET &#96;name&#96;&#x3D;&#39;shenqi&#39; WHERE id &#x3D; 1;</span><br><span class="line">UPDATE &#96;student&#96; SET &#96;name&#96;&#x3D;&#39;shenqi&#39;;</span><br></pre></td></tr></table></figure>
+
+<p>需要注意的是，如果不指定条件，将会修改表内所有数据<br>如果想要同时修改多个属性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UPDATE &#96;student&#96; SET &#96;name&#96;&#x3D;&#39;shenqi&#39;,email&#x3D;&#39;@qq.com&#39; WHERE id &#x3D; 1;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>删除语句</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DELETE FROM &#96;stduent&#96; WHERE id &gt; 2;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>清空表</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TRUNCATE &#96;student&#96;;</span><br></pre></td></tr></table></figure>
+
+<p>TRUNCATE和DELETE都能删除数据，都不会删除表结构但是TRUNCATE 可以重置自增列，DELETE不能重置自增列而且，TRUNCATE不会影响事务所以不推荐使用delete删除表数据<br>另外，当使用DELETE时，数据库引擎不用，重启后现象也不同InnoDB，重启后自增列会从1开始（存在内存当中，断电既失）MyISAM 继续从上一个自增量开始（存在文件当中，不会丢失）</p>
+<h3 id="Q12-DQL语句"><a href="#Q12-DQL语句" class="headerlink" title="Q12:DQL语句?"></a>Q12:DQL语句?</h3><p><strong>数据查询语句，数据库最核心语句</strong></p>
+<p><strong>查询全部学生</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from &#96;student&#96;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>查询指定字段</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT &#96;StudentNo&#96; ,&#96;StudentName&#96; FROM &#96;student&#96;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>可以给字段或者表起别名</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT &#96;StudentNo&#96; AS 学号 ,&#96;StudentName&#96; AS 学生姓名 FROM &#96;student&#96; AS 学生;</span><br></pre></td></tr></table></figure>
+
+<p><strong>字符串拼接函数CONCAT（a，b）</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT CONCAT(&#39;姓名： &#39; ,&#96;StudentName&#96;) AS 新名字 FROM &#96;student&#96; ;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Q13-去重关键字？"><a href="#Q13-去重关键字？" class="headerlink" title="Q13:去重关键字？"></a>Q13:去重关键字？</h3><p><strong>去重 DISTINGCT</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT DISTINCT &#96;StudentNo&#96; FROM result;</span><br></pre></td></tr></table></figure>
+
+<p><strong>查询系统版本(函数)</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT VERSION();</span><br></pre></td></tr></table></figure>
+
+<p><strong>用来计算（表达式）</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT 100-1 AS 计算结果</span><br></pre></td></tr></table></figure>
+
+<p><strong>查询自增的步长（变量）</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT @@auto_increment_increment;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Q14-模糊查询？"><a href="#Q14-模糊查询？" class="headerlink" title="Q14:模糊查询？"></a>Q14:模糊查询？</h3><p>IS NULL 是空</p>
+<p>IS NOT NULL 非空</p>
+<p>BETWEEN AND 在区间内</p>
+<p>LIKE （SQL匹配，两个匹配符，%不限定长度，_限定长度）</p>
+<p>IN （匹配是不是在范围内）</p>
+<h3 id="Q15：联表查询？三种Join的区别？"><a href="#Q15：联表查询？三种Join的区别？" class="headerlink" title="Q15：联表查询？三种Join的区别？"></a>Q15：联表查询？三种Join的区别？</h3><p><strong>联表查询</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT s.&#96;studentNo&#96;, &#96;studentName&#96;, &#96;SubjectNo&#96;, &#96;StudentResult&#96;</span><br><span class="line">FROM &#96;student&#96; AS &#39;s&#39;</span><br><span class="line">INNER JOIN &#96;result&#96; AS &#39;r&#39;</span><br><span class="line">WHERE s.&#96;studentNo&#96; &#x3D; r.&#96;studentNo&#96;</span><br></pre></td></tr></table></figure>
+
+<p>这里的WHERE也可以使用ON来替换如果是on </p>
+<p>就是于join一起使用的连接查询</p>
+<p>where被称为等值查询</p>
+<p>区别在于ON是先筛选再关联，WHERE是先关联再筛选，相对而言，ON对于大量数据的处理上效率更高一点</p>
+<p><strong>三种匹配的区别：</strong></p>
+<p>INNER JOIN 如果表中至少有一个匹配，就返回行</p>
+<p>LEFT JOIN 从左表中返回所有数据，哪怕右表中没有匹配</p>
+<p>RIGHT JOIN 从右表中返回所有数据，哪怕左表中没有匹配</p>
+<p><strong>三表联查:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SELECT s.&#96;studentNo&#96;,&#96;studentName&#96;,&#96;SubjectName&#96;,&#96;StudentResult&#96;</span><br><span class="line">FROM &#96;studentAS&#96; &#39;s&#39;</span><br><span class="line">RIGHT JOIN &#96;result&#96; AS &#39;r&#39;</span><br><span class="line">ON s.&#96;studentNo&#96; &#x3D; r.&#96;studentNo&#96;</span><br><span class="line">INNER JOIN &#96;subject&#96; AS &#39;sub&#39;</span><br><span class="line">ON r.&#96;SubjectNo&#96; &#x3D; sub.&#96;SubjectNo&#96;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>自连接:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT a.&#96;catrgoryName&#96; AS &#39;父栏目&#39;,b.&#96;categoryName&#96; AS &#39;子栏目&#39;</span><br><span class="line">FROM &#96;category&#96; AS &#39;a&#39;,&#96;category&#96; AS &#39;b&#39;</span><br><span class="line">WHERE a.&#96;category&#96; &#x3D; b.&#96;pid&#96;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Q16-分页和排序？"><a href="#Q16-分页和排序？" class="headerlink" title="Q16:分页和排序？"></a>Q16:分页和排序？</h3><p>排序 order by</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SELECT s.&#96;studentNo&#96;,&#96;studentName&#96;,&#96;SubjectNo&#96;,&#96;StudentResult&#96;</span><br><span class="line">FROM &#96;student&#96; AS &#39;s&#39;</span><br><span class="line">INNER JOIN &#96;result&#96; AS &#39;r&#39;</span><br><span class="line">WHERE s.&#96;studentNo&#96; &#x3D; r.&#96;studentNo&#96;</span><br><span class="line">ORDER BY &#96;studentNo&#96; </span><br><span class="line">DESC</span><br></pre></td></tr></table></figure>
+
+<p>DESC 降序</p>
+<p> ASC 升序</p>
+<p>分页limit</p>
+<p>缓解数据库压力，美观与分页相对的是 瀑布流，就是完全不分页，跟抖音的形式有点相似</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM &#96;student&#96;limit 5,5</span><br></pre></td></tr></table></figure>
+
+<p>limit 有两个参数，第一个是页面起始值，第二个是页面大小</p>
+<p>上例中就代表着从第五条数据开始，本页展示5条数据</p>
+<p>将上述知识点综合起来就是：查询JAVA第一学年，课程成绩排名前十的同学，并且分数要大于80的学生信息（学号，姓名，课程名称，分数）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">select s.&#96;studentNO&#96;,&#96;studentName&#96;,&#96;subjectName&#96;,&#96;studentResult&#96;</span><br><span class="line">from &#96;student&#96; s</span><br><span class="line">inner join &#96;result&#96; r</span><br><span class="line">on s.&#96;studentNo&#96; &#x3D; r.&#96;studentNo&#96;</span><br><span class="line">inner join &#96;subject&#96; sub</span><br><span class="line">on r.&#96;subjectName&#96;&#x3D; sub.&#96;subjectName&#96;</span><br><span class="line">where &#96;subjectName&#96; &#x3D; &#39;JAVA&#39; and &#96;subjectResult&#96; &gt;80</span><br><span class="line">order by &#96;subjectResult&#96; </span><br><span class="line">asc             &#x2F;&#x2F;前十名</span><br><span class="line">limit 0,10 ;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Q17-子查询？"><a href="#Q17-子查询？" class="headerlink" title="Q17:子查询？"></a>Q17:子查询？</h3><p>子查询（具体功能与联表查询类似）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SELECT &#96;studentNo&#96;,&#96;subjectNo&#96;,&#96;sutdentResult&#96;</span><br><span class="line">from &#96;result&#96; </span><br><span class="line">where &#96;subjectNo&#96;&#x3D;&#123;  </span><br><span class="line">	select &#96;subjectNo&#96; from &#96;subject&#96;  </span><br><span class="line">	where &#96;subjectName&#96; &#x3D; &#39;数据库&#39;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运算顺序，由里及外</p>
+<h3 id="Q18-MySQL常用函数？"><a href="#Q18-MySQL常用函数？" class="headerlink" title="Q18:MySQL常用函数？"></a>Q18:MySQL常用函数？</h3><p><strong>数学函数:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">select abs(-8); </span><br><span class="line">&#x2F;&#x2F;绝对值</span><br><span class="line"></span><br><span class="line">select ceiling(9.4);</span><br><span class="line">&#x2F;&#x2F;向上取整</span><br><span class="line"></span><br><span class="line">selcect floot（9.4)；</span><br><span class="line">&#x2F;&#x2F;向下取整</span><br><span class="line"></span><br><span class="line">select rand();</span><br><span class="line">&#x2F;&#x2F;返回一个0，1之间的随机数</span><br><span class="line"></span><br><span class="line">select sign(10);</span><br><span class="line">&#x2F;&#x2F;判断一个数的符号，正数返回1，负数返回-1</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>字符串函数:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">select char_length(&#39;hhhhhh&#39;); </span><br><span class="line">&#x2F;&#x2F;返回字符串长度</span><br><span class="line"></span><br><span class="line">select concat(&#39;12&#39;,&#39;23&#39;,&#39;34&#39;);</span><br><span class="line">&#x2F;&#x2F;字符串拼接</span><br><span class="line"></span><br><span class="line">select insert(&#39;helloworld&#39;,1,2,&#39;123&#39;);</span><br><span class="line">&#x2F;&#x2F;插入替换字符串，在第一个位置，替换两个长度的字符串</span><br><span class="line"></span><br><span class="line">select lower(&#39;AAA&#39;);</span><br><span class="line">&#x2F;&#x2F;小写字母</span><br><span class="line"></span><br><span class="line">select upper(&#39;BBB&#39;);</span><br><span class="line">&#x2F;&#x2F;大写字母</span><br><span class="line"></span><br><span class="line">select instr(&#39;asd&#39;,&#39;s&#39;);</span><br><span class="line">&#x2F;&#x2F;子字符串第一次出现的索引</span><br><span class="line"></span><br><span class="line">select replace(&#39;123456&#39;,&#39;23&#39;,&#39;78&#39;);</span><br><span class="line">&#x2F;&#x2F;将指定的字符串替换成另外的字符串</span><br><span class="line"></span><br><span class="line">select substr(&#39;45678912156468&#39;,4,6); </span><br><span class="line">&#x2F;&#x2F;返回指定的字符串（源字符串，截取的位置，截取的长度）</span><br><span class="line"></span><br><span class="line">select reverse(&#39;asdfgh&#39;); </span><br><span class="line">&#x2F;&#x2F;反转字符串</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>时间和日期函数:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">select current_date();</span><br><span class="line">&#x2F;&#x2F;获取当前日期</span><br><span class="line"></span><br><span class="line">select curdate();</span><br><span class="line">&#x2F;&#x2F;获取当前日期</span><br><span class="line"></span><br><span class="line">select now();</span><br><span class="line">&#x2F;&#x2F;获取当前时间</span><br><span class="line"></span><br><span class="line">select localtime();</span><br><span class="line">&#x2F;&#x2F;本地时间</span><br><span class="line"></span><br><span class="line">select sysdate();</span><br><span class="line">&#x2F;&#x2F;系统时间</span><br><span class="line"></span><br><span class="line">select year(now()); </span><br><span class="line">&#x2F;&#x2F;可以把year换成month，day，hour，minute，second</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>系统相关信息:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">select system_user();</span><br><span class="line"></span><br><span class="line">select user();</span><br><span class="line"></span><br><span class="line">select version();</span><br></pre></td></tr></table></figure>
+
+<h3 id="Q19-聚合函数？"><a href="#Q19-聚合函数？" class="headerlink" title="Q19:聚合函数？"></a>Q19:聚合函数？</h3><p>聚合函数（常用）</p>
+<p>COUNT 计数</p>
+<p>sum 求和</p>
+<p>avg 平均值</p>
+<p>max 最大值</p>
+<p>min 最小值</p>
+<h3 id="Q20：分组-过滤？"><a href="#Q20：分组-过滤？" class="headerlink" title="Q20：分组/过滤？"></a>Q20：分组/过滤？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">select &#96;subjectName&#96;，AVG(&#96;StudentResult&#96;)，Max(&#96;StudentResult&#96;)，Min(&#96;StudentResult&#96;)</span><br><span class="line">FROM &#96;result&#96; r</span><br><span class="line">inner join &#96;subject&#96; sub</span><br><span class="line">on r.&#96;subjectNo&#96; &#x3D; sub.&#96;subjectNo&#96;</span><br><span class="line">group by r.&#96;subjectName&#96;</span><br><span class="line">having AVG(&#96;StudentResult&#96;)</span><br></pre></td></tr></table></figure>
+
+<p>根据平均成绩超过80分的科目名称分组，求每科的平均分，最高分，最低分</p>
+<p>需要注意的是，分组的过滤条件不能使用where，只能使用having</p>
+<p>所以having也叫分组过滤</p>
+<h3 id="Q21-数据库级别的MD5摘要？"><a href="#Q21-数据库级别的MD5摘要？" class="headerlink" title="Q21:数据库级别的MD5摘要？"></a>Q21:数据库级别的MD5摘要？</h3><p>MD5 信息摘要算法</p>
+<p>MD5不可逆，但是相同内容加密后密文一样MD5的破解本质上是，对密文的对比<br>UPDATE 表名 SET 字段名=MD5(字段名) </p>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UPDATE &#96;test&#96; SET &#96;pwd&#96;&#x3D;MD5(&#96;pwd&#96;) where &#96;id&#96; &#x3D; 1;</span><br></pre></td></tr></table></figure>
+
+
+<p>还可以在插入的时候就进行加密</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO &#96;test&#96; VALUES(1,&#39;xiamming&#39;,MD5(&#39;123456&#39;));</span><br></pre></td></tr></table></figure>
+
+<p>将用户传进来的密码进行MD5加密后比对</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM &#96;test&#96; WHERE &#96;name&#96;&#x3D;&#39;xiaoming&#39; AND &#96;pwd&#96;&#x3D;MD5(&#39;123456&#39;)</span><br></pre></td></tr></table></figure>
+
+
+
 
       
 
@@ -280,7 +547,29 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/MySQL/" class="article-tag-list-link color1">MySQL</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -330,7 +619,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/03/25/%E7%AE%97%E6%B3%95%E2%80%94%E2%80%94%E4%BD%8D%E8%BF%90%E7%AE%97/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/02/07/MySQL%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -344,18 +633,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/03/25/%E7%AE%97%E6%B3%95%E2%80%94%E2%80%94%E9%80%92%E5%BD%92/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/02/28/MySQL%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9402/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          算法——递归
+          MySQL笔记——02
         
       </div>
     </a>
   
   
-    <a href="/2021/03/24/MySQL%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9402/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">MySQL笔记——02</div>
+    <a href="/2021/01/31/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%94%E7%AB%A0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java编程思想——第五章</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -386,7 +675,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Q1-6种常用位运算符？"><span class="toc-number">1.</span> <span class="toc-text">Q1:6种常用位运算符？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q2：获取奇偶数？"><span class="toc-number">2.</span> <span class="toc-text">Q2：获取奇偶数？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q3：获取二进制位上是0是1？"><span class="toc-number">3.</span> <span class="toc-text">Q3：获取二进制位上是0是1？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q4：找出1001位数组里唯一重复的数（不适用额外空间）？"><span class="toc-number">4.</span> <span class="toc-text">Q4：找出1001位数组里唯一重复的数（不适用额外空间）？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q5：找出二进制种1的位数的三种方法？"><span class="toc-number">5.</span> <span class="toc-text">Q5：找出二进制种1的位数的三种方法？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q6：是不是二的整数次方（1条语句）？"><span class="toc-number">6.</span> <span class="toc-text">Q6：是不是二的整数次方（1条语句）？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q7：奇偶位互换？"><span class="toc-number">7.</span> <span class="toc-text">Q7：奇偶位互换？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q8：0-1浮点实数的二进制表示？"><span class="toc-number">8.</span> <span class="toc-text">Q8：0~1浮点实数的二进制表示？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q9：出现1次与出现k次，数组里只有一个数出现1次，请输出这个数？"><span class="toc-number">9.</span> <span class="toc-text">Q9：出现1次与出现k次，数组里只有一个数出现1次，请输出这个数？</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Q2：操作数据库？"><span class="toc-number">1.</span> <span class="toc-text">Q2：操作数据库？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q3-数据库列类型（数据类型）"><span class="toc-number">2.</span> <span class="toc-text">Q3: 数据库列类型（数据类型）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q4：数据库字段属性？"><span class="toc-number">3.</span> <span class="toc-text">Q4：数据库字段属性？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q5：建议每一个表都需要存在的五个字段？"><span class="toc-number">4.</span> <span class="toc-text">Q5：建议每一个表都需要存在的五个字段？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q6-写一个创建数据表的实例？"><span class="toc-number">5.</span> <span class="toc-text">Q6:写一个创建数据表的实例？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q7：查看数据库语句？"><span class="toc-number">6.</span> <span class="toc-text">Q7：查看数据库语句？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q8-数据库引擎？数据库存储？"><span class="toc-number">7.</span> <span class="toc-text">Q8:数据库引擎？数据库存储？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q9：修改表？删除表？操作表的字段？"><span class="toc-number">8.</span> <span class="toc-text">Q9：修改表？删除表？操作表的字段？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q10-增加外键？"><span class="toc-number">9.</span> <span class="toc-text">Q10:增加外键？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q11-DML语句？"><span class="toc-number">10.</span> <span class="toc-text">Q11:DML语句？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q12-DQL语句"><span class="toc-number">11.</span> <span class="toc-text">Q12:DQL语句?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q13-去重关键字？"><span class="toc-number">12.</span> <span class="toc-text">Q13:去重关键字？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q14-模糊查询？"><span class="toc-number">13.</span> <span class="toc-text">Q14:模糊查询？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q15：联表查询？三种Join的区别？"><span class="toc-number">14.</span> <span class="toc-text">Q15：联表查询？三种Join的区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q16-分页和排序？"><span class="toc-number">15.</span> <span class="toc-text">Q16:分页和排序？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q17-子查询？"><span class="toc-number">16.</span> <span class="toc-text">Q17:子查询？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q18-MySQL常用函数？"><span class="toc-number">17.</span> <span class="toc-text">Q18:MySQL常用函数？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q19-聚合函数？"><span class="toc-number">18.</span> <span class="toc-text">Q19:聚合函数？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q20：分组-过滤？"><span class="toc-number">19.</span> <span class="toc-text">Q20：分组&#x2F;过滤？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q21-数据库级别的MD5摘要？"><span class="toc-number">20.</span> <span class="toc-text">Q21:数据库级别的MD5摘要？</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -554,11 +843,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color5">火锅实验</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">火锅实验</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
             
             <div class="clearfix"></div>

@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>算法——分治法 | ShenQi Blog</title>
+  <title>MySQL笔记——02 | ShenQi Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Q1：快速排序？单向扫描分区：">
+  <meta name="description" content="Q1：事务四大原则？事务最大的特点：要么都成功，要么都失败  事务的四个原则： Atomicity 原子性  事务中的操作无法分割，要么一起成功，要么一起失败，不能只执行一个操作">
 <meta property="og:type" content="article">
-<meta property="og:title" content="算法——分治法">
-<meta property="og:url" content="http://yoursite.com/2021/03/25/%E7%AE%97%E6%B3%95%E2%80%94%E2%80%94%E5%88%86%E6%B2%BB%E6%B3%95/index.html">
+<meta property="og:title" content="MySQL笔记——02">
+<meta property="og:url" content="http://yoursite.com/2021/02/28/MySQL%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9402/index.html">
 <meta property="og:site_name" content="ShenQi Blog">
-<meta property="og:description" content="Q1：快速排序？单向扫描分区：">
+<meta property="og:description" content="Q1：事务四大原则？事务最大的特点：要么都成功，要么都失败  事务的四个原则： Atomicity 原子性  事务中的操作无法分割，要么一起成功，要么一起失败，不能只执行一个操作">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-03-25T03:23:41.000Z">
-<meta property="article:modified_time" content="2021-03-25T05:23:02.394Z">
+<meta property="article:published_time" content="2021-02-28T13:37:19.000Z">
+<meta property="article:modified_time" content="2021-03-26T03:47:52.701Z">
 <meta property="article:author" content="Shen Qi">
+<meta property="article:tag" content="数据库">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="ShenQi Blog" type="application/atom+xml">
@@ -168,14 +169,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-算法——分治法" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-MySQL笔记——02" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      算法——分治法
+      MySQL笔记——02
     </h1>
   
 
@@ -186,91 +187,127 @@
 		  <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
 	</span>
 
-<a href="/2021/03/25/%E7%AE%97%E6%B3%95%E2%80%94%E2%80%94%E5%88%86%E6%B2%BB%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2021-03-25T03:23:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-25</time>
+<a href="/2021/02/28/MySQL%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9402/" class="archive-article-date">
+  	<time datetime="2021-02-28T13:37:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-28</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Q1：快速排序？"><a href="#Q1：快速排序？" class="headerlink" title="Q1：快速排序？"></a>Q1：快速排序？</h3><p><strong>单向扫描分区：</strong></p>
+        <h3 id="Q1：事务四大原则？"><a href="#Q1：事务四大原则？" class="headerlink" title="Q1：事务四大原则？"></a>Q1：事务四大原则？</h3><p>事务最大的特点：要么都成功，要么都失败 </p>
+<p><strong>事务的四个原则：</strong></p>
+<p><strong>Atomicity 原子性</strong> </p>
+<p>事务中的操作无法分割，要么一起成功，要么一起失败，不能只执行一个操作</p>
 <a id="more"></a>
 
-<p>先选定主元扫描指针从左向右扫，big指针从右往左移</p>
-<p>如果被扫描的数，小于等于主元，扫描指针继续向右走</p>
-<p>如果被扫描的数，大于主元，被扫描的数与big指针指向的数交换，big指针左移，扫描指针继续扫描被交换过来的数</p>
-<p>边界：扫描指针与bigger指针交错</p>
-<p>因为指针左侧全部都是小于主元的元素，且内部无序，所以可以直接将主元与指针左侧最后一个元素交换，可以减小时间复杂度</p>
-<p><strong>双向扫描法：</strong></p>
-<p>先选定主元，<strong>让在左右指针不交错的前提下</strong></p>
-<p>左扫描指针先向右走，遇到比主元大或者相等的停下</p>
-<p>右扫描指针向左走，遇到与比主元小或者相等的停下，</p>
-<p><strong>最后左右指针一定交错，此时交换右指针和主元的位置</strong></p>
-<p><strong>三指针分区法：</strong></p>
-<p>与扫描过程与单向扫描类似，但是添加了与主元相等的部分，</p>
-<p><strong>快排的其他优化：</strong></p>
-<p>1.中值取法：三点中值法，绝对中值法</p>
-<p>2.待排序数小于某个值时，执行插入排序</p>
-<h3 id="Q4：最快找到第k小的数？"><a href="#Q4：最快找到第k小的数？" class="headerlink" title="Q4：最快找到第k小的数？"></a>Q4：最快找到第k小的数？</h3><p>常规的想法就是排序后再遍历k次</p>
-<p>但是利用快排的思想，对数组进行分区，因为每次比较后主元的位置是数组排序后固定的</p>
-<p>所以可以利用排序后主元的位置，再处理剩下的元素，从而达到比较快的找到第k小的元素</p>
-<p>（限制：需要改动数组的内容）</p>
-<h3 id="Q5-快速求哪个数字占比超过数组一半（四种方法）"><a href="#Q5-快速求哪个数字占比超过数组一半（四种方法）" class="headerlink" title="Q5:快速求哪个数字占比超过数组一半（四种方法）"></a>Q5:快速求哪个数字占比超过数组一半（四种方法）</h3><p>快速求哪一个数字出现次数超过数组长的的一半（寻找发帖水王）</p>
-<p>算法一：排序后返回数组一半位置的元素</p>
-<p>算法二：hash统计（暂时不会）</p>
-<p>算法三：顺序统计，使主元不断逼近数组一半的位置（限制：需要改动数组的内容）</p>
-<p>算法四：次数统计，新建两个变量，第一个存数字，第二个存出现的次数，遇到不同的数字就次数消掉</p>
-<h3 id="Q6：最小可用ID？"><a href="#Q6：最小可用ID？" class="headerlink" title="Q6：最小可用ID？"></a>Q6：最小可用ID？</h3><p>在非负数组（乱序）种找到最小的可分配的id（从1开始编号），数据量1000000</p>
-<p>找到数组内第k小的数，是否等于k，若等于k则左侧稠密，可用id在主元右侧</p>
-<p>若大于k则右侧稠密，可用id在主元左侧</p>
-<h3 id="Q7：寻找逆序对的个数？"><a href="#Q7：寻找逆序对的个数？" class="headerlink" title="Q7：寻找逆序对的个数？"></a>Q7：寻找逆序对的个数？</h3><p>除了暴力破解以外，还可以使用递归的方法在合并处判断是否逆序</p>
-<h3 id="Q8：数组内树的特性？"><a href="#Q8：数组内树的特性？" class="headerlink" title="Q8：数组内树的特性？"></a>Q8：数组内树的特性？</h3><p>在数组中，树节点的左儿子的节点是2n+1，右儿子的节点是2n+2</p>
-<h3 id="Q10：堆的概念？"><a href="#Q10：堆的概念？" class="headerlink" title="Q10：堆的概念？"></a>Q10：堆的概念？</h3><p>二叉堆是完全二叉树或者近似完全二叉树（既数组内没有空节点）<br>任意节点的值都大于其子节点（大顶堆）任意节点的值都小于其子节点（小顶堆）</p>
-<h3 id="Q11：数组堆化？"><a href="#Q11：数组堆化？" class="headerlink" title="Q11：数组堆化？"></a>Q11：数组堆化？</h3><p>数组堆化确保任意一个父节点都要优于对应的子节点</p>
-<p>其难点在于每次调整顺序都只能调整三个节点内的顺序，不能保证堆顶对于全部数组都是最大的。</p>
-<p>所以其解决的方法是：直接从数组的一半开始，从后向前依次递归每一个节点，确保堆顶是最符合条件的。</p>
-<p>此外需要注意的是，如果堆顶的元素位置被调整之后，很有可能造成，子节点的与孙子节点之间的结构混乱，此时需要递归调整被调换顺序的子节点。使其结构不被破坏。</p>
-<h3 id="Q12：堆排序？"><a href="#Q12：堆排序？" class="headerlink" title="Q12：堆排序？"></a>Q12：堆排序？</h3><p>堆排序堆排序就是利用数组堆化每次能快速选出一个最大值或最小值的特性</p>
-<p>将选出来的最值与数组末尾元素进行交换，最后不断缩减数组规模的一个过程</p>
-<p>可以看作是高级的选择排序</p>
-<p>需要注意的是，小顶堆的堆排结果是从大到小大顶堆的堆排是从小到大</p>
-<h3 id="Q13：计数排序？"><a href="#Q13：计数排序？" class="headerlink" title="Q13：计数排序？"></a>Q13：计数排序？</h3><p>计数排序建立一个辅助空间，空间的大小是原数组存储数据的最大值，只需要遍历一次原数组，将原数组内的元素插入与数组下标的对应的位置中，就可以得到排好序的数组。</p>
-<p>计数排序的优点是快，插入辅助空间是，可以借助下标的对应关系直接插入，不用遍历比较。</p>
-<p>他的时间复杂度是线性的</p>
-<p>但是缺点是需要比较大的辅助空间，如果原数组内数据范围很大，比较稀疏，会导致辅助空间也很大，造成空间的浪费</p>
-<p>所以计数排序适用于数据较为密集或者范围较小的情况下使用</p>
-<p>计数排序的时间空间复杂度都是N+K</p>
-<h3 id="Q14：-桶排序？"><a href="#Q14：-桶排序？" class="headerlink" title="Q14： 桶排序？"></a>Q14： 桶排序？</h3><p>桶排序桶排序是在计数排序的基础上，将辅助空间按顺序分成了一个个桶，所以每次只需要将元素丢入符合条件的桶中，再在桶内进行排序即可。</p>
-<p>排序时只需要将各个桶按顺序的取出桶内元素就能完成排序</p>
-<p>如果桶排序中需要排序的数据集中到了少数几个桶当中，就会造成时间复杂度的极速上升</p>
-<p>最好情况下，桶排序的时间复杂度的范围是O（N）~O(NlgN)</p>
-<h3 id="Q15：基数排序？"><a href="#Q15：基数排序？" class="headerlink" title="Q15：基数排序？"></a>Q15：基数排序？</h3><p>基数排序基数排序是桶排序的特殊情况。</p>
-<p>建立一个二维数组，有十行，分别对应十个数字，相当于十个桶</p>
-<p>从低位开始，先根据低位数字大小放置到对应桶中，按顺序取出</p>
-<p>再根据高位数字大小放入对应桶中，后再按顺序取出</p>
-<p>直到全部位数都放完，此时按顺序取出后，就是排好序的数组了</p>
-<p>如果数据集中在某一个特定范围当中，基数排序会和桶排序一样，时间复杂度极速上升</p>
-<h3 id="Q16：十种排序？"><a href="#Q16：十种排序？" class="headerlink" title="Q16：十种排序？"></a>Q16：十种排序？</h3><p>插入，选择，冒泡 是原址基础排序</p>
-<p>希尔 时间复杂度近似于n的1.3次方</p>
-<p>快排，堆排，归并都是NlgN 快排堆排基于原址，快排表现最好（主元比较靠近边界会导致效率下降，极端情况下时间复杂度会达到n²），堆排常数因子较大，不具备优势</p>
-<p>以上七种都是基于比较的排序</p>
-<p>下面三种是非比较排序，特定情况下比基于比较的排序快很多</p>
-<p>计数 元素集中使用计数</p>
-<p>桶排 元素均匀适合桶排</p>
-<p>基数 又快又稳，适用于十进制整数</p>
-<p>需要做到:1.准确描述算法过程2.写出伪代码3.能分析时间复杂度4.能灵活运用</p>
-<h3 id="Q17：需排序的子数组长度是多少？"><a href="#Q17：需排序的子数组长度是多少？" class="headerlink" title="Q17：需排序的子数组长度是多少？"></a>Q17：需排序的子数组长度是多少？</h3><p>需要排序的最短子数组</p>
-<p>给定义一个无序数组arr，求出需要排序的最短子数组的长度</p>
-<p>例如：arr={2，3，7，5，4，6}返回4，因为只有7546需要排序</p>
-<p>思路：从右往左遍历，先找数组最大值，如果最大值右侧有比最大值小的，就将边界挪到此处</p>
-<p>再从左往右遍历最小值，如果有比最小值小的，同样把边界挪到此处。</p>
-<h3 id="Q19：自定义比较规则？"><a href="#Q19：自定义比较规则？" class="headerlink" title="Q19：自定义比较规则？"></a>Q19：自定义比较规则？</h3><p>利用自定义比较规则完成特殊排序</p>
-<p>例题：数组能排成的最小数</p>
-<p>输入一个正整数数组，把数组里所有整数拼接起来排成一个数，打印出能拼接出所有数字中最小的一个例如：{3，32，321}，则打印出这三个数能排成的最小数字为：321323</p>
-<p>思路：java自带的sort函数可以自定义比较器，输入比较器之后，就可以完成自定义规则的特殊排序了</p>
-<h3 id="Q20：什么时候使用JAVA类库？"><a href="#Q20：什么时候使用JAVA类库？" class="headerlink" title="Q20：什么时候使用JAVA类库？"></a>Q20：什么时候使用JAVA类库？</h3><p>.Java Arrays封装了一些方法比如二分查找，快速排序java里的快排是双指针分区，数据较小时改用插入排序的原址排序</p>
-<p>Java 堆排，桶排，计数排序，基数排序没有封装</p>
+<p><strong>Consistency 一致性</strong> </p>
+<p>事务签后的数据完整性要一致</p>
+<p><strong>Isolation 隔离性</strong> </p>
+<p>多个用户并发访问数据库的时候，数据库为每一个用户开启的事务，不能被其他事务的操作数据所干扰，事务之间要相互隔离</p>
+<p><strong>Durability 持久性</strong> </p>
+<p>事务结束后的数据不随着外界原因导致丢失</p>
+<h3 id="Q2-事务的隔离级别？"><a href="#Q2-事务的隔离级别？" class="headerlink" title="Q2:事务的隔离级别？"></a>Q2:事务的隔离级别？</h3><p><strong>隔离级别脏读</strong> </p>
+<p>一个事务读取了另外一个事务未提交的数据</p>
+<p><strong>不可重复读</strong> </p>
+<p>在一个事务内读取表中的某一行数据，多次读取结果不同（这个不一定是错误，但是某些场合不对）</p>
+<p><strong>幻读</strong> </p>
+<p>在一个事务内读取到了别的事务插入的数据，导致前后读取不一致</p>
+<h3 id="Q3-事务的执行流程？"><a href="#Q3-事务的执行流程？" class="headerlink" title="Q3:事务的执行流程？"></a>Q3:事务的执行流程？</h3><p>mysql 是默认开启事务自动提交的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SET autocommit &#x3D; 0 &#x2F;*关闭*&#x2F;</span><br><span class="line"></span><br><span class="line">SET autocommit &#x3D; 1 &#x2F;*开启（默认的）*&#x2F;</span><br></pre></td></tr></table></figure>
+
+<p><strong>手动处理事务需要经过以下几个步骤:</strong></p>
+<p>1.先关闭自动条件</p>
+<p>SET autocommit = 0 </p>
+<p>2.事务开启</p>
+<p>START TRANSACTION –标记一个事务的开始i，从这个之后的sql 都在同一个事务</p>
+<p>3.事务提交：持久化（成功！）</p>
+<p>COMMIT</p>
+<p>4.回滚：回到原来的样子（失败！）</p>
+<p>ROLLBACK</p>
+<p>5.事务结束</p>
+<p>SET autocommit = 1 开启自动提交</p>
+<p>了解</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SAVEPOINT &#96;保存点名&#96; </span><br><span class="line">-- 设置一个事务的保存点</span><br><span class="line"></span><br><span class="line">ROLLBACK TO SAVEPOINT &#96;保存点名&#96; -- 回滚到保存点</span><br><span class="line"></span><br><span class="line">RELEASE SAVEPOINT &#96;保存点名&#96; -- 撤销保存点</span><br></pre></td></tr></table></figure>
+
+
+
+<p>测试事务用例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">CREATE DATABASE &#96;shop&#96; CHARACTER SET utf8 COLLATE utf8_general_ci; </span><br><span class="line">-- 创建一个数据库，字符集utf8，排序方式utf8_general_ci</span><br><span class="line">USE shop; -- 使用此数据库</span><br><span class="line"></span><br><span class="line">CREATE TABLE &#96;acount&#96;(</span><br><span class="line">&#96;id&#96; INT(3) NOT NULL AUTO_INCREMENT,</span><br><span class="line">&#96;name&#96; VARCHAR(30) NOT NULL,</span><br><span class="line">&#96;money&#96; DECIMAL(9,2) NOT NULL,</span><br><span class="line">PRIMARY KEY (&#96;id&#96;)</span><br><span class="line">)ENGINE &#x3D; INNODB DEFAULT CHARSET &#x3D; utf8 -- 建表</span><br><span class="line"></span><br><span class="line">INSERT INTO &#96;acount&#96; (&#96;name&#96;,&#96;money&#96;) VALUES (&#39;A&#39;,2000.00),(&#39;B&#39;,10000.00); -- 插入数据</span><br></pre></td></tr></table></figure>
+
+<p>– 模拟转账：事务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">SET autocommit &#x3D; 0;</span><br><span class="line"></span><br><span class="line">START TRANSACTION</span><br><span class="line"></span><br><span class="line">UPDATE &#96;acount&#96; SET &#96;money&#96;&#x3D;&#96;money&#96;-500 WHERE &#96;name&#96;&#x3D;&#39;A&#39; -- A减500</span><br><span class="line"></span><br><span class="line">UPDATE &#96;acount&#96; SET &#96;money&#96;&#x3D;&#96;money&#96;+500 WHERE &#96;name&#96;&#x3D;&#39;B&#39; -- B加500</span><br><span class="line"></span><br><span class="line">COMMIT ; -- 事务一旦被提交，那么就已经完成了持久化，无法回滚了</span><br><span class="line"></span><br><span class="line">ROLLBACK;</span><br><span class="line"></span><br><span class="line">SET autocommit &#x3D; 1;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Q4-索引？"><a href="#Q4-索引？" class="headerlink" title="Q4:索引？"></a>Q4:索引？</h3><p>索引是帮助mysql高效获取数据的数据结构</p>
+<p><a href="https://blog.csdn.net/qq_36381855/article/details/80011876" target="_blank" rel="noopener">https://blog.csdn.net/qq_36381855/article/details/80011876</a></p>
+<p>索引的深入知识要详细看，暂不展开</p>
+<p>在一个表中，索引是为了标记列信息的，所以主键索引只能有一个，而确保列信息唯一的唯一索引可以有多个</p>
+<p><strong>主键索引（PRIMARY KEY）</strong></p>
+<p>唯一的标识，主键不可重复，只能有一个列作为主键</p>
+<p><strong>唯一索引（UNIQUE KEY）</strong></p>
+<p>避免重复的列出现，唯一索引可以重复，多个列豆课以标识为唯一索引</p>
+<p><strong>常规索引（KEY/index）</strong></p>
+<p>默认的，使用index/key关键字来设置</p>
+<p><strong>全文索引（FullText）</strong></p>
+<p>在特定的数据库引擎下才有</p>
+<p>显示所有的索引信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SHOW INDEX FROM &#96;student&#96;;</span><br></pre></td></tr></table></figure>
+
+
+<p>增加一个全文索引（列名）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE school.&#96;student&#96; ADD &#96;FullText&#96; INDEX &#96;studentName&#96;(&#96;studentName&#96;)；</span><br></pre></td></tr></table></figure>
+
+<p>EXPLAIN分析sql执行的状况</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">EXPLAIN SELECT * FROM &#96;student&#96;；</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Q5-生成100万条模拟数据并测试索引？"><a href="#Q5-生成100万条模拟数据并测试索引？" class="headerlink" title="Q5:生成100万条模拟数据并测试索引？"></a>Q5:生成100万条模拟数据并测试索引？</h3><p>– 插入100万数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">DELIMITER $$</span><br><span class="line">-- 写函数之前必须要写，标志</span><br><span class="line">CREATE FUNCTION mock_data ()</span><br><span class="line">RETURNS INT DETERMINISTIC </span><br><span class="line">-- 高版本mysql需要加这个DETERMINISTIC</span><br><span class="line">BEGIN</span><br><span class="line">DECLARE num INT DEFAULT 1000000;</span><br><span class="line">DECLARE i INT DEFAULT 0;</span><br><span class="line">WHILE i&lt;num DO</span><br><span class="line">INSERT INTO &#96;app_user&#96;(&#96;name&#96;,&#96;eamil&#96;,&#96;phone&#96;,&#96;gender&#96;)</span><br><span class="line">VALUES(</span><br><span class="line">    CONCAT(&#39;用户&#39;,i),</span><br><span class="line">    &#39;[19224305@qq.com](mailto:19224305@qq.com)&#39;,</span><br><span class="line">    &#39;123456789&#39;,FLOOR(RAND()*2)</span><br><span class="line">);</span><br><span class="line">SET i&#x3D;i+1;END WHILE;RETURN i;</span><br><span class="line">END;</span><br><span class="line"></span><br><span class="line">SELECT mock_data() -- 执行此函数 生成一百万条数据</span><br></pre></td></tr></table></figure>
+
+<p>如果此时执行查询操作</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select * from &#96;app_user&#96; where &#96;name&#96; &#x3D; 9999; </span><br><span class="line">-- 此时在100万条数据内找到指定的用户要执行将近1秒的时间</span><br></pre></td></tr></table></figure>
+
+<p>在这时如果创建一个普通索引</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE INDEX id_app_user_name ON app_user(&#96;name&#96;);</span><br></pre></td></tr></table></figure>
+
+<p>当创建完索引再执行查询操作之后，时间会显著降低</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select * from &#96;app_user&#96; where &#96;name&#96; &#x3D; 9999;</span><br><span class="line">-- 在百万级的数据量下再次查询就只需要0.001秒的时间了</span><br></pre></td></tr></table></figure>
+
+<p>索引在小数据量的时候，用处不大，但是在大数据量的时候，区别十分明显</p>
+<h3 id="Q6-索引应该遵循的几个原则"><a href="#Q6-索引应该遵循的几个原则" class="headerlink" title="Q6:索引应该遵循的几个原则?"></a>Q6:索引应该遵循的几个原则?</h3><p>1.索引不是越多越好</p>
+<p>2.不要对进程变动数据加索引</p>
+<p>3.小数据量的表不需要加索引</p>
+<p>4.索引一般加载常用来查询的字段上</p>
+<p>索引失效的集中情况<a href="https://www.cnblogs.com/liehen2046/p/11052666.html" target="_blank" rel="noopener">https://www.cnblogs.com/liehen2046/p/11052666.html</a></p>
+<p>索引背后的数据结构<a href="https://blog.csdn.net/wufuhuai/article/details/79631466" target="_blank" rel="noopener">https://blog.csdn.net/wufuhuai/article/details/79631466</a></p>
+<h3 id="Q7-用户管理"><a href="#Q7-用户管理" class="headerlink" title="Q7:用户管理?"></a>Q7:用户管理?</h3><p>SQL yog 可视化管理</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">-- 命令行创建用户</span><br><span class="line">CREATE USER shenqi IDENTIFIED BY &#39;1&#39;;</span><br><span class="line">-- 修改密码</span><br><span class="line">set password &#x3D; password（&#39;1&#39;);</span><br><span class="line">-- 修改指定用户密码</span><br><span class="line">set password for shenqi &#x3D; password（&#39;1&#39;);</span><br><span class="line">-- 用户授权</span><br><span class="line">GRANT ALL PRIVILEGES ON *.* TO shenqi;</span><br><span class="line">-- 查询权限 </span><br><span class="line">SHOW GRANTS FOR shenqi;</span><br><span class="line">-- 撤销权限</span><br><span class="line">REVOKE ALL PRIVILEGES ON *.* FROM shenqi;</span><br><span class="line">-- 删除用户</span><br><span class="line">DROP USER shenqi;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Q8-MySQL数据库备份？"><a href="#Q8-MySQL数据库备份？" class="headerlink" title="Q8:MySQL数据库备份？"></a>Q8:MySQL数据库备份？</h3><p><strong>直接拷贝物理文件</strong>   </p>
+<p><strong>在sqlyog中手动导出</strong>   </p>
+<p><strong>使用命令行导出</strong>  </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysqldump -hlocalhost -uroot -p123456 school student &gt;D:/a.sql</span><br><span class="line">-- 导入数据库source D:/a.sql</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Q9-三大范式？"><a href="#Q9-三大范式？" class="headerlink" title="Q9:三大范式？"></a>Q9:三大范式？</h3><p><strong>第一范式（1NF）</strong>    </p>
+<p>原子性 每一列不可再分 </p>
+<p><strong>第二范式（2NF）</strong>  </p>
+<p>1.满足第一范式  </p>
+<p>2.确保数据库的每一列都和主键相关，如果有和主键无关的就要拆分成两张表</p>
+<p><strong>第三范式（3NF）</strong>  </p>
+<p>1.满足第一，第二范式  </p>
+<p>2.消除依赖的传递性，确保每一列数据都和主键直接相关，不是简介相关</p>
+<p>（规范数据库的设计）  </p>
+<p>关联查询的表不能超过三张表     考虑商业化的需求和目标（成本，用户体验）数据库的性能更加重要    </p>
+<p>在规范性能的问题的时候，需要适当考虑一下规范性     </p>
+<p>故意给一些表增加一些冗余的字段（从多表查询变为单表查询）    </p>
+<p>故意增加一些计算列（从大数据量降低为小数据量的查询:索引）</p>
 
       
 
@@ -310,7 +347,29 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/MySQL/" class="article-tag-list-link color1">MySQL</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -360,7 +419,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/03/25/%E7%AE%97%E6%B3%95%E2%80%94%E2%80%94%E5%88%86%E6%B2%BB%E6%B3%95/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/02/28/MySQL%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9402/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -374,18 +433,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/03/25/%E6%B3%A8%E8%A7%A3%E5%92%8C%E5%8F%8D%E5%B0%84/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/03/07/%E7%AE%97%E6%B3%95%E2%80%94%E2%80%94%E4%BD%8D%E8%BF%90%E7%AE%97/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          注解和反射
+          算法——位运算
         
       </div>
     </a>
   
   
-    <a href="/2021/03/25/%E7%AE%97%E6%B3%95%E2%80%94%E2%80%94%E9%80%92%E5%BD%92/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">算法——递归</div>
+    <a href="/2021/02/07/MySQL%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MySQL笔记——01</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -416,7 +475,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Q1：快速排序？"><span class="toc-number">1.</span> <span class="toc-text">Q1：快速排序？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q4：最快找到第k小的数？"><span class="toc-number">2.</span> <span class="toc-text">Q4：最快找到第k小的数？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q5-快速求哪个数字占比超过数组一半（四种方法）"><span class="toc-number">3.</span> <span class="toc-text">Q5:快速求哪个数字占比超过数组一半（四种方法）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q6：最小可用ID？"><span class="toc-number">4.</span> <span class="toc-text">Q6：最小可用ID？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q7：寻找逆序对的个数？"><span class="toc-number">5.</span> <span class="toc-text">Q7：寻找逆序对的个数？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q8：数组内树的特性？"><span class="toc-number">6.</span> <span class="toc-text">Q8：数组内树的特性？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q10：堆的概念？"><span class="toc-number">7.</span> <span class="toc-text">Q10：堆的概念？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q11：数组堆化？"><span class="toc-number">8.</span> <span class="toc-text">Q11：数组堆化？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q12：堆排序？"><span class="toc-number">9.</span> <span class="toc-text">Q12：堆排序？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q13：计数排序？"><span class="toc-number">10.</span> <span class="toc-text">Q13：计数排序？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q14：-桶排序？"><span class="toc-number">11.</span> <span class="toc-text">Q14： 桶排序？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q15：基数排序？"><span class="toc-number">12.</span> <span class="toc-text">Q15：基数排序？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q16：十种排序？"><span class="toc-number">13.</span> <span class="toc-text">Q16：十种排序？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q17：需排序的子数组长度是多少？"><span class="toc-number">14.</span> <span class="toc-text">Q17：需排序的子数组长度是多少？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q19：自定义比较规则？"><span class="toc-number">15.</span> <span class="toc-text">Q19：自定义比较规则？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q20：什么时候使用JAVA类库？"><span class="toc-number">16.</span> <span class="toc-text">Q20：什么时候使用JAVA类库？</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Q1：事务四大原则？"><span class="toc-number">1.</span> <span class="toc-text">Q1：事务四大原则？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q2-事务的隔离级别？"><span class="toc-number">2.</span> <span class="toc-text">Q2:事务的隔离级别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q3-事务的执行流程？"><span class="toc-number">3.</span> <span class="toc-text">Q3:事务的执行流程？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q4-索引？"><span class="toc-number">4.</span> <span class="toc-text">Q4:索引？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q5-生成100万条模拟数据并测试索引？"><span class="toc-number">5.</span> <span class="toc-text">Q5:生成100万条模拟数据并测试索引？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q6-索引应该遵循的几个原则"><span class="toc-number">6.</span> <span class="toc-text">Q6:索引应该遵循的几个原则?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q7-用户管理"><span class="toc-number">7.</span> <span class="toc-text">Q7:用户管理?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q8-MySQL数据库备份？"><span class="toc-number">8.</span> <span class="toc-text">Q8:MySQL数据库备份？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q9-三大范式？"><span class="toc-number">9.</span> <span class="toc-text">Q9:三大范式？</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -584,11 +643,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color5">火锅实验</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">火锅实验</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
             
             <div class="clearfix"></div>

@@ -6,21 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>注解和反射 | ShenQi Blog</title>
+  <title>算法——分治法 | ShenQi Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Q1：内置注解？注解是jdk5.0引入的新技术 内置注解">
+  <meta name="description" content="Q1：快速排序？单向扫描分区：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="注解和反射">
-<meta property="og:url" content="http://yoursite.com/2021/03/25/%E6%B3%A8%E8%A7%A3%E5%92%8C%E5%8F%8D%E5%B0%84/index.html">
+<meta property="og:title" content="算法——分治法">
+<meta property="og:url" content="http://yoursite.com/2021/03/14/%E7%AE%97%E6%B3%95%E2%80%94%E2%80%94%E5%88%86%E6%B2%BB%E6%B3%95/index.html">
 <meta property="og:site_name" content="ShenQi Blog">
-<meta property="og:description" content="Q1：内置注解？注解是jdk5.0引入的新技术 内置注解">
+<meta property="og:description" content="Q1：快速排序？单向扫描分区：">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://yoursite.com/2021/03/25/%E6%B3%A8%E8%A7%A3%E5%92%8C%E5%8F%8D%E5%B0%84/%E6%B3%A8%E8%A7%A3%E5%92%8C%E5%8F%8D%E5%B0%84.png">
-<meta property="article:published_time" content="2021-03-25T03:40:07.000Z">
-<meta property="article:modified_time" content="2021-03-25T05:23:12.671Z">
+<meta property="article:published_time" content="2021-03-14T03:23:41.000Z">
+<meta property="article:modified_time" content="2021-03-26T03:48:58.852Z">
 <meta property="article:author" content="Shen Qi">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/2021/03/25/%E6%B3%A8%E8%A7%A3%E5%92%8C%E5%8F%8D%E5%B0%84/%E6%B3%A8%E8%A7%A3%E5%92%8C%E5%8F%8D%E5%B0%84.png">
   
     <link rel="alternative" href="/atom.xml" title="ShenQi Blog" type="application/atom+xml">
   
@@ -170,14 +168,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-注解和反射" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-算法——分治法" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      注解和反射
+      算法——分治法
     </h1>
   
 
@@ -188,113 +186,91 @@
 		  <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
 	</span>
 
-<a href="/2021/03/25/%E6%B3%A8%E8%A7%A3%E5%92%8C%E5%8F%8D%E5%B0%84/" class="archive-article-date">
-  	<time datetime="2021-03-25T03:40:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-25</time>
+<a href="/2021/03/14/%E7%AE%97%E6%B3%95%E2%80%94%E2%80%94%E5%88%86%E6%B2%BB%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2021-03-14T03:23:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Q1：内置注解？"><a href="#Q1：内置注解？" class="headerlink" title="Q1：内置注解？"></a>Q1：内置注解？</h3><p>注解是jdk5.0引入的新技术</p>
-<p>内置注解</p>
+        <h3 id="Q1：快速排序？"><a href="#Q1：快速排序？" class="headerlink" title="Q1：快速排序？"></a>Q1：快速排序？</h3><p><strong>单向扫描分区：</strong></p>
 <a id="more"></a>
 
-<ul>
-<li><p>@Override:修辞方法的，表示一个方法重写了父类方法</p>
-</li>
-<li><p>@Deprecated: 没啥用，就是写上就不建议用了</p>
-</li>
-<li><p>@SuppressWarnings 抑制警告，加上去警告就没了</p>
-</li>
-</ul>
-<h3 id="Q2：元注解？"><a href="#Q2：元注解？" class="headerlink" title="Q2：元注解？"></a>Q2：元注解？</h3><p>元注解主要负责注解其他注解，4个元注解</p>
-<ul>
-<li><p>@Target 被描述的注解可以用在什么地方</p>
-</li>
-<li><p>@Retention 描述注解生命周期（在什么地方有用）</p>
-</li>
-<li><p>@Document 这个注解会被加入到文档里</p>
-</li>
-<li><p>@Inherited 子类可以继承父类的这个注解</p>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.CLASS)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> ClassPolicy &#123;&#125;</span><br></pre></td></tr></table></figure>
-
-<p>使用方法与这个类似，是写在注解实现的上面的</p>
-<h3 id="Q3-自定义注解写法？"><a href="#Q3-自定义注解写法？" class="headerlink" title="Q3:自定义注解写法？"></a>Q3:自定义注解写法？</h3><p>自定义注解写法</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@MyAnnotation</span>(age=<span class="number">21</span>,name=<span class="string">"shenqi"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target</span>(ElementType.TYPE,ElementType.METHOD)</span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="meta">@interface</span> MyAnnotation&#123;  </span><br><span class="line">    <span class="comment">//这里面定义的实际上就是写注释时括号里的参数 </span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">age</span><span class="params">()</span> <span class="keyword">default</span> 20</span>; </span><br><span class="line">    <span class="comment">//default里面是默认值，如果没有默认值，写参数时就一定要写值</span></span><br><span class="line">    <span class="function">String <span class="title">name</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="Q4-什么是反射？"><a href="#Q4-什么是反射？" class="headerlink" title="Q4:什么是反射？"></a>Q4:什么是反射？</h3><p>可以通过实例化的对象反射求出包名，进而求出相关属性</p>
-<h3 id="Q5：创建Class类的三种方法？"><a href="#Q5：创建Class类的三种方法？" class="headerlink" title="Q5：创建Class类的三种方法？"></a>Q5：创建Class类的三种方法？</h3><p>方式一：通过对象获得</p>
-<p>Class c1= person.getClass()；</p>
-<p>方式二：forName获得</p>
-<p>Class c2 = Class.forName(“io.shenqqq.person”);</p>
-<p>方式三：通过.class直接获得</p>
-<p>Class c3 = person.class;</p>
-<p>需要注意的是，所有的包装类都一个Type属性，如果获取这个属性，就会返回基本数据类型</p>
-<p>Class c4 = Integer.TYPE；</p>
-<p>获取父类类型</p>
-<p>Class c5 = c1.getSuperClass();</p>
-<h3 id="Q6：类加载？"><a href="#Q6：类加载？" class="headerlink" title="Q6：类加载？"></a>Q6：类加载？</h3><ul>
-<li><p>类的加载过程（Load）</p>
-<p>将类的class文件读入内存，并为之创建一个class对象，此过程由类加载器完成</p>
-</li>
-<li><p>类的链接（Link）</p>
-<p>将类的二进制数据合并到JVM的运行状态之中   </p>
-</li>
-</ul>
-<p>​        验证：确保加载的类信息符合JVM规范，没有安全问题       </p>
-<p>​        准备：正式为类变量分配内存并设置类变量默认初始值的阶段，这些内存都将在方法区中进行分配   </p>
-<p>​        解析：虚拟机常量池中的符号引用（常量名）替换为直接引用（地址）的过程</p>
-<ul>
-<li><p>类的初始化（Initialize）  </p>
-<p>执行类构造器&lt;clinit&gt;()的方法的过程，类构造器&lt;clinit&gt;()的方法是由编译器自动收集类中变量赋值过程和静态代码块中的语句合并产生的</p>
-</li>
-</ul>
-<p>JVM负责对类进行初始化  </p>
-<p>​    当初始化一个类时，如果发现其父类话没有进行初始化，咋需要先触发其父类的初始化  </p>
-<p>​    虚拟机会保证一个类的&lt;clinit&gt;()方法在多线程环境中被正确加锁和同步</p>
-<h3 id="Q7-类的初始化？"><a href="#Q7-类的初始化？" class="headerlink" title="Q7:类的初始化？"></a>Q7:类的初始化？</h3><p>什么时候会发生类的初始化</p>
-<p>（1）类的主动引用（一定会发生类的初始化）    </p>
-<p>当虚拟机启动，先初始化main的方法  </p>
-<p>new一个类的对象  </p>
-<p>调用类的静态成员和静态方法 </p>
-<p> 对类进行反射调用  </p>
-<p>初始化一个类，其父类没有被初始化，会先初始化他的父类</p>
-<p>（2）类的被动引用，不会发生类的初始化  </p>
-<p>当访问一个静态域时，只有真正声明这个域的类才会被初始。（比如子类访问父类的静态变量，不会导致子类初始化）  </p>
-<p>通过数组定义类引用，不会触发类的初始化（只是定义了一片内存空间，不会初始化类）  </p>
-<p>引用常量不会触发类的初始化（常量在链接阶段就被调入常量池当中了）</p>
-<h3 id="Q8：类加载器的作用？"><a href="#Q8：类加载器的作用？" class="headerlink" title="Q8：类加载器的作用？"></a>Q8：类加载器的作用？</h3><p>类加载的作用：</p>
-<p>将class文件字节码内容加载到内存当中，并将这些静态数据转换为方法区的运行时的数据结构，然后在堆中生成一个代表这个类的java.lang.class对象，作为方法区中类数据的访问入口。</p>
-<p>类缓存：</p>
-<p>标准的JAVASE加载器可以按照要求查找类，但是一旦某个类被加载到类加载中，他将维持加载(缓存)一段时间。不过JVM垃圾回收机制可以回收这些class对象</p>
-<p>类加载器有三种</p>
-<p>引导类加载器（根加载器）：用C++编写的，是JVM自带的类加载器，负责<strong>JAVA平台核心库(java.rt),</strong>该加载器被无法获取引导类加载是根加载器，是扩展类加载器的</p>
-<p>父类扩展类加载器：指定目录下的jar包装入工作库（java.ext）(extClassLoader)扩展类加载器是系统类加载器的父类</p>
-<p>系统类加载器：负责java -classpath或-D所指的目录下类与jar包装入工作，是最常用的加载器（appCLassLoader），用户定义的类都是由这个加载器加载的</p>
-<p><img src="/2021/03/25/%E6%B3%A8%E8%A7%A3%E5%92%8C%E5%8F%8D%E5%B0%84/%E6%B3%A8%E8%A7%A3%E5%92%8C%E5%8F%8D%E5%B0%84.png" alt="注解和反射"></p>
-<p>1双亲委派机制： 创建包的时候，会向上检索有没有具体的包，如果没有的话才会创建新包</p>
-<h3 id="Q9-什么是反射？有什么用？"><a href="#Q9-什么是反射？有什么用？" class="headerlink" title="Q9:什么是反射？有什么用？"></a>Q9:什么是反射？有什么用？</h3><p>只要获得了类的名称，就能利用newinstance方法来实例化对象</p>
-<p>Java 反射，就是在运行状态中</p>
-<ul>
-<li><p>获取任意类的名称、package 信息、所有属性、方法、注解、类型、类加载器、modifiers（public、static）、父类、现实接口等</p>
-</li>
-<li><p>获取任意对象的属性，并且能改变对象的属性</p>
-</li>
-<li><p>调用任意对象的方法判断任意一个对象所属的类</p>
-</li>
-<li><p>实例化任意一个类的对象</p>
-</li>
-</ul>
-<p>Java 的动态就体现在反射。通过反射我们可以实现动态装配，降低代码的耦合度；动态代理等。反射的过度使用会严重消耗系统资源。</p>
-<p>JDK 中 java.lang.Class 类，就是为了实现反射提供的核心类之一。</p>
-<p>一个 jvm 中一种 Class 只会被加载一次。</p>
+<p>先选定主元扫描指针从左向右扫，big指针从右往左移</p>
+<p>如果被扫描的数，小于等于主元，扫描指针继续向右走</p>
+<p>如果被扫描的数，大于主元，被扫描的数与big指针指向的数交换，big指针左移，扫描指针继续扫描被交换过来的数</p>
+<p>边界：扫描指针与bigger指针交错</p>
+<p>因为指针左侧全部都是小于主元的元素，且内部无序，所以可以直接将主元与指针左侧最后一个元素交换，可以减小时间复杂度</p>
+<p><strong>双向扫描法：</strong></p>
+<p>先选定主元，<strong>让在左右指针不交错的前提下</strong></p>
+<p>左扫描指针先向右走，遇到比主元大或者相等的停下</p>
+<p>右扫描指针向左走，遇到与比主元小或者相等的停下，</p>
+<p><strong>最后左右指针一定交错，此时交换右指针和主元的位置</strong></p>
+<p><strong>三指针分区法：</strong></p>
+<p>与扫描过程与单向扫描类似，但是添加了与主元相等的部分，</p>
+<p><strong>快排的其他优化：</strong></p>
+<p>1.中值取法：三点中值法，绝对中值法</p>
+<p>2.待排序数小于某个值时，执行插入排序</p>
+<h3 id="Q4：最快找到第k小的数？"><a href="#Q4：最快找到第k小的数？" class="headerlink" title="Q4：最快找到第k小的数？"></a>Q4：最快找到第k小的数？</h3><p>常规的想法就是排序后再遍历k次</p>
+<p>但是利用快排的思想，对数组进行分区，因为每次比较后主元的位置是数组排序后固定的</p>
+<p>所以可以利用排序后主元的位置，再处理剩下的元素，从而达到比较快的找到第k小的元素</p>
+<p>（限制：需要改动数组的内容）</p>
+<h3 id="Q5-快速求哪个数字占比超过数组一半（四种方法）"><a href="#Q5-快速求哪个数字占比超过数组一半（四种方法）" class="headerlink" title="Q5:快速求哪个数字占比超过数组一半（四种方法）"></a>Q5:快速求哪个数字占比超过数组一半（四种方法）</h3><p>快速求哪一个数字出现次数超过数组长的的一半（寻找发帖水王）</p>
+<p>算法一：排序后返回数组一半位置的元素</p>
+<p>算法二：hash统计（暂时不会）</p>
+<p>算法三：顺序统计，使主元不断逼近数组一半的位置（限制：需要改动数组的内容）</p>
+<p>算法四：次数统计，新建两个变量，第一个存数字，第二个存出现的次数，遇到不同的数字就次数消掉</p>
+<h3 id="Q6：最小可用ID？"><a href="#Q6：最小可用ID？" class="headerlink" title="Q6：最小可用ID？"></a>Q6：最小可用ID？</h3><p>在非负数组（乱序）种找到最小的可分配的id（从1开始编号），数据量1000000</p>
+<p>找到数组内第k小的数，是否等于k，若等于k则左侧稠密，可用id在主元右侧</p>
+<p>若大于k则右侧稠密，可用id在主元左侧</p>
+<h3 id="Q7：寻找逆序对的个数？"><a href="#Q7：寻找逆序对的个数？" class="headerlink" title="Q7：寻找逆序对的个数？"></a>Q7：寻找逆序对的个数？</h3><p>除了暴力破解以外，还可以使用递归的方法在合并处判断是否逆序</p>
+<h3 id="Q8：数组内树的特性？"><a href="#Q8：数组内树的特性？" class="headerlink" title="Q8：数组内树的特性？"></a>Q8：数组内树的特性？</h3><p>在数组中，树节点的左儿子的节点是2n+1，右儿子的节点是2n+2</p>
+<h3 id="Q10：堆的概念？"><a href="#Q10：堆的概念？" class="headerlink" title="Q10：堆的概念？"></a>Q10：堆的概念？</h3><p>二叉堆是完全二叉树或者近似完全二叉树（既数组内没有空节点）<br>任意节点的值都大于其子节点（大顶堆）任意节点的值都小于其子节点（小顶堆）</p>
+<h3 id="Q11：数组堆化？"><a href="#Q11：数组堆化？" class="headerlink" title="Q11：数组堆化？"></a>Q11：数组堆化？</h3><p>数组堆化确保任意一个父节点都要优于对应的子节点</p>
+<p>其难点在于每次调整顺序都只能调整三个节点内的顺序，不能保证堆顶对于全部数组都是最大的。</p>
+<p>所以其解决的方法是：直接从数组的一半开始，从后向前依次递归每一个节点，确保堆顶是最符合条件的。</p>
+<p>此外需要注意的是，如果堆顶的元素位置被调整之后，很有可能造成，子节点的与孙子节点之间的结构混乱，此时需要递归调整被调换顺序的子节点。使其结构不被破坏。</p>
+<h3 id="Q12：堆排序？"><a href="#Q12：堆排序？" class="headerlink" title="Q12：堆排序？"></a>Q12：堆排序？</h3><p>堆排序堆排序就是利用数组堆化每次能快速选出一个最大值或最小值的特性</p>
+<p>将选出来的最值与数组末尾元素进行交换，最后不断缩减数组规模的一个过程</p>
+<p>可以看作是高级的选择排序</p>
+<p>需要注意的是，小顶堆的堆排结果是从大到小大顶堆的堆排是从小到大</p>
+<h3 id="Q13：计数排序？"><a href="#Q13：计数排序？" class="headerlink" title="Q13：计数排序？"></a>Q13：计数排序？</h3><p>计数排序建立一个辅助空间，空间的大小是原数组存储数据的最大值，只需要遍历一次原数组，将原数组内的元素插入与数组下标的对应的位置中，就可以得到排好序的数组。</p>
+<p>计数排序的优点是快，插入辅助空间是，可以借助下标的对应关系直接插入，不用遍历比较。</p>
+<p>他的时间复杂度是线性的</p>
+<p>但是缺点是需要比较大的辅助空间，如果原数组内数据范围很大，比较稀疏，会导致辅助空间也很大，造成空间的浪费</p>
+<p>所以计数排序适用于数据较为密集或者范围较小的情况下使用</p>
+<p>计数排序的时间空间复杂度都是N+K</p>
+<h3 id="Q14：-桶排序？"><a href="#Q14：-桶排序？" class="headerlink" title="Q14： 桶排序？"></a>Q14： 桶排序？</h3><p>桶排序桶排序是在计数排序的基础上，将辅助空间按顺序分成了一个个桶，所以每次只需要将元素丢入符合条件的桶中，再在桶内进行排序即可。</p>
+<p>排序时只需要将各个桶按顺序的取出桶内元素就能完成排序</p>
+<p>如果桶排序中需要排序的数据集中到了少数几个桶当中，就会造成时间复杂度的极速上升</p>
+<p>最好情况下，桶排序的时间复杂度的范围是O（N）~O(NlgN)</p>
+<h3 id="Q15：基数排序？"><a href="#Q15：基数排序？" class="headerlink" title="Q15：基数排序？"></a>Q15：基数排序？</h3><p>基数排序基数排序是桶排序的特殊情况。</p>
+<p>建立一个二维数组，有十行，分别对应十个数字，相当于十个桶</p>
+<p>从低位开始，先根据低位数字大小放置到对应桶中，按顺序取出</p>
+<p>再根据高位数字大小放入对应桶中，后再按顺序取出</p>
+<p>直到全部位数都放完，此时按顺序取出后，就是排好序的数组了</p>
+<p>如果数据集中在某一个特定范围当中，基数排序会和桶排序一样，时间复杂度极速上升</p>
+<h3 id="Q16：十种排序？"><a href="#Q16：十种排序？" class="headerlink" title="Q16：十种排序？"></a>Q16：十种排序？</h3><p>插入，选择，冒泡 是原址基础排序</p>
+<p>希尔 时间复杂度近似于n的1.3次方</p>
+<p>快排，堆排，归并都是NlgN 快排堆排基于原址，快排表现最好（主元比较靠近边界会导致效率下降，极端情况下时间复杂度会达到n²），堆排常数因子较大，不具备优势</p>
+<p>以上七种都是基于比较的排序</p>
+<p>下面三种是非比较排序，特定情况下比基于比较的排序快很多</p>
+<p>计数 元素集中使用计数</p>
+<p>桶排 元素均匀适合桶排</p>
+<p>基数 又快又稳，适用于十进制整数</p>
+<p>需要做到:1.准确描述算法过程2.写出伪代码3.能分析时间复杂度4.能灵活运用</p>
+<h3 id="Q17：需排序的子数组长度是多少？"><a href="#Q17：需排序的子数组长度是多少？" class="headerlink" title="Q17：需排序的子数组长度是多少？"></a>Q17：需排序的子数组长度是多少？</h3><p>需要排序的最短子数组</p>
+<p>给定义一个无序数组arr，求出需要排序的最短子数组的长度</p>
+<p>例如：arr={2，3，7，5，4，6}返回4，因为只有7546需要排序</p>
+<p>思路：从右往左遍历，先找数组最大值，如果最大值右侧有比最大值小的，就将边界挪到此处</p>
+<p>再从左往右遍历最小值，如果有比最小值小的，同样把边界挪到此处。</p>
+<h3 id="Q19：自定义比较规则？"><a href="#Q19：自定义比较规则？" class="headerlink" title="Q19：自定义比较规则？"></a>Q19：自定义比较规则？</h3><p>利用自定义比较规则完成特殊排序</p>
+<p>例题：数组能排成的最小数</p>
+<p>输入一个正整数数组，把数组里所有整数拼接起来排成一个数，打印出能拼接出所有数字中最小的一个例如：{3，32，321}，则打印出这三个数能排成的最小数字为：321323</p>
+<p>思路：java自带的sort函数可以自定义比较器，输入比较器之后，就可以完成自定义规则的特殊排序了</p>
+<h3 id="Q20：什么时候使用JAVA类库？"><a href="#Q20：什么时候使用JAVA类库？" class="headerlink" title="Q20：什么时候使用JAVA类库？"></a>Q20：什么时候使用JAVA类库？</h3><p>.Java Arrays封装了一些方法比如二分查找，快速排序java里的快排是双指针分区，数据较小时改用插入排序的原址排序</p>
+<p>Java 堆排，桶排，计数排序，基数排序没有封装</p>
 
       
 
@@ -384,7 +360,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/03/25/%E6%B3%A8%E8%A7%A3%E5%92%8C%E5%8F%8D%E5%B0%84/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/03/14/%E7%AE%97%E6%B3%95%E2%80%94%E2%80%94%E5%88%86%E6%B2%BB%E6%B3%95/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -398,18 +374,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/03/25/MyBatis%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%9401/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/03/14/%E6%B3%A8%E8%A7%A3%E5%92%8C%E5%8F%8D%E5%B0%84/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          MyBatis笔记——01
+          注解和反射
         
       </div>
     </a>
   
   
-    <a href="/2021/03/25/%E7%AE%97%E6%B3%95%E2%80%94%E2%80%94%E5%88%86%E6%B2%BB%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">算法——分治法</div>
+    <a href="/2021/03/07/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E2%80%94%E2%80%94%E7%AC%AC%E5%85%AD%E7%AB%A0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java编程思想——第六章</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -440,7 +416,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Q1：内置注解？"><span class="toc-number">1.</span> <span class="toc-text">Q1：内置注解？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q2：元注解？"><span class="toc-number">2.</span> <span class="toc-text">Q2：元注解？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q3-自定义注解写法？"><span class="toc-number">3.</span> <span class="toc-text">Q3:自定义注解写法？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q4-什么是反射？"><span class="toc-number">4.</span> <span class="toc-text">Q4:什么是反射？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q5：创建Class类的三种方法？"><span class="toc-number">5.</span> <span class="toc-text">Q5：创建Class类的三种方法？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q6：类加载？"><span class="toc-number">6.</span> <span class="toc-text">Q6：类加载？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q7-类的初始化？"><span class="toc-number">7.</span> <span class="toc-text">Q7:类的初始化？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q8：类加载器的作用？"><span class="toc-number">8.</span> <span class="toc-text">Q8：类加载器的作用？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q9-什么是反射？有什么用？"><span class="toc-number">9.</span> <span class="toc-text">Q9:什么是反射？有什么用？</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Q1：快速排序？"><span class="toc-number">1.</span> <span class="toc-text">Q1：快速排序？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q4：最快找到第k小的数？"><span class="toc-number">2.</span> <span class="toc-text">Q4：最快找到第k小的数？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q5-快速求哪个数字占比超过数组一半（四种方法）"><span class="toc-number">3.</span> <span class="toc-text">Q5:快速求哪个数字占比超过数组一半（四种方法）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q6：最小可用ID？"><span class="toc-number">4.</span> <span class="toc-text">Q6：最小可用ID？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q7：寻找逆序对的个数？"><span class="toc-number">5.</span> <span class="toc-text">Q7：寻找逆序对的个数？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q8：数组内树的特性？"><span class="toc-number">6.</span> <span class="toc-text">Q8：数组内树的特性？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q10：堆的概念？"><span class="toc-number">7.</span> <span class="toc-text">Q10：堆的概念？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q11：数组堆化？"><span class="toc-number">8.</span> <span class="toc-text">Q11：数组堆化？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q12：堆排序？"><span class="toc-number">9.</span> <span class="toc-text">Q12：堆排序？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q13：计数排序？"><span class="toc-number">10.</span> <span class="toc-text">Q13：计数排序？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q14：-桶排序？"><span class="toc-number">11.</span> <span class="toc-text">Q14： 桶排序？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q15：基数排序？"><span class="toc-number">12.</span> <span class="toc-text">Q15：基数排序？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q16：十种排序？"><span class="toc-number">13.</span> <span class="toc-text">Q16：十种排序？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q17：需排序的子数组长度是多少？"><span class="toc-number">14.</span> <span class="toc-text">Q17：需排序的子数组长度是多少？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q19：自定义比较规则？"><span class="toc-number">15.</span> <span class="toc-text">Q19：自定义比较规则？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q20：什么时候使用JAVA类库？"><span class="toc-number">16.</span> <span class="toc-text">Q20：什么时候使用JAVA类库？</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -608,11 +584,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color5">火锅实验</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">火锅实验</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
             
             <div class="clearfix"></div>
